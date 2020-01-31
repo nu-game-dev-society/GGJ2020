@@ -23,8 +23,16 @@ public class InteractionController : MonoBehaviour
     {
         if (currentItem)
         {
-            currentItem.PickedUp(player);
-            player.heldItem = currentItem;
+            if (currentItem.pickupTarget)
+            {
+                currentItem.Dropped();
+                player.heldItem = null;
+            }
+            else if(player.heldItem == null)
+            {
+                currentItem.PickedUp(player);
+                player.heldItem = currentItem;
+            }
         }
         else if (currentInteraction)
         {
