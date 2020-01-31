@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractionController : MonoBehaviour
 {
     public PlayerController player;
     public TextMeshProUGUI pickupText;
     public InventoryItem currentItem;
+    public RepairPart currentRepair;
     public Interaction currentInteraction;
     public GameObject interactionUI;
+    public GameObject repairUI;
+    private static Image repairProgress;
     void Start()
     {
-
+        repairProgress = repairUI.transform.Find("Progress").GetComponent<Image>();
     }
 
     public void Interact()
@@ -26,7 +30,22 @@ public class InteractionController : MonoBehaviour
         {
             currentInteraction.Interact();
         }
+        else if (currentRepair)
+        {
+            repairUI.SetActive(true);
+            currentRepair.StartRepair();
+        }
     }
+
+    public void UnInteract()
+    {
+        if (currentRepair)
+        {
+            repairUI.SetActive(false);
+            currentRepair.StopRepair();
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         switch (other.tag)
@@ -40,6 +59,11 @@ public class InteractionController : MonoBehaviour
                 currentInteraction = other.transform.GetComponent<Interaction>();
                 interactionUI.SetActive(true);
                 pickupText.SetText("E to " + currentInteraction.interactionName);
+                break;
+            case "Repairable":
+                currentRepair = other.transform.GetComponent<RepairPart>();
+                interactionUI.SetActive(true);
+                pickupText.SetText("Hold E to Repair");
                 break;
         }
 
@@ -66,6 +90,20 @@ public class InteractionController : MonoBehaviour
                     interactionUI.SetActive(false);
                 }
                 break;
+            case "Repairable":
+                RepairPart part = other.GetComponent<RepairPart>();
+                if (part == currentRepair)
+                {
+                    currentRepair.StopRepair();
+                    currentRepair = null;
+                    interactionUI.SetActive(false);
+                }
+                break;
         }
+    }
+
+    public static void SetUseDisplay(float total, float current)
+    {
+        repairProgress.fillAmount = current / total;
     }
 }

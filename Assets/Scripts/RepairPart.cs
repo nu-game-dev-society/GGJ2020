@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class RepairPart : MonoBehaviour
 {
-    public bool isLookedAt = false;
-
     [SerializeField]
     private bool isBroken = true;
 
@@ -32,26 +30,30 @@ public class RepairPart : MonoBehaviour
         IsBroken = isBroken;
     }
 
+    public void StartRepair()
+    {
+        if (!repairing)
+        {
+            repairing = true;
+            startTime = Time.time;
+        }
+    }
+
+    public void StopRepair()
+    {
+        repairing = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (isLookedAt && IsBroken)
+        if (IsBroken)
         {
-            if (Input.GetKeyDown(KeyCode.E) && !repairing)
-            {
-                repairing = true;
-                startTime = Time.time;
-            }
-
-            if (Input.GetKeyUp(KeyCode.E) && repairing)
-            {
-                repairing = false;
-            }
 
             if (repairing)
             {
                 float curTime = (Time.time - startTime);
-                HUDManager.Instance.SetUseDisplay(repairTime, curTime);
+                InteractionController.SetUseDisplay(repairTime, curTime);
 
                 if (curTime >= repairTime)
                 {
@@ -60,15 +62,5 @@ public class RepairPart : MonoBehaviour
                 }
             }
         }
-    }
-
-    public void StartLook()
-    {
-        isLookedAt = true;
-    }
-
-    public void EndLook()
-    {
-        isLookedAt = false;
     }
 }

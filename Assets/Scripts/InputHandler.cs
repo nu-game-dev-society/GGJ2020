@@ -13,5 +13,6 @@ public class InputHandler : MonoBehaviour
         player.inputs.mouseX = Input.GetAxis("Mouse X");
         player.inputs.mouseY = Input.GetAxis("Mouse Y");
         player.inputs.interactPressed = Input.GetButtonDown("Interact");
+        player.inputs.interactReleased = Input.GetButtonUp("Interact");
     }
 }

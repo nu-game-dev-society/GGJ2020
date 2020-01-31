@@ -9,6 +9,7 @@ public class Inputs
     public float v, h;
     public float mouseX, mouseY;
     public bool interactPressed;
+    public bool interactReleased;
 }
 public class PlayerController : MonoBehaviour
 {
@@ -52,6 +53,9 @@ public class PlayerController : MonoBehaviour
     {
         if (inputs.interactPressed)
             interactionController.Interact();
+
+        if (inputs.interactReleased)
+            interactionController.UnInteract();
 
     }
     void FixedUpdate()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class RepairManager : MonoBehaviour
 {
     #region Singleton Pattern
-    public static HUDManager Instance { get; private set; }
+    public static RepairManager Instance { get; private set; }
     void Awake()
     {
         if (Instance == null)

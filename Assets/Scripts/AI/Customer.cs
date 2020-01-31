@@ -34,7 +34,7 @@ public class Customer : MonoBehaviour
             //Request next target
             target = current.GetNext();
             agent.SetDestination(target.Position);
-            agent.st
+            //agent.st
         }
     }
 }
