@@ -46,7 +46,10 @@ public class Waypoint : MonoBehaviour
 
     public bool Ready(Customer customer)
     {
-        return customers[0] == customer;
+        if (customers.Count > 0)
+            return customers[0] == customer;
+        else
+            return true;
     }
 
     public void Leave(Customer customer)
