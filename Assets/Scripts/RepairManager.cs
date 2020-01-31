@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class RepairManager : MonoBehaviour
 {
+    #region Singleton Pattern
+    public static HUDManager Instance { get; private set; }
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
+    #endregion
+
     private RepairPart[] parts;
 
     [SerializeField]
@@ -33,6 +42,14 @@ public class RepairManager : MonoBehaviour
                     part.IsBroken = true;
                 }
             }
+        }
+    }
+
+    public void SetAllBreak(bool broken)
+    {
+        foreach (RepairPart part in parts)
+        {
+            part.IsBroken = broken;
         }
     }
 }
