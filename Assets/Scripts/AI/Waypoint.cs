@@ -5,13 +5,12 @@ using UnityEngine;
 public class Waypoint : MonoBehaviour
 {
     [SerializeField] List<Waypoint> nextWaypoint;
-    Customer currentCustomer;
-    List<Customer> requests;
+    List<Customer> customers;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        customers = new List<Customer>();
     }
 
     // Update is called once per frame
@@ -27,27 +26,36 @@ public class Waypoint : MonoBehaviour
     //TODO: Validate spot is occupied or not
     public Waypoint GetNext()
     {
-        return nextWaypoint[Random.Range(0, nextWaypoint.Count - 1)];
+        if (nextWaypoint.Count == 0)
+            return this;
+        else
+        {
+            Waypoint wp;
+            do
+            {
+                wp = nextWaypoint[Random.Range(0, nextWaypoint.Count)];
+            } while (wp.Occupied);
+            return wp;
+        }
     }
 
     public void Request(Customer customer)
     {
-        requests.Add(customer);
+        customers.Add(customer);
     }
-    public void Enter(Customer customer)
+
+    public bool Ready(Customer customer)
     {
-        currentCustomer = customer;
+        return customers[0] == customer;
     }
+
     public void Leave(Customer customer)
     {
-        if (customer == currentCustomer)
-            currentCustomer = null;
-        else if(requests.Contains(customer))
-            requests.Remove(customer);
+        if(customers.Contains(customer))
+            customers.Remove(customer);
         else
             Debug.Log("HOW CAN YOU LEAVE??? YOU WERE NEVER HERE!!!");
-
-        //Reset customer just to be sure
-        currentCustomer = requests[0];
     }
+
+    public bool Occupied => customers.Count > 0;
 }
