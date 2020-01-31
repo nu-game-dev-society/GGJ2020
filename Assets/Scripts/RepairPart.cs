@@ -61,4 +61,14 @@ public class RepairPart : MonoBehaviour
             }
         }
     }
+
+    public void StartLook()
+    {
+        isLookedAt = true;
+    }
+
+    public void EndLook()
+    {
+        isLookedAt = false;
+    }
 }
