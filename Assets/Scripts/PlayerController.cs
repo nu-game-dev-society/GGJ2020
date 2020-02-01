@@ -104,9 +104,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        /*Vector3 forward = transform.forward;
+        Vector3 forward = transform.forward;
         Vector3 right = transform.right;
-        if (Physics.Raycast(transform.position + Vector3.up, Vector3.down * 2f, out RaycastHit hit, floor))
+        /*if (Physics.Raycast(transform.position + Vector3.up, Vector3.down * 2f, out RaycastHit hit, floor))
         {
             
             forward = Vector3.ProjectOnPlane(transform.forward, hit.normal);
@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
             right *= 20f;
         }
         Debug.Log(forward + " " + rb.velocity.magnitude);*/
-        
+
         Vector3 movement = (inputs.v * forward + inputs.h * right).normalized;
         rb.AddForce(movement * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
     }
