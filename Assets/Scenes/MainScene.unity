@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 698229866}
   - component: {fileID: 698229865}
   - component: {fileID: 698229864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -934,7 +934,7 @@ GameObject:
   - component: {fileID: 1563048442}
   - component: {fileID: 1563048441}
   - component: {fileID: 1563048440}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1014,6 +1014,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563048438}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1585469520 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1695570533809110336, guid: 8e6054c4239c7884ea0d44291f17edc1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1695570534833026522}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1625227654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,6 +1314,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784760348}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1792104535 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1695570534868005528, guid: 8e6054c4239c7884ea0d44291f17edc1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1695570534833026522}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1695570534833026522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1375,6 +1387,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1695570534868005534, guid: 8e6054c4239c7884ea0d44291f17edc1,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 1695570533909576440, guid: 8e6054c4239c7884ea0d44291f17edc1,
         type: 3}
       propertyPath: pickupText
@@ -1390,5 +1407,35 @@ PrefabInstance:
       propertyPath: repairUI
       value: 
       objectReference: {fileID: 986607659}
+    - target: {fileID: 1695570534664822378, guid: 8e6054c4239c7884ea0d44291f17edc1,
+        type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695570534664822378, guid: 8e6054c4239c7884ea0d44291f17edc1,
+        type: 3}
+      propertyPath: mouseSmooth
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695570534664822378, guid: 8e6054c4239c7884ea0d44291f17edc1,
+        type: 3}
+      propertyPath: lookSens
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695570534664822378, guid: 8e6054c4239c7884ea0d44291f17edc1,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1792104535}
+    - target: {fileID: 1695570534664822378, guid: 8e6054c4239c7884ea0d44291f17edc1,
+        type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 1585469520}
+    - target: {fileID: 1695570534664822378, guid: 8e6054c4239c7884ea0d44291f17edc1,
+        type: 3}
+      propertyPath: floor.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e6054c4239c7884ea0d44291f17edc1, type: 3}

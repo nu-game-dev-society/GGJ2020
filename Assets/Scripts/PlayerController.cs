@@ -15,10 +15,12 @@ public class Inputs
 public class PlayerController : MonoBehaviour
 {
     public Inputs inputs;
+    public LayerMask floor;
     [HideInInspector] public InventoryItem heldItem;
     public float speed;
     public float mouseSmooth;
     public float lookSens;
+    public float crouchDist = 0.45f;
     CapsuleCollider playerCollider;
     
     public Transform cam;
@@ -63,6 +65,10 @@ public class PlayerController : MonoBehaviour
         {
             ToggleCrouch();
         }
+        if (inputs.v != 0 || inputs.h != 0)
+            rb.drag = 1;
+        else
+            rb.drag = 10;
 
     }
 
@@ -72,25 +78,49 @@ public class PlayerController : MonoBehaviour
         crouching = !crouching;
         if(crouching)
         {
-            cam.localPosition -= new Vector3(0, 0.9f, 0);
-            playerCollider.height -= 0.9f;
+            StartCoroutine(LerpCameraPosition(cam.localPosition - new Vector3(0, crouchDist, 0)));
+            playerCollider.height -= crouchDist;
         }
         else
         {
-            cam.localPosition += new Vector3(0, 0.9f, 0);
-            playerCollider.height += 0.9f;
+            StartCoroutine(LerpCameraPosition(cam.localPosition + new Vector3(0, crouchDist, 0)));
+            playerCollider.height += crouchDist;
         }
         playerCollider.center = new Vector3(0, playerCollider.height / 2, 0);
     }
 
+    IEnumerator LerpCameraPosition(Vector3 targetPosition)
+    {
+        float t = 0;
+        Vector3 startPos = cam.localPosition;
+        while (t<1)
+        {
+            t += Time.deltaTime * 3f;
+            cam.localPosition = Vector3.Lerp(startPos, targetPosition, t);
+            yield return null;
+        }
+        cam.localPosition = targetPosition;
+    }
+
     void FixedUpdate()
     {
-        Vector3 movement = (inputs.v * transform.forward + inputs.h * transform.right).normalized;
+        /*Vector3 forward = transform.forward;
+        Vector3 right = transform.right;
+        if (Physics.Raycast(transform.position + Vector3.up, Vector3.down * 2f, out RaycastHit hit, floor))
+        {
+            
+            forward = Vector3.ProjectOnPlane(transform.forward, hit.normal);
+            right = Vector3.ProjectOnPlane(transform.right, hit.normal);
+            forward *= 20f;
+            right *= 20f;
+        }
+        Debug.Log(forward + " " + rb.velocity.magnitude);*/
+        
+        Vector3 movement = (inputs.v * forward + inputs.h * right).normalized;
         rb.AddForce(movement * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
     }
     private void LateUpdate()
     {
         LookCamera();
-        
     }
 }
