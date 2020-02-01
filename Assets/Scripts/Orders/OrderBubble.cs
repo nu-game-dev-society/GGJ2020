@@ -9,13 +9,21 @@ public class OrderBubble : MonoBehaviour
 
     private Dictionary<string, GameObject> itemHas = new Dictionary<string, GameObject>();
 
+    private Transform player;
+
+    [SerializeField]
+    private Transform content;
+
     void Start()
     {
+        player = FindObjectOfType<PlayerController>().transform;
+
         foreach (OrderItem item in order.items)
         {
             GameObject itemGO = GameObject.Instantiate(OrderManager.Instance.itemPrefab);
-            itemGO.transform.SetParent(transform);
-            itemGO.transform.position = transform.position;
+            itemGO.transform.SetParent(content);
+            itemGO.transform.position = content.position;
+            itemGO.transform.rotation = content.rotation;
 
             itemGO.transform.Find("Image").GetComponent<MeshRenderer>().material = OrderManager.Instance.GetItemImageMat(item.item);
             itemGO.transform.Find("Quantity").GetComponent<TextMeshPro>().text = "x" + item.quantity;
@@ -34,5 +42,10 @@ public class OrderBubble : MonoBehaviour
                 hasGO.SetActive(item.has);
             }
         }
+    }
+
+    private void Update()
+    {
+        transform.LookAt(player);
     }
 }
