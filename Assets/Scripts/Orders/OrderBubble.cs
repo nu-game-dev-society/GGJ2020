@@ -51,6 +51,8 @@ public class OrderBubble : MonoBehaviour
         itemGO1.transform.Find("Image").GetComponent<MeshRenderer>().material = OrderManager.Instance.GetItemImageMat(order.items[0].item);
 
         itemHas.Add("0", itemGO1.transform.Find("Has").gameObject);
+
+        content.gameObject.SetActive(customer.atBar);
     }
 
     void FixedUpdate()
@@ -78,5 +80,10 @@ public class OrderBubble : MonoBehaviour
     private void Update()
     {
         transform.LookAt(player);
+
+        if (customer.atBar)
+        {
+            content.gameObject.SetActive(customer.atBar);
+        }
     }
 }
