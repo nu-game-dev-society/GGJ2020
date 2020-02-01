@@ -59,6 +59,7 @@ public class RepairPart : MonoBehaviour
                 {
                     IsBroken = false;
                     repairing = false;
+                    InteractionController.FinishRepair();
                 }
             }
         }

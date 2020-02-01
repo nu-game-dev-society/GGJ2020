@@ -11,12 +11,19 @@ public class InteractionController : MonoBehaviour
     public InventoryItem currentItem;
     public RepairPart currentRepair;
     public Interaction currentInteraction;
+
     public GameObject interactionUI;
     public GameObject repairUI;
+
+    public static GameObject statInteractionUI;
+    public static GameObject statRepairUI;
     private static Image repairProgress;
+
     void Start()
     {
         repairProgress = repairUI.transform.Find("Progress").GetComponent<Image>();
+        statInteractionUI = interactionUI;
+        statRepairUI = repairUI;
     }
 
     public void Interact()
@@ -70,8 +77,11 @@ public class InteractionController : MonoBehaviour
                 break;
             case "Repairable":
                 currentRepair = other.transform.GetComponent<RepairPart>();
-                interactionUI.SetActive(true);
-                pickupText.SetText("Hold E to Repair");
+                if (currentRepair.IsBroken)
+                {
+                    interactionUI.SetActive(true);
+                    pickupText.SetText("Hold E to Repair");
+                }
                 break;
         }
 
@@ -113,5 +123,11 @@ public class InteractionController : MonoBehaviour
     public static void SetUseDisplay(float total, float current)
     {
         repairProgress.fillAmount = current / total;
+    }
+
+    public static void FinishRepair()
+    {
+        statInteractionUI.SetActive(false);
+        statRepairUI.SetActive(false);
     }
 }
