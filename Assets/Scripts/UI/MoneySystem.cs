@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class MoneySystem : MonoBehaviour
     //interval for saving money to prefrences
     public float saveInterval = 3;
 
-    private  static MoneySystem instance
+    private static MoneySystem instance
     {
         get
         {
@@ -57,25 +58,25 @@ public class MoneySystem : MonoBehaviour
         AddMoney(PlayerPrefs.GetInt("MoneySave", 0));
 
         //start the save interval
-        StartCoroutine("SaveMoney");
+        StartCoroutine(SaveMoney());
     }
 
     //while reality exists save money each interval
-    public IEnumerator saveMoney()
+    public IEnumerator SaveMoney()
     {
         while (true)
         {
             yield return new WaitForSeconds(saveInterval);
-            PlayerPrefs.SetInt("MoneySave", mInstance.mMoney);
+            PlayerPrefs.SetInt("MoneySave", instance.mMoney);
         }
     }
 
     //check if you have enough money to buy 
-    public static  bool BuyItem(int cost)
+    public static bool BuyItem(int cost)
     {
-        if (mInstance.mMoney - cost >= 0)
+        if (instance.mMoney - cost >= 0)
         {
-            mInstance.mMoney -= cost;
+            instance.mMoney -= cost;
             return true;
         }
         else
@@ -87,19 +88,18 @@ public class MoneySystem : MonoBehaviour
     //Get current balance
     public static int GetMoney()
     {
-        return mInstance.mMoney;
+        return instance.mMoney;
     }
 
 
     //Add money to balance
     public static void AddMoney(int amount)
     {
-        mInstance.mMoney += amount;
+        instance.mMoney += amount;
     }
 
-    // Update is called once per frame
-    void Update()
+    public static string FormatMoney(int amount)
     {
-        
+        return "£" + String.Format("{0:n0}", amount);
     }
 }
