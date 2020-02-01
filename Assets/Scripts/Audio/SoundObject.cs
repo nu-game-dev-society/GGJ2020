@@ -10,6 +10,10 @@ public class SoundObject : MonoBehaviour
     public AudioClip hitClipHard;
     public AudioClip breakClip;
 
+    private void Start()
+    {
+        m_rigidbody = this.GetComponent<Rigidbody>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

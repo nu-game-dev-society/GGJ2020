@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83c2120a0089e24b994fa1af490b304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_rigidbody: {fileID: 0}
+  m_rigidbody: {fileID: 8977468775937532202}
   hitClipSoft: {fileID: 8300000, guid: 9243f902e9769d24ebd6d08cfd32392f, type: 3}
   hitClipHard: {fileID: 8300000, guid: 9243f902e9769d24ebd6d08cfd32392f, type: 3}
   breakClip: {fileID: 0}
