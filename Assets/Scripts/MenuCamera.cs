@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuCamera : MonoBehaviour
 {
     [SerializeField]
-    private Transform start;
+    Image bgImage;
+    [SerializeField]
+    Transform cameraLookPoint;
+    [SerializeField]
+    private Transform[] start;
 
     [SerializeField]
-    private Transform end;
+    private Transform[] end;
 
     public float movementTime = 1;
     public float rotationSpeed = 0.1f;
@@ -21,19 +26,30 @@ public class MenuCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = start;
+
     }
 
-    // Update is called once per frame
+    float t = 0;
+    int i = 0;
     void Update()
     {
-        if (Vector3.Distance(transform.position, start.position) <= 0.1f)
-            target = end;
-
-        if (Vector3.Distance(transform.position, end.position) <= 0.1f)
-            target = start;
-
-        transform.position = Vector3.SmoothDamp(transform.position, target.position, ref refPos, movementTime);
-        transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, rotationSpeed * Time.deltaTime);
+        t += (Time.deltaTime / movementTime);
+        transform.position = Vector3.Slerp(start[0].position, end[0].position, t);
+        if(t>0.95f)
+        {
+            bgImage.color = new Color(0, 0, 0, 1-(20 * (1 - t)));
+        }
+        else if (t <= 0.05f)
+        {
+            bgImage.color = new Color(0, 0, 0, 1-(20 * t));
+        }
+        if (t > 1)
+        {
+            t = 0;
+            i++;
+            if (i >= start.Length)
+                i = 0;
+        }
+        transform.LookAt(cameraLookPoint);
     }
 }
