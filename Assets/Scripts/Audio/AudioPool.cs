@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio; 
 
 public class AudioPool : MonoBehaviour
 {
@@ -8,13 +9,32 @@ public class AudioPool : MonoBehaviour
 
     public List<AudioSourcePooled> audioSources = new List<AudioSourcePooled>();
 
-    public GameObject audioSourcePrefab; 
+    public GameObject audioSourcePrefab;
+
+    public AudioMixer mixer;
+    public AudioMixerSnapshot main;
+    public AudioMixerSnapshot bathroom;
+
+
+    public void SnapMixerToMain()
+    {
+        Debug.LogError("Transition to main");
+        main.TransitionTo(0.5f);
+    }
+
+    public void SnapMixerToBathroom()
+    {
+        bathroom.TransitionTo(0.5f);
+    }
 
     private void Awake()
     {
         if (!instance)
             instance = this; 
     }
+
+
+
 
 
     private void Start()

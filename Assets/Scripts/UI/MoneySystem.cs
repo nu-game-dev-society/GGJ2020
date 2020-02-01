@@ -9,7 +9,7 @@ public class MoneySystem : MonoBehaviour
     private static MoneySystem mInstance;
 
     //Current balance
-    public int mMoney = 0;
+    public int mMoney = 1000;
 
     //interval for saving money to prefrences
     public float saveInterval = 3;
@@ -55,10 +55,10 @@ public class MoneySystem : MonoBehaviour
         mInstance = this;
 
         //load saved money
-        AddMoney(PlayerPrefs.GetInt("MoneySave", 0));
+        //AddMoney(PlayerPrefs.GetInt("MoneySave", 0));
 
         //start the save interval
-        StartCoroutine(SaveMoney());
+        //StartCoroutine(SaveMoney());
     }
 
     //while reality exists save money each interval
