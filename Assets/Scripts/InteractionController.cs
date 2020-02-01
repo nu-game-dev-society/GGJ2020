@@ -31,7 +31,15 @@ public class InteractionController : MonoBehaviour
 
     public void Interact()
     {
-        if (player.heldItem)
+        if (currentRepair)
+        {
+            if (currentRepair.IsBroken && (currentRepair.requiredTool == "" || (player.heldItem && player.heldItem.id.Equals(currentRepair.requiredTool))))
+            {
+                repairUI.SetActive(true);
+                currentRepair.StartRepair(player);
+            }
+        }
+        else if(player.heldItem)
         {
             player.heldItem.Dropped();
             player.heldItem = null;
@@ -45,11 +53,7 @@ public class InteractionController : MonoBehaviour
         {
             currentInteraction.Interact();
         }
-        else if (currentRepair)
-        {
-            repairUI.SetActive(true);
-            currentRepair.StartRepair();
-        }
+         
     }
 
     public void ReleaseInteract()
@@ -83,7 +87,11 @@ public class InteractionController : MonoBehaviour
                 if (currentRepair.IsBroken)
                 {
                     interactionUI.SetActive(true);
-                    pickupText.SetText("Hold E to Repair");
+
+                    if (currentRepair.requiredTool == "" || (player.heldItem && player.heldItem.id.Equals(currentRepair.requiredTool)))
+                        pickupText.SetText("Hold E to Repair");
+                    else
+                        pickupText.SetText("Find a " + currentRepair.requiredTool);
                 }
                 break;
         }

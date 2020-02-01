@@ -7,13 +7,11 @@ using UnityEngine;
 public class OrderItem
 {
     public string item;
-    public int quantity;
     public bool has;
 
-    public OrderItem(string item, int quantity)
+    public OrderItem(string item)
     {
         this.item = item;
-        this.quantity = quantity;
         this.has = false;
     }
 }

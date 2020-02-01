@@ -1,20 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RepairPart : MonoBehaviour
 {
     [SerializeField]
-    private bool isBroken = true;
-
+    private bool isBroken = false;
+    public string requiredTool;
     public bool IsBroken
     {
         get { return isBroken; }
-        set { isBroken = value; repairModel.SetActive(isBroken); }
+        set { isBroken = value;
+            if (isBroken) broken.Invoke();
+            else {
+                repaired.Invoke();
+                if (requiredTool != "" && currentTool)
+                {
+                    currentTool.SetActive(true);
+                }
+            }
+        }
     }
-
-    [SerializeField]
-    private GameObject repairModel;
+    public UnityEvent startRepairing = new UnityEvent();
+    public UnityEvent stopRepairing = new UnityEvent();
+    public UnityEvent repaired = new UnityEvent(); 
+    public UnityEvent broken = new UnityEvent(); 
 
     private bool repairing = false;
     private float startTime = 0;
@@ -30,11 +41,18 @@ public class RepairPart : MonoBehaviour
         IsBroken = isBroken;
     }
 
-    public void StartRepair()
+    GameObject currentTool;
+    public void StartRepair(PlayerController pc)
     {
-        if (!repairing)
+        if (!repairing && (requiredTool == "" || (pc.heldItem && pc.heldItem.id.Equals(requiredTool))))
         {
             repairing = true;
+            startRepairing.Invoke();
+            if(requiredTool != "")
+            {
+                currentTool = pc.heldItem.gameObject;
+                currentTool.SetActive(false);
+            }
             startTime = Time.time;
         }
     }
@@ -42,6 +60,11 @@ public class RepairPart : MonoBehaviour
     public void StopRepair()
     {
         repairing = false;
+        stopRepairing.Invoke();
+        if (requiredTool != "" && currentTool)
+        {
+            currentTool.SetActive(true);
+        }
     }
 
     // Update is called once per frame

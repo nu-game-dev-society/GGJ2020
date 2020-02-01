@@ -30,7 +30,9 @@ public class InventoryItem : MonoBehaviour
         pickupTarget = pc.handTransform;
         rb.angularDrag = 1f;
         //rb.useGravity = false;
-        Physics.IgnoreCollision(GetComponent<Collider>(), pc.GetComponent<Collider>());
+        Collider[] cols = GetComponents<Collider>();
+        foreach (Collider c in cols)
+            Physics.IgnoreCollision(c, pc.GetComponent<Collider>());
     }
     public void Dropped()
     {
