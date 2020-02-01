@@ -10,6 +10,7 @@ public class AudioSourcePooled : MonoBehaviour
 
     public void Play(AudioClip clip, float vol = 1f)
     {
+        audioSource.pitch = Random.Range(0.8f, 1.2f);
         audioSource.clip = clip;
         audioSource.volume = vol;
         audioSource.Play();
