@@ -5,8 +5,6 @@ using TMPro;
 
 public class OrderBubble : MonoBehaviour
 {
-    public Order order;
-
     private Dictionary<string, GameObject> itemHas = new Dictionary<string, GameObject>();
 
     private Transform player;
@@ -24,7 +22,7 @@ public class OrderBubble : MonoBehaviour
         Vector3 pos1 = content.position;
         Vector3 pos2 = content.position;
 
-        if (order.items.Count == 2)
+        if (customer.order.items.Count == 2)
         {
             pos1 = pos1 - (content.right * 0.3f);
             pos2 = pos2 + (content.right * 0.3f);
@@ -34,7 +32,7 @@ public class OrderBubble : MonoBehaviour
             itemGO2.transform.position = pos2;
             itemGO2.transform.rotation = content.rotation;
 
-            itemGO2.transform.Find("Image").GetComponent<MeshRenderer>().material = OrderManager.Instance.GetItemImageMat(order.items[1].item);
+            itemGO2.transform.Find("Image").GetComponent<MeshRenderer>().material = OrderManager.Instance.GetItemImageMat(customer.order.items[1].item);
 
             itemHas.Add("1", itemGO2.transform.Find("Has").gameObject);
         }
@@ -48,7 +46,7 @@ public class OrderBubble : MonoBehaviour
         itemGO1.transform.position = pos1;
         itemGO1.transform.rotation = content.rotation;
 
-        itemGO1.transform.Find("Image").GetComponent<MeshRenderer>().material = OrderManager.Instance.GetItemImageMat(order.items[0].item);
+        itemGO1.transform.Find("Image").GetComponent<MeshRenderer>().material = OrderManager.Instance.GetItemImageMat(customer.order.items[0].item);
 
         itemHas.Add("0", itemGO1.transform.Find("Has").gameObject);
 
@@ -59,7 +57,7 @@ public class OrderBubble : MonoBehaviour
     {
         bool allActive = true;
 
-        foreach (OrderItem item in order.items)
+        foreach (OrderItem item in customer.order.items)
         {
             if (!item.has) { allActive = false; }
 
@@ -85,5 +83,19 @@ public class OrderBubble : MonoBehaviour
         {
             content.gameObject.SetActive(customer.atBar);
         }
+    }
+
+    public bool PickupItem(string itemID)
+    {
+        foreach (OrderItem item in customer.order.items)
+        {
+            if (item.item == itemID)
+            {
+                item.has = true;
+                return true;
+            }
+        }
+
+        return false;
     }
 }

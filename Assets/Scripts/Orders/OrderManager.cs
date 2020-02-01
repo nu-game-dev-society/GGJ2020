@@ -27,12 +27,11 @@ public class OrderManager : MonoBehaviour
     [SerializeField]
     private List<OrderRand> orderRandItems;
 
-    public void CreateBubble(CustomerController customer, Order order)
+    public void CreateBubble(CustomerController customer)
     {
         GameObject bubble = GameObject.Instantiate(bubblePrefab);
         bubble.transform.SetParent(customer.transform);
         bubble.transform.position = customer.transform.Find("BubblePos").position;
-        bubble.GetComponent<OrderBubble>().order = order;
     }
 
     public Sprite GetItemImage(string itemID)
@@ -81,6 +80,6 @@ public class OrderManager : MonoBehaviour
         //Debug.Log("Adding " + orderItems.Count);
 
         cust.order = new Order(orderItems);
-        CreateBubble(cust, cust.order);
+        CreateBubble(cust);
     }
 }
