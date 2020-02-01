@@ -141,6 +141,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_rigidbody: {fileID: 6992704001050035169}
-  hitClipSoft: {fileID: 8300000, guid: 9243f902e9769d24ebd6d08cfd32392f, type: 3}
-  hitClipHard: {fileID: 8300000, guid: 9243f902e9769d24ebd6d08cfd32392f, type: 3}
-  breakClip: {fileID: 0}
+  hitClipSoft: {fileID: 8300000, guid: 98fb8a0f76ef32e4e8922d2d93523838, type: 3}
+  hitClipHard: {fileID: 8300000, guid: 98fb8a0f76ef32e4e8922d2d93523838, type: 3}
+  breakClip: {fileID: 8300000, guid: f69ff60b02f29d4488f420ef7c447e5a, type: 3}
