@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
+    [SerializeField] public bool barSpot;
     [SerializeField] List<Waypoint> nextWaypoint;
-    List<Customer> customers;
+    List<Customer> customers = new List<Customer>();
 
     // Start is called before the first frame update
     void Start()
     {
-        customers = new List<Customer>();
+        
     }
 
     // Update is called once per frame
@@ -56,9 +57,19 @@ public class Waypoint : MonoBehaviour
     {
         if(customers.Contains(customer))
             customers.Remove(customer);
-        else
-            Debug.Log("HOW CAN YOU LEAVE??? YOU WERE NEVER HERE!!!");
     }
 
     public bool Occupied => customers.Count > 0;
+
+    //GIZMOS STUFF
+    Color nodeDefault = Color.white;
+    Color nodeOccupied = Color.white;
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Occupied ? nodeOccupied : nodeDefault;
+        Gizmos.DrawWireSphere(gameObject.transform.position, 0.5f);
+        Gizmos.color = Color.green;
+        foreach (Waypoint wp in nextWaypoint)
+            Gizmos.DrawLine(gameObject.transform.position, wp.gameObject.transform.position);
+    }
 }
