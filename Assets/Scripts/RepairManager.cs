@@ -38,7 +38,7 @@ public class RepairManager : MonoBehaviour
             {
                 if (Random.Range(0.0f, 1.0f) <= part.breakChance)
                 {
-                    Debug.Log("Broken " + part.transform.name);
+                    //Debug.Log("Broken " + part.transform.name);
                     part.IsBroken = true;
                 }
             }
