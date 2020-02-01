@@ -10,7 +10,7 @@ public class OrderTest : MonoBehaviour
     void Start()
     {
         customer = GetComponent<Customer>();
-        order = new Order(new List<OrderItem> { new OrderItem("wine", 1) });
+        order = new Order(new List<OrderItem> { new OrderItem("wine") });
 
         OrderManager.Instance.CreateBubble(customer, order);
     }
