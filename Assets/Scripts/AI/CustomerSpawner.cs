@@ -13,11 +13,6 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField]
     private float spawnTimeMax = 10.0f;
 
-    private int maxItems = 2;
-
-    [SerializeField]
-    private List<OrderRand> orderRandItems;
-
     private float lastSpawn;
     private float spawnTime;
 
@@ -38,28 +33,7 @@ public class CustomerSpawner : MonoBehaviour
             GameObject customer = GameObject.Instantiate(customerPrefab);
             customer.transform.position = transform.position;
 
-            List<OrderItem> orderItems = new List<OrderItem>();
-
-            while (orderItems.Count <= 0 || orderItems.Count > maxItems)
-            {
-                orderItems.Clear();
-
-                foreach (OrderRand order in orderRandItems)
-                {
-                    int count = Random.Range(order.min, order.max + 1);
-                    Debug.Log("Adding " + order.id + " x" + count);
-                    
-                    for (int i = 0; i < count; i++)
-                    {
-                        orderItems.Add(new OrderItem(order.id));
-                    }
-                }
-            }
-
-            Debug.Log("Adding " + orderItems.Count);
-            CustomerController cust = customer.GetComponent<CustomerController>();
-            cust.order = new Order(orderItems);
-            OrderManager.Instance.CreateBubble(cust, cust.order);
+            OrderManager.Instance.GenerateOrder(customer.GetComponent<CustomerController>());
         }
     }
 }

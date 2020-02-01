@@ -22,6 +22,11 @@ public class OrderManager : MonoBehaviour
     public OrderImage[] images;
     public Sprite defaultImage;
 
+    private int maxItems = 2;
+
+    [SerializeField]
+    private List<OrderRand> orderRandItems;
+
     public void CreateBubble(CustomerController customer, Order order)
     {
         GameObject bubble = GameObject.Instantiate(bubblePrefab);
@@ -51,5 +56,31 @@ public class OrderManager : MonoBehaviour
         material.SetTexture("_MainTex", image.texture);
 
         return material;
+    }
+
+    public void GenerateOrder(CustomerController cust)
+    {
+        List<OrderItem> orderItems = new List<OrderItem>();
+
+        while (orderItems.Count <= 0 || orderItems.Count > maxItems)
+        {
+            orderItems.Clear();
+
+            foreach (OrderRand order in orderRandItems)
+            {
+                int count = Random.Range(order.min, order.max + 1);
+                //Debug.Log("Adding " + order.id + " x" + count);
+
+                for (int i = 0; i < count; i++)
+                {
+                    orderItems.Add(new OrderItem(order.id));
+                }
+            }
+        }
+
+        //Debug.Log("Adding " + orderItems.Count);
+
+        cust.order = new Order(orderItems);
+        CreateBubble(cust, cust.order);
     }
 }
