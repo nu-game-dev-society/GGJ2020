@@ -59,4 +59,9 @@ public class CustomerManager : MonoBehaviour
         } while (wp.Occupied);
         return wp;
     }
+
+    public List<CustomerController> GetAllCustomers()
+    {
+        return null;
+    }
 }
