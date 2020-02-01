@@ -36,8 +36,11 @@ public class CustomerController : MonoBehaviour
             if (wp != null)
                 SetTarget(wp);
 
-            if (target.barSpot && agent.remainingDistance < 0.1f)
+            if (target.barSpot && agent.remainingDistance < 0.1f && !atBar)
+            {
                 atBar = true;
+                target.GetComponentInChildren<ServiceTriggers>().cust = GetComponentInChildren<OrderBubble>();
+            }
         }
         if(atBar && serviceComplete)
         {
@@ -68,10 +71,19 @@ public class CustomerController : MonoBehaviour
     {
         Waypoint wp = CustomerManager.Instance.RequestQueueSpot();
         if (wp == null)
-            StartCoroutine(Wait(0.2f));
-        else
-            SetTarget(wp);
+        {
+            wp = CustomerManager.Instance.RequestIdleSpot();
+            StartCoroutine(Wait(10f));
+        }
+        SetTarget(wp);
     }
+    public void SetDrunkness(float v)
+    {
+        drunkness = v;
+        animator.SetFloat("Drunkness", drunkness);
+    }
+
+
 
     [ContextMenu("Finish Drink")]
     public void FinishedDrink()
@@ -80,11 +92,8 @@ public class CustomerController : MonoBehaviour
         JoinQueue();
     }
 
-    public void SetDrunkness(float v)
-    {
-        drunkness = v;
-        animator.SetFloat("Drunkness", drunkness);
-    }
+    
+    //Force update drunk
 #if UNITY_EDITOR
     [ContextMenu("Update Drunkness")]
     public void UpdateDrunkness()
