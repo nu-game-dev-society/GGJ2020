@@ -11,12 +11,15 @@ public class OrderBubble : MonoBehaviour
 
     private Transform player;
 
+    private CustomerController customer;
+
     [SerializeField]
     private Transform content;
 
     void Start()
     {
         player = FindObjectOfType<PlayerController>().transform;
+        customer = GetComponentInParent<CustomerController>();
 
         Vector3 pos1 = content.position;
         Vector3 pos2 = content.position;
@@ -52,13 +55,23 @@ public class OrderBubble : MonoBehaviour
 
     void FixedUpdate()
     {
+        bool allActive = true;
+
         foreach (OrderItem item in order.items)
         {
+            if (!item.has) { allActive = false; }
+
             GameObject hasGO;
             if (itemHas.TryGetValue(item.item, out hasGO))
             {
                 hasGO.SetActive(item.has);
             }
+        }
+
+        if (allActive)
+        {
+            customer.serviceComplete = true;
+            Destroy(gameObject);
         }
     }
 
