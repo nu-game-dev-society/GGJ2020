@@ -5,17 +5,20 @@ using UnityEngine.AI;
 
 public class CustomerController : MonoBehaviour
 {
+    public Order order;
     Animator animator;
     NavMeshAgent agent;
     public Waypoint target;
     public bool serviceComplete;
     public bool atBar;
+    [Range(0.0f,1.0f)]
+    public float drunkness;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
-
+        
         //-----
         JoinQueue();
     }
@@ -83,4 +86,17 @@ public class CustomerController : MonoBehaviour
         serviceComplete = false;
         JoinQueue();
     }
+
+    public void SetDrunkness(float v)
+    {
+        drunkness = v;
+        animator.SetFloat("Drunkness", drunkness);
+    }
+#if UNITY_EDITOR
+    [ContextMenu("Update Drunkness")]
+    public void UpdateDrunkness()
+    {
+        animator.SetFloat("Drunkness", drunkness);
+    }
+#endif
 }

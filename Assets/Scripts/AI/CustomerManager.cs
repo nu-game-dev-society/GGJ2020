@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CustomerManager : MonoBehaviour
 {
-    List<Customer> customers = new List<Customer>();
+    //List<Customer> customers = new List<Customer>();
     [SerializeField] List<Waypoint> queueSpots; //bad name - this only stores the end or "top" of the queue, once customer is inside they figure their own way through
     [SerializeField] List<Waypoint> idleSpots;
     [SerializeField] List<Waypoint> barSpots;
@@ -41,7 +41,7 @@ public class CustomerManager : MonoBehaviour
     {
         
     }
-
+    /*
     public void Register(Customer customer)
     {
         if (customers.Contains(customer))
@@ -59,7 +59,7 @@ public class CustomerManager : MonoBehaviour
         } while (wp.Occupied);
         customer.behaviour = Behaviour.Queueing;
         return wp;
-    }
+    }*/
 
     public Waypoint RequestQueueSpot()
     {
@@ -70,7 +70,7 @@ public class CustomerManager : MonoBehaviour
 
         return null;
     }
-
+    /*
     public Waypoint RequestIdleSpot(Customer customer)
     {
         foreach (Waypoint x in queueSpots)
@@ -85,7 +85,7 @@ public class CustomerManager : MonoBehaviour
         } while (wp.Occupied);
         customer.behaviour = Behaviour.Drinking;
         return wp;
-    }
+    }*/
     public Waypoint RequestIdleSpot()
     {
         Waypoint wp;
