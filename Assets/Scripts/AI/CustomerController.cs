@@ -34,23 +34,16 @@ public class CustomerController : MonoBehaviour
             Waypoint wp = target.EvaluateNext();
 
             if (wp != null)
-            {
                 SetTarget(wp);
-            }
-            if(target.barSpot && agent.remainingDistance < 0.1f)
-            {
-                //target.Occupied = false;
-                //target = null;
+
+            if (target.barSpot && agent.remainingDistance < 0.1f)
                 atBar = true;
-            }
         }
         if(atBar && serviceComplete)
         {
             atBar = false;
             SetTarget(CustomerManager.Instance.RequestIdleSpot());
         }
-
-
     }
 
     void SetTarget(Waypoint wp)
