@@ -35,6 +35,7 @@ public class InventoryItem : MonoBehaviour
     public void Dropped()
     {
         pickupTarget = null;
+        pickedUpByPlayer.heldItem = null;
         rb.angularDrag = defaultAngular;
         //rb.useGravity = true;
 

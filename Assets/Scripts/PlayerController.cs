@@ -10,14 +10,16 @@ public class Inputs
     public float mouseX, mouseY;
     public bool interactPressed;
     public bool interactReleased;
+    public bool crouch;
 }
 public class PlayerController : MonoBehaviour
 {
     public Inputs inputs;
-    public InventoryItem heldItem;
+    [HideInInspector] public InventoryItem heldItem;
     public float speed;
     public float mouseSmooth;
     public float lookSens;
+    CapsuleCollider playerCollider;
     
     public Transform cam;
     Vector2 lookDir;
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         interactionController = GetComponentInChildren<InteractionController>();
+        playerCollider = GetComponent<CapsuleCollider>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -55,9 +58,31 @@ public class PlayerController : MonoBehaviour
             interactionController.Interact();
 
         if (inputs.interactReleased)
-            interactionController.UnInteract();
+            interactionController.ReleaseInteract();
+        if(inputs.crouch)
+        {
+            ToggleCrouch();
+        }
 
     }
+
+    bool crouching;
+    private void ToggleCrouch()
+    {
+        crouching = !crouching;
+        if(crouching)
+        {
+            cam.localPosition -= new Vector3(0, 0.9f, 0);
+            playerCollider.height -= 0.9f;
+        }
+        else
+        {
+            cam.localPosition += new Vector3(0, 0.9f, 0);
+            playerCollider.height += 0.9f;
+        }
+        playerCollider.center = new Vector3(0, playerCollider.height / 2, 0);
+    }
+
     void FixedUpdate()
     {
         Vector3 movement = (inputs.v * transform.forward + inputs.h * transform.right).normalized;
@@ -66,5 +91,6 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate()
     {
         LookCamera();
+        
     }
 }

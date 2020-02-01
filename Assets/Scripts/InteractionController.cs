@@ -7,17 +7,20 @@ using UnityEngine.UI;
 public class InteractionController : MonoBehaviour
 {
     public PlayerController player;
-    public TextMeshProUGUI pickupText;
+
     public InventoryItem currentItem;
     public RepairPart currentRepair;
     public Interaction currentInteraction;
 
+    #region UI
+    public TextMeshProUGUI pickupText;
     public GameObject interactionUI;
     public GameObject repairUI;
 
     public static GameObject statInteractionUI;
     public static GameObject statRepairUI;
     private static Image repairProgress;
+    #endregion
 
     void Start()
     {
@@ -28,18 +31,15 @@ public class InteractionController : MonoBehaviour
 
     public void Interact()
     {
-        if (currentItem)
+        if (player.heldItem)
         {
-            if (currentItem.pickupTarget)
-            {
-                currentItem.Dropped();
-                player.heldItem = null;
-            }
-            else if(player.heldItem == null)
-            {
-                currentItem.PickedUp(player);
-                player.heldItem = currentItem;
-            }
+            player.heldItem.Dropped();
+            player.heldItem = null;
+        }
+        else if (currentItem)
+        {
+            currentItem.PickedUp(player);
+            player.heldItem = currentItem;
         }
         else if (currentInteraction)
         {
@@ -52,7 +52,7 @@ public class InteractionController : MonoBehaviour
         }
     }
 
-    public void UnInteract()
+    public void ReleaseInteract()
     {
         if (currentRepair)
         {
@@ -66,7 +66,10 @@ public class InteractionController : MonoBehaviour
         switch (other.tag)
         {
             case "PickupItem":
+
                 currentItem = other.transform.GetComponent<InventoryItem>();
+                if (currentItem.pickupTarget)
+                    return;
                 interactionUI.SetActive(true);
                 pickupText.SetText("E to Pickup " + currentItem.itemName);
                 break;
@@ -94,10 +97,8 @@ public class InteractionController : MonoBehaviour
                 InventoryItem item = other.GetComponent<InventoryItem>();
                 if (item == currentItem)
                 {
-                    if (item.pickupTarget)
-                        return;
-                    currentItem = null;
                     interactionUI.SetActive(false);
+                    currentItem = null;
                 }
                 break;
             case "Interaction":
