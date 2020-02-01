@@ -56,7 +56,11 @@ public class RepairPart : MonoBehaviour
             startTime = Time.time;
         }
     }
-
+    [ContextMenu("ToggleBroken")]
+    public void ToggleBroken()
+    {
+        IsBroken = !isBroken;
+    }
     public void StopRepair()
     {
         repairing = false;
