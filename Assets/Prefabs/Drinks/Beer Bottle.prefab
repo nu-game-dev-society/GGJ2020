@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f416c1636ecfdbb48b714463a066fffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 2502602
+  id: Beer Bottle
   itemName: Beer Bottle
   type: 2
   pickedUpByPlayer: {fileID: 0}

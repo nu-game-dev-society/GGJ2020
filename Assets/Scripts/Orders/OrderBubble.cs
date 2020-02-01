@@ -57,12 +57,13 @@ public class OrderBubble : MonoBehaviour
     {
         bool allActive = true;
 
-        foreach (OrderItem item in customer.order.items)
+        for (int i = 0; i < customer.order.items.Count; i++)
         {
+            OrderItem item = customer.order.items[i];
             if (!item.has) { allActive = false; }
 
             GameObject hasGO;
-            if (itemHas.TryGetValue(item.item, out hasGO))
+            if (itemHas.TryGetValue(i.ToString(), out hasGO))
             {
                 hasGO.SetActive(item.has);
             }
@@ -87,9 +88,10 @@ public class OrderBubble : MonoBehaviour
 
     public bool PickupItem(string itemID)
     {
-        foreach (OrderItem item in customer.order.items)
+        for (int i = 0; i < customer.order.items.Count; i++)
         {
-            if (item.item == itemID)
+            OrderItem item = customer.order.items[i];
+            if (item.item == itemID && !item.has)
             {
                 item.has = true;
                 return true;
