@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7494285188662178747}
   - component: {fileID: 7494285188662178756}
   - component: {fileID: 7494285188662178757}
+  - component: {fileID: 1663528355547444823}
   m_Layer: 0
   m_Name: LeakyPipe
   m_TagString: Repairable
@@ -138,6 +139,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.28640437, y: 0.7365051, z: 0.30053777}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1663528355547444823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494285188662178746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4313559bc46cbba42893449ce01822f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Leaky Pipe
+  id: 1
 --- !u!1 &7494285189489549314
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +306,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BreakablePipe
       objectReference: {fileID: 0}
+    - target: {fileID: 615694930536448264, guid: ba3c34ec517a5ef4092f7f63b424583c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2178996044070328405, guid: ba3c34ec517a5ef4092f7f63b424583c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -355,11 +375,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 99.99998
-      objectReference: {fileID: 0}
-    - target: {fileID: 615694930536448264, guid: ba3c34ec517a5ef4092f7f63b424583c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2911014775368533233, guid: ba3c34ec517a5ef4092f7f63b424583c,
         type: 3}

@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class CustomerController : MonoBehaviour
 {
     public Order order;
+    public Complaint complaint;
     Animator animator;
     NavMeshAgent agent;
     public Waypoint target;
@@ -100,4 +101,10 @@ public class CustomerController : MonoBehaviour
         animator.SetFloat("Drunkness", drunkness);
     }
 #endif
+
+    public void ComplainAbout(Complaint complaint)
+    {
+        this.complaint = complaint;
+
+    }
 }

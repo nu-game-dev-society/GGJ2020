@@ -32,7 +32,7 @@ public class ComplaintManager : MonoBehaviour
     }
 
     //A new thing has gone wrong
-    void AddComplaint(Complaint complaint)
+    public void AddComplaint(Complaint complaint)
     {
         if (!complaints.Contains(complaint))
             complaints.Add(complaint);
@@ -41,7 +41,7 @@ public class ComplaintManager : MonoBehaviour
     }
 
     //Player fixed something
-    void RemoveComplaint(Complaint complaint)
+    public void RemoveComplaint(Complaint complaint)
     {
         if (!complaints.Contains(complaint))
             complaints.Remove(complaint);
@@ -54,17 +54,9 @@ public class ComplaintManager : MonoBehaviour
     {
         List<CustomerController> customers = CustomerManager.Instance.GetAllCustomers();
         foreach (Complaint complaint in complaints)
-        {
             foreach(CustomerController customer in customers)
-            {
-                //customer.ComplainAbout(complaint)
-            }
-        }
+                customer.ComplainAbout(complaint);
+
+        cooldown = 10.0f;
     }
-}
-
-//temp
-public class Complaint : MonoBehaviour
-{
-
 }
