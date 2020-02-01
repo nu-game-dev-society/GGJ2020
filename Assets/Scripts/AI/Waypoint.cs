@@ -54,8 +54,8 @@ public class Waypoint : MonoBehaviour
     //GIZMOS STUFF
     Color nodeDefault = Color.white;
     Color nodeOccupied = Color.red;
-    private void OnDrawGizmosSelected()
-    {
+    private void OnDrawGizmos()
+    { 
         Gizmos.color = Occupied ? nodeOccupied : nodeDefault;
         Gizmos.DrawWireSphere(gameObject.transform.position, 0.5f);
         Gizmos.color = Color.green;
