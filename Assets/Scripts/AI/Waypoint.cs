@@ -6,7 +6,7 @@ public class Waypoint : MonoBehaviour
 {
     [SerializeField] public bool barSpot;
     [SerializeField] List<Waypoint> nextWaypoint;
-    public List<Customer> customers = new List<Customer>();
+    //public List<Customer> customers = new List<Customer>();
     public bool Occupied;
     // Start is called before the first frame update
     void Start()
@@ -50,7 +50,7 @@ public class Waypoint : MonoBehaviour
 
         return wp;
     }
-
+    /*
     public void Request(Customer customer)
     {
         customers.Add(customer);
@@ -68,7 +68,7 @@ public class Waypoint : MonoBehaviour
     {
         if(customers.Contains(customer))
             customers.Remove(customer);
-    }
+    }*/
 
     
 

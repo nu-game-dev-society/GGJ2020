@@ -57,7 +57,7 @@ public class CustomerSpawner : MonoBehaviour
             }
 
             Debug.Log("Adding " + orderItems.Count);
-            CustomerManager cust = customer.GetComponent<CustomerManager>();
+            CustomerController cust = customer.GetComponent<CustomerController>();
             cust.order = new Order(orderItems);
             OrderManager.Instance.CreateBubble(cust, cust.order);
         }

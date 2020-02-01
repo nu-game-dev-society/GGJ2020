@@ -22,7 +22,7 @@ public class OrderManager : MonoBehaviour
     public OrderImage[] images;
     public Sprite defaultImage;
 
-    public void CreateBubble(CustomerManager customer, Order order)
+    public void CreateBubble(CustomerController customer, Order order)
     {
         GameObject bubble = GameObject.Instantiate(bubblePrefab);
         bubble.transform.SetParent(customer.transform);
