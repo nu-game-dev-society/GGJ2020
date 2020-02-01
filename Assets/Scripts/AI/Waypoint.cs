@@ -6,8 +6,8 @@ public class Waypoint : MonoBehaviour
 {
     [SerializeField] public bool barSpot;
     [SerializeField] List<Waypoint> nextWaypoint;
-    List<Customer> customers = new List<Customer>();
-
+    public List<Customer> customers = new List<Customer>();
+    public bool Occupied;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,16 +28,27 @@ public class Waypoint : MonoBehaviour
     public Waypoint GetNext()
     {
         if (nextWaypoint.Count == 0)
-            return this;
-        else
+            return null;
+
+        Waypoint wp;
+        do
         {
-            Waypoint wp;
-            do
-            {
-                wp = nextWaypoint[Random.Range(0, nextWaypoint.Count)];
-            } while (wp.Occupied);
-            return wp;
-        }
+            wp = nextWaypoint[Random.Range(0, nextWaypoint.Count)];
+        } while (wp.Occupied);
+        return wp;
+    }
+
+    public Waypoint EvaluateNext()
+    {
+        if (nextWaypoint.Count == 0)
+            return null;
+
+        Waypoint wp = null;
+        foreach (Waypoint x in nextWaypoint)
+            if (!x.Occupied)
+                wp = x;
+
+        return wp;
     }
 
     public void Request(Customer customer)
@@ -59,11 +70,11 @@ public class Waypoint : MonoBehaviour
             customers.Remove(customer);
     }
 
-    public bool Occupied => customers.Count > 0;
+    
 
     //GIZMOS STUFF
     Color nodeDefault = Color.white;
-    Color nodeOccupied = Color.white;
+    Color nodeOccupied = Color.red;
     private void OnDrawGizmos()
     {
         Gizmos.color = Occupied ? nodeOccupied : nodeDefault;

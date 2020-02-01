@@ -39,11 +39,18 @@ public class Customer : MonoBehaviour
     {
         animState = value;
         animator.SetInteger("State", (int)value);
+        Debug.Log("AnimState updated: #" + (int)value +"_"+ value.ToString());
+        //Debug.Log(agent.velocity.sqrMagnitude);
     }
     
     // Update is called once per frame
     void Update()
     {
+        if (agent.velocity.sqrMagnitude > 0.1f)
+            SetAnimState(AnimState.Walking);
+        else
+            SetAnimState(AnimState.Idle);
+
         switch (behaviour)
         {
             case Behaviour.Queueing:
@@ -63,13 +70,14 @@ public class Customer : MonoBehaviour
         //If customer has reached destination
         if (agent.remainingDistance < 0.1f)
         {
-            SetAnimState(AnimState.Idle);
             target.Leave(this);
 
-            if (target.barSpot)//Go drink
+            //Try to advance in the queue
+            //If no more spots, we're at the bar
+            if ((target = target.GetNext()) == null)
+            {
                 behaviour = Behaviour.Ordering;
-            else//Move up in queue
-                target = target.GetNext();
+            }
 
             //Tell target we are on our way
             target.Request(this);
@@ -79,7 +87,6 @@ public class Customer : MonoBehaviour
         if (target.Ready(this))
         {
             agent.SetDestination(target.Position);
-            SetAnimState(AnimState.Walking);
         }
         else
             waitedFor += Time.deltaTime;
@@ -95,12 +102,13 @@ public class Customer : MonoBehaviour
         }
         else
         {
+            
             target = CustomerManager.Instance.RequestIdleSpot(this);
             //If target node is ready for new customer
             if (target.Ready(this))
             {
                 agent.SetDestination(target.Position);
-                SetAnimState(AnimState.Walking);
+                
             }
         }        
     }
@@ -115,7 +123,6 @@ public class Customer : MonoBehaviour
             target = CustomerManager.Instance.JoinQueue(this);
             temp_fakebartime = 5.0f;
             temp_fakedrinktime = 5.0f;
-        }
-            
+        }            
     }
 }

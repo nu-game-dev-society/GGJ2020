@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3323775537956066579}
   - component: {fileID: 3323775537956066575}
   - component: {fileID: 952342007807341113}
+  - component: {fileID: 673075254547667035}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Untagged
@@ -51,7 +52,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3323775537956066578}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -102,15 +103,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3323775537956066578}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e38d993c4bb68a949a3df0cd8df22c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  order:
+    items: []
   target: {fileID: 0}
-  state: 0
+  behaviour: 0
   animState: 0
-  walk: 1
+  temp_fakebartime: 5
 --- !u!195 &952342007807341113
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -133,6 +136,21 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &673075254547667035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3323775537956066578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d232d2b7dacbd648a1d5fb758bd28a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  serviceComplete: 0
+  atBar: 0
 --- !u!1001 &8381321581342524206
 PrefabInstance:
   m_ObjectHideFlags: 0
