@@ -37,7 +37,9 @@ public class CustomerController : MonoBehaviour
                 SetTarget(wp);
 
             if (target.barSpot && agent.remainingDistance < 0.1f)
+            {
                 atBar = true;
+            }
         }
         if(atBar && serviceComplete)
         {
