@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f416c1636ecfdbb48b714463a066fffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 2502602
+  id: Beer Bottle
   itemName: Beer Bottle
   type: 2
   pickedUpByPlayer: {fileID: 0}
@@ -1043,7 +1043,7 @@ Transform:
   m_GameObject: {fileID: 9079707705131631285}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.002564403, z: 0.0011293953}
-  m_LocalScale: {x: -0.0021274998, y: -0.0021275003, z: -0.0021275003}
+  m_LocalScale: {x: 0.0021275, y: 0.0021275, z: 0.0021275}
   m_Children:
   - {fileID: 7870856917349603217}
   - {fileID: 1566642726017976704}
