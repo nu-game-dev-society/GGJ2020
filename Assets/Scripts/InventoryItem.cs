@@ -10,45 +10,49 @@ public class InventoryItem : MonoBehaviour
     public PlayerController pickedUpByPlayer;
     public Transform pickupTarget;
     Rigidbody rb;
+
+
+    float defaultAngular; 
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        defaultAngular = rb.angularDrag; 
     }
 
     public void Use()
     {
-        Debug.Log("Used " + name + " (" + id  + ")");
+        Debug.Log("Used " + name + " (" + id + ")");
     }
     public void PickedUp(PlayerController pc)
     {
         pickedUpByPlayer = pc;
         pickupTarget = pc.handTransform;
-        rb.useGravity = false;
-        Physics.IgnoreCollision(GetComponent<Collider>(), pc.GetComponent<Collider>());
+        rb.angularDrag = 1f;
+        //rb.useGravity = false;
     }
     public void Dropped()
     {
         pickupTarget = null;
-        rb.useGravity = true;
+        rb.angularDrag = defaultAngular;
+        //rb.useGravity = true;
     }
+
     private void FixedUpdate()
     {
-        if(pickupTarget)
+        if (pickupTarget)
         {
             Vector3 dir = pickupTarget.position - transform.position;
-            float dist = Vector3.Distance(pickupTarget.position, transform.position) * 300f;
-            float fwdBoost = 0;
-            if (pickedUpByPlayer.inputs.v > 0)
-                fwdBoost = pickedUpByPlayer.inputs.v * pickedUpByPlayer.speed * 3f;
-            rb.AddForce(((dir * dist) + (fwdBoost * pickedUpByPlayer.transform.forward)) * Time.fixedDeltaTime, ForceMode.VelocityChange);
+            rb.velocity = dir * 10f;
+
         }
     }
-}
 
-public enum ItemType
-{
-    Tool,
-    Glass,
-    Drink,
-    Other
+    public enum ItemType
+    {
+        Tool,
+        Glass,
+        Drink,
+        Other
+    }
 }
