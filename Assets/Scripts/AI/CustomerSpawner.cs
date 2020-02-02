@@ -88,7 +88,7 @@ public class CustomerSpawner : MonoBehaviour
             activeCustomers.Add(customerController);
 
             customer.transform.position = transform.position;
-            foreach (SkinnedMeshRenderer renderer in customer.transform.Find("BaseCustomer@Happy Idle").GetComponentsInChildren<SkinnedMeshRenderer>())
+            foreach (SkinnedMeshRenderer renderer in customerController.skinnedMeshs)
             {
                 renderer.GetPropertyBlock(propBlock);
 

@@ -16,7 +16,7 @@ public class CustomerController : MonoBehaviour
     public float drunkness;
     public float happiness;
     public float timeSinceLastDrink;
-
+    public SkinnedMeshRenderer[] skinnedMeshs;
     public Waypoint exitWP;
 
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class CustomerController : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
-        
+        skinnedMeshs = GetComponentsInChildren<SkinnedMeshRenderer>();
         //-----
         JoinQueue();
     }
