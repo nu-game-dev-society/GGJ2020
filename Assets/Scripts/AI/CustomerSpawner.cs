@@ -64,8 +64,6 @@ public class CustomerSpawner : MonoBehaviour
             lastSpawn = Time.time;
             spawnTime = Random.Range(spawnTimeMin, spawnTimeMax + 1);
 
-            if ((activeCustomers.Count + inactiveCustomers.Count) >= maxCustomers) { return; }
-
             GameObject customer;
             CustomerController customerController;
 
@@ -80,6 +78,7 @@ public class CustomerSpawner : MonoBehaviour
             }
             else
             {
+                if ((activeCustomers.Count + inactiveCustomers.Count) >= maxCustomers) { return; }
                 customer = GameObject.Instantiate(customerPrefab);
                 customerController = customer.GetComponent<CustomerController>();
             }
