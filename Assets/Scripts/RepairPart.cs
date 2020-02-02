@@ -11,9 +11,16 @@ public class RepairPart : MonoBehaviour
     public bool IsBroken
     {
         get { return isBroken; }
-        set { isBroken = value;
-            if (isBroken) broken.Invoke();
-            else {
+        set
+        {
+            isBroken = value;
+            if (isBroken)
+            {
+                brokenTime = Time.time;
+                broken.Invoke();
+            }
+            else
+            {
                 repaired.Invoke();
                 if (requiredTool != "" && currentTool)
                 {
@@ -24,16 +31,24 @@ public class RepairPart : MonoBehaviour
     }
     public UnityEvent startRepairing = new UnityEvent();
     public UnityEvent stopRepairing = new UnityEvent();
-    public UnityEvent repaired = new UnityEvent(); 
-    public UnityEvent broken = new UnityEvent(); 
+    public UnityEvent repaired = new UnityEvent();
+    public UnityEvent broken = new UnityEvent();
 
     private bool repairing = false;
-    private float startTime = 0;
+    private float startTime = 0.0f;
 
     [SerializeField]
     private int repairTime = 1;
 
     public float breakChance = 0.2f;
+
+    private float brokenTime = 0.0f;
+
+    [SerializeField]
+    private float autoRepairTime = 20.0f;
+
+    [SerializeField]
+    private int autoRepairCost = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +63,7 @@ public class RepairPart : MonoBehaviour
         {
             repairing = true;
             startRepairing.Invoke();
-            if(requiredTool != "")
+            if (requiredTool != "")
             {
                 currentTool = pc.heldItem.gameObject;
                 currentTool.SetActive(false);
@@ -76,7 +91,6 @@ public class RepairPart : MonoBehaviour
     {
         if (IsBroken)
         {
-
             if (repairing)
             {
                 float curTime = (Time.time - startTime);
@@ -88,6 +102,14 @@ public class RepairPart : MonoBehaviour
                     repairing = false;
                     InteractionController.FinishRepair();
                 }
+            }
+            else if ((Time.time - brokenTime) >= autoRepairTime)
+            {
+                Debug.Log("Auto repaired " + gameObject.name + " for " + MoneySystem.FormatMoney(autoRepairCost));
+
+                IsBroken = false;
+                InteractionController.FinishRepair();
+                MoneySystem.TakeMoney(autoRepairCost);
             }
         }
     }
