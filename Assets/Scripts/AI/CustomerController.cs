@@ -35,6 +35,7 @@ public class CustomerController : MonoBehaviour
     {
         //-----
         JoinQueue();
+        drunkness = Random.Range(0, 0.5f - Random.Range(0.0f, 0.5f));
     }
     private void OnEnable()
     {
