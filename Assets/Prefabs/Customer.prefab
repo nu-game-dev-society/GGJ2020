@@ -134,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   order:
     items: []
+    cost: 0
   complaint: {fileID: 0}
   target: {fileID: 0}
   serviceComplete: 0
@@ -222,16 +223,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3323775537956066574}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 2cd340b70007b5e44b125a58f2f28fa0,
-        type: 3}
-      propertyPath: m_Name
-      value: BaseCustomer@Happy Idle
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 2cd340b70007b5e44b125a58f2f28fa0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2cd340b70007b5e44b125a58f2f28fa0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -302,6 +293,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2cd340b70007b5e44b125a58f2f28fa0,
+        type: 3}
+      propertyPath: m_Name
+      value: BaseCustomer@Happy Idle
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2cd340b70007b5e44b125a58f2f28fa0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -913319910442054796, guid: 2cd340b70007b5e44b125a58f2f28fa0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -312,6 +313,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 3f8e3b895d7eb144c97222a3a3a4adc5, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 2cd340b70007b5e44b125a58f2f28fa0,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cd340b70007b5e44b125a58f2f28fa0, type: 3}
 --- !u!4 &3542885249185032244 stripped
