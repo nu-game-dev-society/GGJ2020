@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -18,13 +18,21 @@ public class CustomerController : MonoBehaviour
     public float timeSinceLastDrink;
     [SerializeField]GameObject complaintBubble;
 
+    public SkinnedMeshRenderer[] skinnedMeshs;
+
     public Waypoint exitWP;
+
+    private void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
+
+        skinnedMeshs = GetComponentsInChildren<SkinnedMeshRenderer>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponentInChildren<Animator>();
         //-----
         JoinQueue();
     }

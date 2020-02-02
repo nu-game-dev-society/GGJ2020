@@ -64,8 +64,6 @@ public class CustomerSpawner : MonoBehaviour
             lastSpawn = Time.time;
             spawnTime = Random.Range(spawnTimeMin, spawnTimeMax + 1);
 
-            if ((activeCustomers.Count + inactiveCustomers.Count) >= maxCustomers) { return; }
-
             GameObject customer;
             CustomerController customerController;
 
@@ -75,10 +73,12 @@ public class CustomerSpawner : MonoBehaviour
                 customer = customerController.gameObject;
                 inactiveCustomers.Remove(customerController);
 
+                customer.SetActive(true);
                 customerController.JoinQueue();
             }
             else
             {
+                if ((activeCustomers.Count + inactiveCustomers.Count) >= maxCustomers) { return; }
                 customer = GameObject.Instantiate(customerPrefab);
                 customerController = customer.GetComponent<CustomerController>();
             }
@@ -88,7 +88,7 @@ public class CustomerSpawner : MonoBehaviour
             activeCustomers.Add(customerController);
 
             customer.transform.position = transform.position;
-            foreach (SkinnedMeshRenderer renderer in customer.transform.Find("BaseCustomer@Happy Idle").GetComponentsInChildren<SkinnedMeshRenderer>())
+            foreach (SkinnedMeshRenderer renderer in customerController.skinnedMeshs)
             {
                 renderer.GetPropertyBlock(propBlock);
 
