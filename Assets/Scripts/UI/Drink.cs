@@ -9,7 +9,10 @@ public class Drink : MonoBehaviour
 
     public void ClearSpawn()
     {
-        spawn.drink = null;
-        spawn = null;
+        if (spawn != null)
+        {
+            spawn.drink = null;
+            spawn = null;
+        }
     }
 }
