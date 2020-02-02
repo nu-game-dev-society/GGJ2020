@@ -48,4 +48,13 @@ public class HUD : MonoBehaviour
         else
             Cursor.lockState = CursorLockMode.Locked;
     }
+
+    public void Exit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }
