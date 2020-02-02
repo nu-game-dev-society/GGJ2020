@@ -144,6 +144,6 @@ public class CustomerController : MonoBehaviour
     public void ComplainAbout(Complaint complaint)
     {
         this.complaint = complaint;
-
+        gameObject.transform.Find("ComplaintBubble").GetChild(complaint.id);
     }
 }
