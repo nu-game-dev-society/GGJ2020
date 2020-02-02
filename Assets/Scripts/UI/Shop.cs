@@ -43,17 +43,17 @@ public class Shop : MonoBehaviour
         {
             GameObject itemObj = GameObject.Instantiate(itemPrefab);
             itemObj.transform.SetParent(itemList.transform);
-
-            itemObj.transform.Find("ProductName").GetComponent<TextMeshProUGUI>().text = item.name;
-            itemObj.transform.Find("ProductDesc").GetComponent<TextMeshProUGUI>().text = item.desc;
+            itemObj.GetComponent<ShopItemUI>().item = item;
 
             Transform buyButton = itemObj.transform.Find("BuyButton");
-            buyButton.GetComponentInChildren<TextMeshProUGUI>().text = MoneySystem.FormatMoney(item.price);
             buyButton.GetComponent<Button>().onClick.AddListener(delegate { CheckPrice(item.id, item.price); });
-            if (item.owned)
+
+            bool owned = (item.maxNum == item.ownedNum);
+            if (owned)
             {
                 buyButton.GetComponent<Button>().interactable = false;
             }
+            item.go.SetActive(owned);
         }
     }
 
@@ -66,7 +66,7 @@ public class Shop : MonoBehaviour
             {
                 if (item.id == id)
                 {
-                    item.owned = true;
+                    item.ownedNum++;
                     break;
                 }
             }

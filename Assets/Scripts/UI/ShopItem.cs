@@ -10,5 +10,7 @@ public class ShopItem
     public string name;
     public string desc;
     public int price;
-    public bool owned = false;
+    public int ownedNum;
+    public int maxNum;
+    public GameObject go;
 }
