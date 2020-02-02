@@ -7,9 +7,11 @@ using UnityEngine;
 public class Order
 {
     public List<OrderItem> items;
+    public int cost;
 
-    public Order(List<OrderItem> items)
+    public Order(List<OrderItem> items, int cost)
     {
         this.items = items;
+        this.cost = cost;
     }
 }

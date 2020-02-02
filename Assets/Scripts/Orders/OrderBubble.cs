@@ -72,6 +72,7 @@ public class OrderBubble : MonoBehaviour
         if (allActive)
         {
             customer.serviceComplete = true;
+            MoneySystem.AddMoney(customer.order.cost);
             Destroy(gameObject);
         }
     }

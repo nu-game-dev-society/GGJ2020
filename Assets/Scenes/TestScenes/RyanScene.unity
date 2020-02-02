@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 0
+  barSpot: 1
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &203222859
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 0
+  barSpot: 1
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &423732851
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 0
+  barSpot: 1
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &474984005
@@ -982,7 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 0
+  barSpot: 1
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &1075940753
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 0
+  barSpot: 1
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &1138464281
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 0
+  barSpot: 1
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &1233114032
@@ -1394,7 +1394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 0
+  barSpot: 1
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &1630922973
@@ -1793,19 +1793,16 @@ MonoBehaviour:
   itemPrefab: {fileID: 8836206618919073512, guid: de2aac9818fa0044eb12d572d5f6f819,
     type: 3}
   baseMaterial: {fileID: 2100000, guid: 07f86eb3132eb0c4f8772c88a938927f, type: 2}
-  images:
-  - itemID: wine
-    itemImage: {fileID: 21300000, guid: 326a549ab8f5b2a44ab7388624500057, type: 3}
-  - itemID: beer
-    itemImage: {fileID: 21300000, guid: 69495295674c71143a58f21b561dad49, type: 3}
   defaultImage: {fileID: 21300000, guid: b36a9694e06b59240a5f09df89688395, type: 3}
-  orderRandItems:
+  orderPossibleItems:
   - id: wine
     min: 0
     max: 2
+    itemImage: {fileID: 21300000, guid: 326a549ab8f5b2a44ab7388624500057, type: 3}
   - id: beer
     min: 0
     max: 2
+    itemImage: {fileID: 21300000, guid: 69495295674c71143a58f21b561dad49, type: 3}
 --- !u!114 &1957225797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1858,7 +1855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 0
+  barSpot: 1
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &2025567355
@@ -2136,7 +2133,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 2.87, z: 1}
-  m_Center: {x: -5.13, y: 0, z: -5.03}
+  m_Center: {x: -6.78, y: 0, z: -5.03}
 --- !u!4 &2085707616
 Transform:
   m_ObjectHideFlags: 0

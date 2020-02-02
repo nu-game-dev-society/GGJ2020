@@ -19,13 +19,12 @@ public class OrderManager : MonoBehaviour
     [SerializeField]
     private Material baseMaterial;
 
-    public OrderImage[] images;
     public Sprite defaultImage;
 
     private int maxItems = 2;
 
     [SerializeField]
-    private List<OrderRand> orderRandItems;
+    private List<OrderPossibleItem> orderPossibleItems;
 
     public void CreateBubble(CustomerController customer)
     {
@@ -36,11 +35,11 @@ public class OrderManager : MonoBehaviour
 
     public Sprite GetItemImage(string itemID)
     {
-        foreach (OrderImage image in images)
+        foreach (OrderPossibleItem possibleItem in orderPossibleItems)
         {
-            if (itemID == image.itemID)
+            if (itemID == possibleItem.id)
             {
-                return image.itemImage;
+                return possibleItem.itemImage;
             }
         }
 
@@ -60,26 +59,26 @@ public class OrderManager : MonoBehaviour
     public void GenerateOrder(CustomerController cust)
     {
         List<OrderItem> orderItems = new List<OrderItem>();
+        int orderCost = 0;
 
         while (orderItems.Count <= 0 || orderItems.Count > maxItems)
         {
             orderItems.Clear();
+            orderCost = 0;
 
-            foreach (OrderRand order in orderRandItems)
+            foreach (OrderPossibleItem possibleItem in orderPossibleItems)
             {
-                int count = Random.Range(order.min, order.max + 1);
-                //Debug.Log("Adding " + order.id + " x" + count);
+                int count = Random.Range(possibleItem.min, possibleItem.max + 1);
 
                 for (int i = 0; i < count; i++)
                 {
-                    orderItems.Add(new OrderItem(order.id));
+                    orderCost += possibleItem.price;
+                    orderItems.Add(new OrderItem(possibleItem.id));
                 }
             }
         }
 
-        //Debug.Log("Adding " + orderItems.Count);
-
-        cust.order = new Order(orderItems);
+        cust.order = new Order(orderItems, orderCost);
         CreateBubble(cust);
     }
 }

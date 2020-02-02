@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class OrderRand
+public class OrderPossibleItem
 {
     public string id;
     public int min;
     public int max;
+    public Sprite itemImage;
+    public int price;
 }

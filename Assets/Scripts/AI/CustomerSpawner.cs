@@ -83,7 +83,6 @@ public class CustomerSpawner : MonoBehaviour
             }
 
             customer.SetActive(true);
-            customerController.JoinQueue();
 
             activeCustomers.Add(customerController);
 
@@ -114,6 +113,8 @@ public class CustomerSpawner : MonoBehaviour
             }
 
             OrderManager.Instance.GenerateOrder(customerController);
+
+            customerController.JoinQueue();
         }
     }
 
