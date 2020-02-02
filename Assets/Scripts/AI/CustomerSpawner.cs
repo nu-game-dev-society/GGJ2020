@@ -75,6 +75,8 @@ public class CustomerSpawner : MonoBehaviour
                 customerController = inactiveCustomers[0];
                 customer = customerController.gameObject;
                 inactiveCustomers.Remove(customerController);
+
+                customerController.JoinQueue();
             }
             else
             {
@@ -113,8 +115,6 @@ public class CustomerSpawner : MonoBehaviour
             }
 
             OrderManager.Instance.GenerateOrder(customerController);
-
-            customerController.JoinQueue();
         }
     }
 
