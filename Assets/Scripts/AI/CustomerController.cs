@@ -56,7 +56,7 @@ public class CustomerController : MonoBehaviour
             if (target.barSpot && agent.remainingDistance < 0.1f && !atBar)
             {
                 atBar = true;
-                //target.GetComponentInChildren<ServiceTriggers>().cust = GetComponentInChildren<OrderBubble>();
+                target.GetComponentInChildren<ServiceTriggers>().cust = GetComponentInChildren<OrderBubble>();
             }
         }
         if(atBar && serviceComplete)
