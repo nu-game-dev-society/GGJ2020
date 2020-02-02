@@ -12,5 +12,6 @@ public class ShopItem
     public int price;
     public int ownedNum;
     public int maxNum;
+    public Sprite image;
     public GameObject go;
 }

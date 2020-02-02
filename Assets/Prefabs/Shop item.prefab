@@ -515,10 +515,12 @@ MonoBehaviour:
     price: 0
     ownedNum: 0
     maxNum: 0
+    image: {fileID: 0}
     go: {fileID: 0}
   ProductName: {fileID: 2052914183358298728}
   ProductDesc: {fileID: 4212098801094834507}
   BuyButton: {fileID: 1450087887218071046}
+  ProductImage: {fileID: 1450087888652244372}
 --- !u!1 &1450087888652244378
 GameObject:
   m_ObjectHideFlags: 0
