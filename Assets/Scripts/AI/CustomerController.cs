@@ -19,12 +19,16 @@ public class CustomerController : MonoBehaviour
     public SkinnedMeshRenderer[] skinnedMeshs;
     public Waypoint exitWP;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
         skinnedMeshs = GetComponentsInChildren<SkinnedMeshRenderer>();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
         //-----
         JoinQueue();
     }

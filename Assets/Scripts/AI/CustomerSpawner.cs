@@ -75,6 +75,7 @@ public class CustomerSpawner : MonoBehaviour
                 customer = customerController.gameObject;
                 inactiveCustomers.Remove(customerController);
 
+                customer.SetActive(true);
                 customerController.JoinQueue();
             }
             else
