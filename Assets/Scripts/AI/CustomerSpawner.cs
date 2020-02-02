@@ -35,6 +35,18 @@ public class CustomerSpawner : MonoBehaviour
     {
         spawnTime = Random.Range(spawnTimeMin, spawnTimeMax);
         propBlock = new MaterialPropertyBlock();
+
+        if (tshirtColours.Length == 0)
+            tshirtColours = new Color[] { new Color(204.0f / 255.0f, 185.0f / 255.0f, 99.0f / 255.0f) };
+
+        if (trouserColours.Length == 0)
+            trouserColours = new Color[] { new Color(17.0f / 255.0f, 47.0f / 255.0f, 81.0f / 255.0f) };
+
+        if (hairColours.Length == 0)
+            hairColours = new Color[] { new Color(18.0f / 255.0f, 10.0f / 255.0f, 5.0f / 255.0f) };
+
+        if (skinColours.Length == 0)
+            skinColours = new Color[] { new Color(204.0f / 255.0f, 152.0f / 255.0f, 194.0f / 255.0f) };
     }
 
     // Update is called once per frame
