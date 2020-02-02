@@ -149,7 +149,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   repairTime: 2
   breakChance: 0.2
-  autoRepairTime: 20
+  autoRepairTime: 60
   autoRepairCost: 20
 --- !u!65 &7494285188662178757
 BoxCollider:

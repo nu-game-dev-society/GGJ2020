@@ -16878,7 +16878,7 @@ MonoBehaviour:
     min: 0
     max: 2
     itemImage: {fileID: 21300000, guid: 69495295674c71143a58f21b561dad49, type: 3}
-    price: 5
+    price: 3
   - id: Wine Bottle
     min: 0
     max: 2

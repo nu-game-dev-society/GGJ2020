@@ -104,6 +104,8 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   repairTime: 1
   breakChance: 0.2
+  autoRepairTime: 60
+  autoRepairCost: 20
 --- !u!65 &1473772487312384173
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -239,6 +241,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1473772487312384174}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: a0f0d049c318cad4f8a7d2dab5a3cf6a,
+        type: 3}
+      propertyPath: m_Name
+      value: Wrench
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: a0f0d049c318cad4f8a7d2dab5a3cf6a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a0f0d049c318cad4f8a7d2dab5a3cf6a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -308,16 +320,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: a0f0d049c318cad4f8a7d2dab5a3cf6a,
-        type: 3}
-      propertyPath: m_Name
-      value: Wrench
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: a0f0d049c318cad4f8a7d2dab5a3cf6a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0f0d049c318cad4f8a7d2dab5a3cf6a, type: 3}

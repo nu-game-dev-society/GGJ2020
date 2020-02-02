@@ -1044,7 +1044,7 @@ MonoBehaviour:
   - id: Wine Bottle
     name: Wine Bottle
     desc: 'Just Wine. '
-    price: 1
+    price: 3
     ownedNum: 7
     maxNum: 100
     go: {fileID: 0}
