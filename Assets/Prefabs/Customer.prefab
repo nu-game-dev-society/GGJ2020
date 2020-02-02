@@ -235,6 +235,7 @@ MonoBehaviour:
   happiness: 0
   timeSinceLastDrink: 0
   complaintBubble: {fileID: 3784262777729182464}
+  skinnedMeshs: []
   exitWP: {fileID: 0}
 --- !u!54 &9058621511798683502
 Rigidbody:
@@ -262,6 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6694693115277549232}
   - component: {fileID: 1151611709158370731}
+  - component: {fileID: 4295175552743485213}
   m_Layer: 0
   m_Name: ComplaintBubble
   m_TagString: Untagged
@@ -334,6 +336,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4295175552743485213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3784262777729182464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944dd3b6156d0884c8b6d460cea414be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4431813344666966368
 GameObject:
   m_ObjectHideFlags: 0
