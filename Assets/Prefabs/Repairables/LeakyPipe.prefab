@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7494285188662178756}
   - component: {fileID: 7494285188662178757}
   - component: {fileID: 1663528355547444823}
+  - component: {fileID: 1357966936}
   m_Layer: 0
   m_Name: LeakyPipe
   m_TagString: Repairable
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7494285188662178746}
-  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.70710677}
   m_LocalPosition: {x: -1.1915638, y: 1.006, z: 0.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd8a4699aba8204d96912659846ff6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBroken: 1
+  isBroken: 0
   requiredTool: Wrench
   startRepairing:
     m_PersistentCalls:
@@ -55,6 +56,17 @@ MonoBehaviour:
       - m_Target: {fileID: 7494285189489549314}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1357966936}
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -71,6 +83,17 @@ MonoBehaviour:
       - m_Target: {fileID: 7494285189489549314}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1357966936}
+        m_MethodName: Stop
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -148,14 +171,109 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7494285188662178746}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4313559bc46cbba42893449ce01822f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   description: Leaky Pipe
   id: 0
-  content: {fileID: 0}
+--- !u!82 &1357966936
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494285188662178746}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f749dad0e0c88464fbff078af3fd364a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7494285189489549314
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +394,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a0f0d049c318cad4f8a7d2dab5a3cf6a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7889692
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a0f0d049c318cad4f8a7d2dab5a3cf6a,
+        type: 3}
       propertyPath: m_LocalScale.y
       value: 2.3714008
       objectReference: {fileID: 0}
@@ -283,11 +406,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.7889693
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: a0f0d049c318cad4f8a7d2dab5a3cf6a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.7889692
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0f0d049c318cad4f8a7d2dab5a3cf6a, type: 3}
@@ -308,11 +426,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BreakablePipe
-      objectReference: {fileID: 0}
-    - target: {fileID: 615694930536448264, guid: ba3c34ec517a5ef4092f7f63b424583c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2178996044070328405, guid: ba3c34ec517a5ef4092f7f63b424583c,
         type: 3}
@@ -378,11 +491,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 99.99998
-      objectReference: {fileID: 0}
-    - target: {fileID: 2911014775368533233, guid: ba3c34ec517a5ef4092f7f63b424583c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba3c34ec517a5ef4092f7f63b424583c, type: 3}
