@@ -105,7 +105,7 @@ public class RepairPart : MonoBehaviour
             }
             else if ((Time.time - brokenTime) >= autoRepairTime)
             {
-                Debug.Log("Auto repaired " + gameObject.name + " for " + MoneySystem.FormatMoney(autoRepairCost));
+                RepairManager.Instance.ShowRepairNotification("Auto repaired " + gameObject.name + " for " + MoneySystem.FormatMoney(autoRepairCost));
 
                 IsBroken = false;
                 InteractionController.FinishRepair();

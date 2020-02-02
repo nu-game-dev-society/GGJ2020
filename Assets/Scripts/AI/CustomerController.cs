@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -16,13 +16,17 @@ public class CustomerController : MonoBehaviour
     public float drunkness;
     public float happiness;
     public float timeSinceLastDrink;
+    [SerializeField]GameObject complaintBubble;
+
     public SkinnedMeshRenderer[] skinnedMeshs;
+
     public Waypoint exitWP;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
+
         skinnedMeshs = GetComponentsInChildren<SkinnedMeshRenderer>();
     }
 
@@ -65,7 +69,7 @@ public class CustomerController : MonoBehaviour
         {
             happiness -= (Time.deltaTime / 200);
             if (happiness < 0.3f)
-                SetTargetIgnoreOccupied(exitWP);
+                LeaveBar();
         }
         if(!atBar && serviceComplete)
         {
@@ -75,7 +79,7 @@ public class CustomerController : MonoBehaviour
                 if (happiness > 0.3f)
                     FinishedDrink();
                 else
-                    SetTargetIgnoreOccupied(exitWP);
+                    LeaveBar();
             }
         }
     }
@@ -103,7 +107,12 @@ public class CustomerController : MonoBehaviour
         target.Occupied = true;
     }
 
-
+    void LeaveBar()
+    {
+        complaintBubble.SetActive(false);
+        Destroy(GetComponentInChildren<OrderBubble>().gameObject);
+        SetTargetIgnoreOccupied(exitWP);
+    }
     IEnumerator Wait(float t)
     {
         yield return new WaitForSeconds(t);
@@ -145,9 +154,22 @@ public class CustomerController : MonoBehaviour
     }
 #endif
 
-    public void ComplainAbout(Complaint complaint)
+    public void SetComplaint(Complaint complaint)
     {
-        this.complaint = complaint;
-        gameObject.transform.Find("ComplaintBubble").GetChild(complaint.id);
+        if(complaint!=null)
+        {
+            this.complaint = complaint;
+            for (int i = 0; i < complaintBubble.transform.childCount; i++)
+                complaintBubble.transform.GetChild(i).gameObject.SetActive(false);
+
+            complaintBubble.SetActive(true);            
+            complaintBubble.transform.GetChild(complaint.id).gameObject.SetActive(true);            
+        }
+        else
+        {
+            for (int i = 0; i < complaintBubble.transform.childCount; i++)
+                complaintBubble.transform.GetChild(i).gameObject.SetActive(false);
+            complaintBubble.SetActive(false);
+        }        
     }
 }
