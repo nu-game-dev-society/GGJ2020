@@ -68,7 +68,8 @@ public class CustomerController : MonoBehaviour
         yield return new WaitForSeconds(t);
         JoinQueue();
     }
-    void JoinQueue()
+
+    public void JoinQueue()
     {
         Waypoint wp = CustomerManager.Instance.RequestQueueSpot();
         if (wp == null)

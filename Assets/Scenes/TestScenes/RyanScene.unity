@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 1
+  barSpot: 0
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &203222859
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 1
+  barSpot: 0
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &423732851
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 1
+  barSpot: 0
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &474984005
@@ -982,7 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 1
+  barSpot: 0
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &1075940753
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 1
+  barSpot: 0
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &1138464281
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 1
+  barSpot: 0
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &1233114032
@@ -1394,7 +1394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 1
+  barSpot: 0
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &1630922973
@@ -1858,7 +1858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937330602037964080f691421a13548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barSpot: 1
+  barSpot: 0
   nextWaypoint: []
   Occupied: 0
 --- !u!4 &2025567355
@@ -2116,6 +2116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2085707616}
   - component: {fileID: 2085707617}
+  - component: {fileID: 2085707615}
   m_Layer: 0
   m_Name: CustomerSpawner
   m_TagString: Untagged
@@ -2123,6 +2124,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2085707615
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085707614}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.87, z: 1}
+  m_Center: {x: -5.13, y: 0, z: -5.03}
 --- !u!4 &2085707616
 Transform:
   m_ObjectHideFlags: 0
@@ -2153,8 +2167,8 @@ MonoBehaviour:
     type: 3}
   spawnTimeMin: 5
   spawnTimeMax: 5
-  tshirtColours:
-  - {r: 1, g: 0, b: 0, a: 0}
+  maxCustomers: 20
+  tshirtColours: []
   trouserColours:
   - {r: 0, g: 0.50284934, b: 1, a: 0}
   hairColours:

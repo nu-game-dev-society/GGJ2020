@@ -14,6 +14,9 @@ public class CustomerSpawner : MonoBehaviour
     private float spawnTimeMax = 10.0f;
 
     [SerializeField]
+    private int maxCustomers = 20;
+
+    [SerializeField]
     private Color[] tshirtColours;
 
     [SerializeField]
@@ -30,11 +33,16 @@ public class CustomerSpawner : MonoBehaviour
 
     private MaterialPropertyBlock propBlock;
 
+    private List<CustomerController> activeCustomers;
+    private List<CustomerController> inactiveCustomers;
+
     // Start is called before the first frame update
     void Start()
     {
         spawnTime = Random.Range(spawnTimeMin, spawnTimeMax);
         propBlock = new MaterialPropertyBlock();
+        activeCustomers = new List<CustomerController>();
+        inactiveCustomers = new List<CustomerController>();
 
         if (tshirtColours.Length == 0)
             tshirtColours = new Color[] { new Color(204.0f / 255.0f, 185.0f / 255.0f, 99.0f / 255.0f) };
@@ -57,7 +65,28 @@ public class CustomerSpawner : MonoBehaviour
             lastSpawn = Time.time;
             spawnTime = Random.Range(spawnTimeMin, spawnTimeMax + 1);
 
-            GameObject customer = GameObject.Instantiate(customerPrefab);
+            if ((activeCustomers.Count + inactiveCustomers.Count) >= maxCustomers) { return; }
+
+            GameObject customer;
+            CustomerController customerController;
+
+            if (inactiveCustomers.Count >= 1)
+            {
+                customerController = inactiveCustomers[0];
+                customer = customerController.gameObject;
+                inactiveCustomers.Remove(customerController);
+            }
+            else
+            {
+                customer = GameObject.Instantiate(customerPrefab);
+                customerController = customer.GetComponent<CustomerController>();
+            }
+
+            customer.SetActive(true);
+            customerController.JoinQueue();
+
+            activeCustomers.Add(customerController);
+
             customer.transform.position = transform.position;
             foreach (SkinnedMeshRenderer renderer in customer.transform.Find("BaseCustomer@Happy Idle").GetComponentsInChildren<SkinnedMeshRenderer>())
             {
@@ -84,14 +113,23 @@ public class CustomerSpawner : MonoBehaviour
                 renderer.SetPropertyBlock(propBlock);
             }
 
-           
+            OrderManager.Instance.GenerateOrder(customerController);
+        }
+    }
 
-            /*SkinnedMeshRenderer pantsRenderer = customer.transform.Find("BaseCustomer@Happy Idle/Pants").GetComponent<SkinnedMeshRenderer>();
-            Material pantsMat = new Material(pantsRenderer.material);
-            pantsMat.color = Color.red;
-            pantsRenderer.material = pantsMat;*/
+    void PoolCustomer(CustomerController customer)
+    {
+        activeCustomers.Remove(customer);
+        inactiveCustomers.Add(customer);
+        customer.gameObject.SetActive(false);
+    }
 
-            OrderManager.Instance.GenerateOrder(customer.GetComponent<CustomerController>());
+    private void OnTriggerEnter(Collider other)
+    {
+        CustomerController customer = other.GetComponent<CustomerController>();
+        if (customer)
+        {
+            PoolCustomer(customer);
         }
     }
 }
