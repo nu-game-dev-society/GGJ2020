@@ -12,7 +12,9 @@ public class SoundObject : MonoBehaviour
 
     bool firstHit = true;
 
-    public Rigidbody[] breakFragments; 
+    public Rigidbody[] breakFragments;
+
+    float health = 10;
 
     private void Start()
     {
@@ -23,17 +25,19 @@ public class SoundObject : MonoBehaviour
     {
         if (m_rigidbody.velocity.magnitude < 2 && m_rigidbody.velocity.magnitude > 0.5f)
         {
-
-           
-
             if (Time.time > 0.5f)
                 AudioPool.instance.RequestAudioSource(transform.position).Play(hitClipSoft);
+
+            health -= m_rigidbody.velocity.magnitude;
         }
-        else if (m_rigidbody.velocity.magnitude < 3f)
+        else if (m_rigidbody.velocity.magnitude < 8f)
         {
             if (Time.time > 0.5f)
                 AudioPool.instance.RequestAudioSource(transform.position).Play(hitClipHard);
             firstHit = false;
+
+
+            health -= m_rigidbody.velocity.magnitude;
         }
         else
         {
@@ -50,6 +54,21 @@ public class SoundObject : MonoBehaviour
 
                 gameObject.SetActive(false);
             }
+        }
+
+
+        if (health <= 0)
+        {
+            AudioPool.instance.RequestAudioSource(transform.position).Play(breakClip);
+
+            foreach (Rigidbody frag in breakFragments)
+            {
+                frag.gameObject.SetActive(true);
+                frag.transform.SetParent(null);
+                frag.velocity = m_rigidbody.velocity;
+            }
+
+            gameObject.SetActive(false);
         }
     }
 }
