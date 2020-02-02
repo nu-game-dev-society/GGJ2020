@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio; 
+using UnityEngine.Audio;
 
 public class AudioPool : MonoBehaviour
 {
@@ -15,6 +15,13 @@ public class AudioPool : MonoBehaviour
     public AudioMixerSnapshot main;
     public AudioMixerSnapshot bathroom;
 
+
+    [SerializeField] AudioSource foleyAudio;
+
+    [SerializeField] CustomerSpawner custSpawn;
+
+    [SerializeField] AudioSource MusicAudio;
+    [SerializeField] AudioClip[] songs; 
 
     public void SnapMixerToMain()
     {
@@ -31,10 +38,12 @@ public class AudioPool : MonoBehaviour
     {
         if (!instance)
             instance = this; 
+
+       
     }
 
 
-
+    
 
 
     private void Start()
@@ -42,6 +51,17 @@ public class AudioPool : MonoBehaviour
         //Populate pool
         PopulatePool(20);
 
+    }
+
+    private void Update()
+    {
+        //float custcount = custSpawn.
+
+        if (!MusicAudio.isPlaying)
+        {
+            MusicAudio.clip = songs[Random.Range(0,3)];
+            MusicAudio.Play();
+        }
     }
 
     public void PopulatePool(int count)

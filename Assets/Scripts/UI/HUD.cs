@@ -43,5 +43,11 @@ public class HUD : MonoBehaviour
         playerController.enabled = !isPaused;
         inputHandler.enabled = !isPaused;
         Time.timeScale = Convert.ToInt32(!isPaused);
+        Cursor.visible = isPaused;
+
+        if (isPaused)
+            Cursor.lockState = CursorLockMode.None;
+        else
+            Cursor.lockState = CursorLockMode.Locked;
     }
 }
