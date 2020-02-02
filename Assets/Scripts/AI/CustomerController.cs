@@ -79,7 +79,7 @@ public class CustomerController : MonoBehaviour
         {
             atBar = false;
             SetTarget(CustomerManager.Instance.RequestIdleSpot());
-            StartCoroutine(UpdateDrunkness(0.08f));
+            StartCoroutine(UpdateDrunkness(0.3f));
         }
         if(!serviceComplete)
         {
@@ -126,12 +126,15 @@ public class CustomerController : MonoBehaviour
     }
     void SetTarget(Waypoint wp)
     {
+        if (agent.enabled == false)
+            return;
         //Leave old wp
         if (target)
             target.Occupied = false;
 
         //Join new wp
         target = wp;
+        
         agent.SetDestination(target.transform.position);
         target.Occupied = true;
     }
