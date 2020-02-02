@@ -844,6 +844,7 @@ MonoBehaviour:
   nextWaypoint:
   - {fileID: 866008325}
   Occupied: 0
+  isSeat: 0
 --- !u!1001 &66698782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1050,6 +1051,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!4 &85530930 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
@@ -2233,6 +2235,7 @@ MonoBehaviour:
   - {fileID: 985013187}
   - {fileID: 424949014}
   Occupied: 0
+  isSeat: 0
 --- !u!4 &202930648 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
@@ -2324,6 +2327,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1 &254845803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,6 +2374,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1001 &255094304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2650,6 +2655,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1001 &278605352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2816,6 +2822,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1 &298358631
 GameObject:
   m_ObjectHideFlags: 0
@@ -3854,6 +3861,7 @@ MonoBehaviour:
   - {fileID: 1920202652}
   - {fileID: 1142278609}
   Occupied: 0
+  isSeat: 0
 --- !u!4 &424949015
 Transform:
   m_ObjectHideFlags: 0
@@ -4244,6 +4252,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1001 &482988953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4620,6 +4629,7 @@ MonoBehaviour:
   - {fileID: 968559037}
   - {fileID: 866008325}
   Occupied: 0
+  isSeat: 0
 --- !u!1001 &548464137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5118,6 +5128,7 @@ MonoBehaviour:
   barSpot: 1
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!4 &579356254
 Transform:
   m_ObjectHideFlags: 0
@@ -5804,6 +5815,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1 &653730107 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 2edf43c23056c114b815fb3a250f2102,
@@ -6286,6 +6298,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!4 &750165336 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 24bda3580414beb44b6a8504fc5aa2f9,
@@ -7304,6 +7317,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!4 &806799411 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8a18adc88159d0149a3c2cecd6b2d7e8,
@@ -8001,6 +8015,7 @@ MonoBehaviour:
   nextWaypoint:
   - {fileID: 579356253}
   Occupied: 0
+  isSeat: 0
 --- !u!4 &866008326
 Transform:
   m_ObjectHideFlags: 0
@@ -9110,6 +9125,7 @@ MonoBehaviour:
   - {fileID: 1142278609}
   - {fileID: 579356253}
   Occupied: 0
+  isSeat: 0
 --- !u!4 &968559038
 Transform:
   m_ObjectHideFlags: 0
@@ -9315,6 +9331,7 @@ MonoBehaviour:
   nextWaypoint:
   - {fileID: 1920202652}
   Occupied: 0
+  isSeat: 0
 --- !u!4 &985013188
 Transform:
   m_ObjectHideFlags: 0
@@ -10753,6 +10770,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1001 &1111642816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11144,6 +11162,7 @@ MonoBehaviour:
   barSpot: 1
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!4 &1142278610
 Transform:
   m_ObjectHideFlags: 0
@@ -11389,6 +11408,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!4 &1167721651 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3366409328398912976, guid: d346bdfcacb025d4f99ffd0d2526436f,
@@ -11532,6 +11552,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!4 &1188006103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
@@ -12788,6 +12809,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1001 &1346034579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12913,6 +12935,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1 &1351649022 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: dff9888a11315d647be2a3dfdf6b7aae,
@@ -14041,6 +14064,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!4 &1445437786 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: c5b94ffbdbb3c9045b29ce75f2f592e0,
@@ -14443,6 +14467,7 @@ MonoBehaviour:
   - {fileID: 968559037}
   - {fileID: 424949014}
   Occupied: 0
+  isSeat: 0
 --- !u!1001 &1485969635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15077,6 +15102,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!4 &1585469520 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1695570533809110336, guid: 8e6054c4239c7884ea0d44291f17edc1,
@@ -16094,6 +16120,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1 &1726687112
 GameObject:
   m_ObjectHideFlags: 0
@@ -16140,6 +16167,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1001 &1737924347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16723,6 +16751,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!4 &1798841067 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
@@ -17048,6 +17077,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1001 &1848551450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17342,6 +17372,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1001 &1867384773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17915,6 +17946,7 @@ MonoBehaviour:
   barSpot: 1
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!4 &1920202653
 Transform:
   m_ObjectHideFlags: 0
@@ -18257,6 +18289,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1001 &1961194554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18675,6 +18708,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1 &2024862067 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -9138384822779237652, guid: c5d0a836118e9d3479f85ff270dd3add,
@@ -18772,6 +18806,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1001 &2052988569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19017,6 +19052,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1 &2097847305
 GameObject:
   m_ObjectHideFlags: 0
@@ -19548,6 +19584,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1001 &2134823794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19703,6 +19740,7 @@ MonoBehaviour:
   barSpot: 0
   nextWaypoint: []
   Occupied: 0
+  isSeat: 0
 --- !u!1001 &2141940265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20099,5 +20137,11 @@ PrefabInstance:
       propertyPath: items.Array.data[0].go
       value: 
       objectReference: {fileID: 235208998}
+    - target: {fileID: 6678109825878527518, guid: 0a7cdb14ca67bac4b85c52f15bd6c758,
+        type: 3}
+      propertyPath: items.Array.data[0].image
+      value: 
+      objectReference: {fileID: 21300000, guid: 69495295674c71143a58f21b561dad49,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a7cdb14ca67bac4b85c52f15bd6c758, type: 3}
