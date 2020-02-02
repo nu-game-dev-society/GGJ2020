@@ -20,14 +20,12 @@ public class Shop : MonoBehaviour
 
     private bool showShop;
     private PlayerController playerController;
-    private InputHandler inputHandler;
 
     void Start()
     {
         showShop = false;
 
         playerController = FindObjectOfType<PlayerController>();
-        inputHandler = FindObjectOfType<InputHandler>();
 
         BuildList();
     }
@@ -101,7 +99,6 @@ public class Shop : MonoBehaviour
             shopPanel.SetActive(showShop);
 
             playerController.enabled = !showShop;
-            inputHandler.enabled = !showShop;
         }
     }
 }

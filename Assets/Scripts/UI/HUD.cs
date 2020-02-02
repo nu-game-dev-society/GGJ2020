@@ -22,7 +22,6 @@ public class HUD : MonoBehaviour
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
-        inputHandler = FindObjectOfType<InputHandler>();
     }
 
     // Update is called once per frame
@@ -41,7 +40,6 @@ public class HUD : MonoBehaviour
         isPaused = !isPaused;
         pausePanel.SetActive(isPaused);
         playerController.enabled = !isPaused;
-        inputHandler.enabled = !isPaused;
         Time.timeScale = Convert.ToInt32(!isPaused);
         Cursor.visible = isPaused;
 
