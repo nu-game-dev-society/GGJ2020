@@ -7,6 +7,7 @@ public class Waypoint : MonoBehaviour
     [SerializeField] public bool barSpot;
     [SerializeField] List<Waypoint> nextWaypoint = new List<Waypoint>();
     public bool Occupied;
+    public bool isSeat = false;
     // Start is called before the first frame update
     void Start()
     {
