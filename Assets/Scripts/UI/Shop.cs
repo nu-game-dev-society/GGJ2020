@@ -16,7 +16,7 @@ public class Shop : MonoBehaviour
     private GameObject shopPanel;
 
     [SerializeField]
-    private List<ShopItem> items;
+    public List<ShopItem> items;
 
     private bool showShop;
     private PlayerController playerController;
@@ -53,7 +53,9 @@ public class Shop : MonoBehaviour
             {
                 buyButton.GetComponent<Button>().interactable = false;
             }
-            item.go.SetActive(owned);
+
+            if(item.go)
+                item.go.SetActive(owned);
         }
     }
 

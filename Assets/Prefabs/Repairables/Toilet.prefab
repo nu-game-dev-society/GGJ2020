@@ -289,6 +289,8 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   repairTime: 3
   breakChance: 0.2
+  autoRepairTime: 60
+  autoRepairCost: 20
 --- !u!114 &4157694403203991973
 MonoBehaviour:
   m_ObjectHideFlags: 0

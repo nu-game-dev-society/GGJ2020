@@ -27,9 +27,4 @@ public class Complaint : MonoBehaviour
             ComplaintManager.Instance.Deactivate(this);
         }
     }
-
-    void Update()
-    {
-        transform.LookAt(player);
-    }
 }

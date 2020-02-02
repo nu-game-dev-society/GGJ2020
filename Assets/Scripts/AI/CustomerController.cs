@@ -85,7 +85,7 @@ public class CustomerController : MonoBehaviour
         {
             happiness -= (Time.deltaTime / 200);
             if (happiness < 0.3f)
-                SetTargetIgnoreOccupied(exitWP);
+                LeaveBar();
         }
         if(!atBar && serviceComplete)
         {
@@ -95,7 +95,7 @@ public class CustomerController : MonoBehaviour
                 if (happiness > 0.3f)
                     FinishedDrink();
                 else
-                    SetTargetIgnoreOccupied(exitWP);
+                    LeaveBar();
             }
         }
 
@@ -142,7 +142,12 @@ public class CustomerController : MonoBehaviour
         target.Occupied = true;
     }
 
-
+    void LeaveBar()
+    {
+        complaintBubble.SetActive(false);
+        Destroy(GetComponentInChildren<OrderBubble>().gameObject);
+        SetTargetIgnoreOccupied(exitWP);
+    }
     IEnumerator Wait(float t)
     {
         yield return new WaitForSeconds(t);

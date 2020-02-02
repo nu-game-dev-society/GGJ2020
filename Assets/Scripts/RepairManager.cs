@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RepairManager : MonoBehaviour
 {
+
     #region Singleton Pattern
+
     public static RepairManager Instance { get; private set; }
     void Awake()
     {
@@ -12,6 +15,12 @@ public class RepairManager : MonoBehaviour
             Instance = this;
     }
     #endregion
+
+    [SerializeField]
+    private GameObject notificationPrefab;
+
+    [SerializeField]
+    private Canvas canvas;
 
     private RepairPart[] parts;
 
@@ -51,5 +60,12 @@ public class RepairManager : MonoBehaviour
         {
             part.IsBroken = broken;
         }
+    }
+
+    public void ShowRepairNotification(string text)
+    {
+        GameObject noti = GameObject.Instantiate(notificationPrefab);
+        noti.transform.SetParent(canvas.transform);
+        noti.GetComponent<Notification>().text = text;
     }
 }

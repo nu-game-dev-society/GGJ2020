@@ -9,7 +9,7 @@ public class MoneySystem : MonoBehaviour
     private static MoneySystem mInstance;
 
     //Current balance
-    public int mMoney = 1000;
+    public int mMoney = 100;
 
     //interval for saving money to prefrences
     public float saveInterval = 3;

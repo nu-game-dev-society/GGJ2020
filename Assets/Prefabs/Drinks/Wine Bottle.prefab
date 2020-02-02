@@ -917,6 +917,7 @@ GameObject:
   - component: {fileID: 8321877807263067834}
   - component: {fileID: 2914316774250931379}
   - component: {fileID: 5103428112346997233}
+  - component: {fileID: 4093026831203871211}
   m_Layer: 0
   m_Name: Wine Bottle
   m_TagString: PickupItem
@@ -1015,6 +1016,7 @@ MonoBehaviour:
   type: 2
   pickedUpByPlayer: {fileID: 0}
   pickupTarget: {fileID: 0}
+  drinkComponent: {fileID: 4093026831203871211}
 --- !u!54 &2914316774250931379
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1056,3 +1058,18 @@ MonoBehaviour:
   - {fileID: 3785160853880377137}
   - {fileID: 4001356203419874541}
   - {fileID: 7204916347424556895}
+--- !u!114 &4093026831203871211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8458802403546895444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 652229985db463441875b688dda00c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn:
+    transform: {fileID: 0}
+    drink: {fileID: 0}
