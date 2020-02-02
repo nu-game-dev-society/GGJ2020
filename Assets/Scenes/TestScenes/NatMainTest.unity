@@ -202,6 +202,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -266,11 +271,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
@@ -920,6 +920,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -984,11 +989,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
@@ -1547,6 +1547,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 909426033}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: aa39e109cfb517e498164ce8c21d51dc,
+        type: 3}
+      propertyPath: m_Name
+      value: PipeLong
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: aa39e109cfb517e498164ce8c21d51dc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: aa39e109cfb517e498164ce8c21d51dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1616,16 +1626,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: aa39e109cfb517e498164ce8c21d51dc,
-        type: 3}
-      propertyPath: m_Name
-      value: PipeLong
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: aa39e109cfb517e498164ce8c21d51dc,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: aa39e109cfb517e498164ce8c21d51dc,
         type: 3}
@@ -1848,6 +1848,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1912,11 +1917,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -2375,6 +2375,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2439,11 +2444,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
@@ -3496,6 +3496,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3560,11 +3565,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
@@ -4364,6 +4364,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (15)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4429,11 +4434,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 100.00003
       objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (15)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
 --- !u!1 &505894925
@@ -4498,6 +4498,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4562,11 +4567,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
@@ -4933,6 +4933,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass (15)
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4997,11 +5002,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00019
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
@@ -5447,6 +5447,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (14)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5511,11 +5516,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -5684,6 +5684,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5748,11 +5753,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
@@ -6043,6 +6043,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (17)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6108,11 +6113,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 100.00003
       objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (17)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
 --- !u!1 &697536614
@@ -6160,6 +6160,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (21)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6224,11 +6229,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (21)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -6297,6 +6297,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6361,11 +6366,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
@@ -6896,6 +6896,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6960,11 +6965,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -7070,6 +7070,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (12)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7134,11 +7139,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -7435,6 +7435,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7500,11 +7505,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 100.00003
       objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
 --- !u!4 &818143954 stripped
@@ -7520,6 +7520,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1395926645}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7584,11 +7589,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -7710,6 +7710,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (23)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7774,11 +7779,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (23)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -8322,6 +8322,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1395926645}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: da353b817e231414994176d95dba4904,
+        type: 3}
+      propertyPath: m_Name
+      value: TapUrinalToilet
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: da353b817e231414994176d95dba4904,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502203975881118265, guid: da353b817e231414994176d95dba4904,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502203975881118265, guid: da353b817e231414994176d95dba4904,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695666576454475813, guid: da353b817e231414994176d95dba4904,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695666576454475813, guid: da353b817e231414994176d95dba4904,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469484624682501897, guid: da353b817e231414994176d95dba4904,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469484624682501897, guid: da353b817e231414994176d95dba4904,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: da353b817e231414994176d95dba4904,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8376,46 +8416,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: da353b817e231414994176d95dba4904,
-        type: 3}
-      propertyPath: m_Name
-      value: TapUrinalToilet
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: da353b817e231414994176d95dba4904,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 2502203975881118265, guid: da353b817e231414994176d95dba4904,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2502203975881118265, guid: da353b817e231414994176d95dba4904,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 4695666576454475813, guid: da353b817e231414994176d95dba4904,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4695666576454475813, guid: da353b817e231414994176d95dba4904,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469484624682501897, guid: da353b817e231414994176d95dba4904,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469484624682501897, guid: da353b817e231414994176d95dba4904,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 2498326036907817780, guid: da353b817e231414994176d95dba4904,
         type: 3}
@@ -8496,11 +8496,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 64
       objectReference: {fileID: 0}
-    - target: {fileID: -1504981713932161579, guid: 7b560c107a80a9543957f3cf50a2e986,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b793afc007e7bd34b9d60725810cc89b, type: 2}
     - target: {fileID: -4216859302048453862, guid: 7b560c107a80a9543957f3cf50a2e986,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8571,6 +8566,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 7b560c107a80a9543957f3cf50a2e986,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b793afc007e7bd34b9d60725810cc89b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b560c107a80a9543957f3cf50a2e986, type: 3}
 --- !u!1 &924488801 stripped
@@ -8612,6 +8612,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 909426033}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 24bda3580414beb44b6a8504fc5aa2f9,
+        type: 3}
+      propertyPath: m_Name
+      value: PipeCorner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 24bda3580414beb44b6a8504fc5aa2f9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 24bda3580414beb44b6a8504fc5aa2f9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8682,16 +8692,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 24bda3580414beb44b6a8504fc5aa2f9,
-        type: 3}
-      propertyPath: m_Name
-      value: PipeCorner (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 24bda3580414beb44b6a8504fc5aa2f9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 24bda3580414beb44b6a8504fc5aa2f9,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8706,6 +8706,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (25)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8771,11 +8776,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 99.999985
       objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (25)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
 --- !u!1001 &960381284
@@ -8785,6 +8785,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (18)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8849,11 +8854,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (18)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -9045,6 +9045,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9110,11 +9115,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 100.00003
       objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass (5)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
 --- !u!1001 &976729793
@@ -9124,6 +9124,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9188,11 +9193,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
@@ -9355,6 +9355,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (19)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9419,11 +9424,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (19)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -9843,6 +9843,11 @@ MonoBehaviour:
     type: 3}
   spawnTimeMin: 5
   spawnTimeMax: 10
+  maxCustomers: 20
+  tshirtColours: []
+  trouserColours: []
+  hairColours: []
+  skinColours: []
 --- !u!4 &1052997310
 Transform:
   m_ObjectHideFlags: 0
@@ -10093,6 +10098,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10157,11 +10167,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -10282,6 +10287,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10346,11 +10356,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -10742,11 +10747,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 64
       objectReference: {fileID: 0}
-    - target: {fileID: -1504981713932161579, guid: 7b560c107a80a9543957f3cf50a2e986,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b793afc007e7bd34b9d60725810cc89b, type: 2}
     - target: {fileID: -4216859302048453862, guid: 7b560c107a80a9543957f3cf50a2e986,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10817,6 +10817,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 7b560c107a80a9543957f3cf50a2e986,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b793afc007e7bd34b9d60725810cc89b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b560c107a80a9543957f3cf50a2e986, type: 3}
 --- !u!1001 &1113865713
@@ -11275,6 +11280,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11339,11 +11349,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -11738,6 +11743,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (24)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11802,11 +11812,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (24)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -11929,6 +11934,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11994,11 +12004,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 100.00003
       objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (10)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
 --- !u!1001 &1238529170
@@ -12008,6 +12013,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12072,11 +12082,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
@@ -12289,6 +12294,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12354,11 +12364,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 100.00003
       objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
 --- !u!1001 &1313549445
@@ -12368,6 +12373,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (20)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12432,11 +12442,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (20)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -12668,6 +12673,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12732,11 +12742,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -13017,6 +13022,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13081,11 +13091,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -13402,6 +13407,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass (13)
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13466,11 +13476,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00009
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass (13)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
@@ -13601,6 +13606,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 909426033}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 24bda3580414beb44b6a8504fc5aa2f9,
+        type: 3}
+      propertyPath: m_Name
+      value: PipeCorner
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 24bda3580414beb44b6a8504fc5aa2f9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 24bda3580414beb44b6a8504fc5aa2f9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13670,16 +13685,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 13.25568
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 24bda3580414beb44b6a8504fc5aa2f9,
-        type: 3}
-      propertyPath: m_Name
-      value: PipeCorner
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 24bda3580414beb44b6a8504fc5aa2f9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 24bda3580414beb44b6a8504fc5aa2f9,
         type: 3}
@@ -13784,6 +13789,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13848,11 +13858,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -13925,11 +13930,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 64
       objectReference: {fileID: 0}
-    - target: {fileID: -1504981713932161579, guid: 7b560c107a80a9543957f3cf50a2e986,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b793afc007e7bd34b9d60725810cc89b, type: 2}
     - target: {fileID: -4216859302048453862, guid: 7b560c107a80a9543957f3cf50a2e986,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14000,6 +14000,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 7b560c107a80a9543957f3cf50a2e986,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b793afc007e7bd34b9d60725810cc89b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b560c107a80a9543957f3cf50a2e986, type: 3}
 --- !u!1 &1458666126
@@ -14681,6 +14686,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass (12)
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14745,11 +14755,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
@@ -14871,19 +14876,18 @@ MonoBehaviour:
   itemPrefab: {fileID: 8836206618919073512, guid: de2aac9818fa0044eb12d572d5f6f819,
     type: 3}
   baseMaterial: {fileID: 2100000, guid: 07f86eb3132eb0c4f8772c88a938927f, type: 2}
-  images:
-  - itemID: Wine Bottle
-    itemImage: {fileID: 21300000, guid: 326a549ab8f5b2a44ab7388624500057, type: 3}
-  - itemID: Beer Bottle
-    itemImage: {fileID: 21300000, guid: 69495295674c71143a58f21b561dad49, type: 3}
   defaultImage: {fileID: 21300000, guid: b36a9694e06b59240a5f09df89688395, type: 3}
-  orderRandItems:
+  orderPossibleItems:
   - id: Wine Bottle
     min: 0
     max: 2
+    itemImage: {fileID: 21300000, guid: 326a549ab8f5b2a44ab7388624500057, type: 3}
+    price: 10
   - id: Beer Bottle
     min: 0
     max: 2
+    itemImage: {fileID: 21300000, guid: 69495295674c71143a58f21b561dad49, type: 3}
+    price: 5
 --- !u!4 &1599512656
 Transform:
   m_ObjectHideFlags: 0
@@ -14917,6 +14921,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14981,11 +14990,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -15280,6 +15284,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15344,11 +15353,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -15595,6 +15599,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass (14)
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15659,11 +15668,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.000145
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
@@ -16565,6 +16569,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1395926645}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16619,11 +16628,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -49.638
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -16828,6 +16832,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 909426033}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: aa39e109cfb517e498164ce8c21d51dc,
+        type: 3}
+      propertyPath: m_Name
+      value: PipeLong (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: aa39e109cfb517e498164ce8c21d51dc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: aa39e109cfb517e498164ce8c21d51dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16897,16 +16911,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: aa39e109cfb517e498164ce8c21d51dc,
-        type: 3}
-      propertyPath: m_Name
-      value: PipeLong (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: aa39e109cfb517e498164ce8c21d51dc,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: aa39e109cfb517e498164ce8c21d51dc,
         type: 3}
@@ -17070,6 +17074,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (22)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17134,11 +17143,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (22)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -17985,6 +17989,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 909426033}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: aa39e109cfb517e498164ce8c21d51dc,
+        type: 3}
+      propertyPath: m_Name
+      value: PipeLong (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: aa39e109cfb517e498164ce8c21d51dc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: aa39e109cfb517e498164ce8c21d51dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18054,16 +18068,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: aa39e109cfb517e498164ce8c21d51dc,
-        type: 3}
-      propertyPath: m_Name
-      value: PipeLong (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: aa39e109cfb517e498164ce8c21d51dc,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: aa39e109cfb517e498164ce8c21d51dc,
         type: 3}
@@ -18701,6 +18705,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (13)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18765,11 +18774,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (13)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
@@ -18971,6 +18975,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
+        type: 3}
+      propertyPath: m_Name
+      value: Pint Glass (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 288093329828803246, guid: 92389d3228494324f9de3700feeecb36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19035,11 +19044,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184198976226342895, guid: 92389d3228494324f9de3700feeecb36,
-        type: 3}
-      propertyPath: m_Name
-      value: Pint Glass (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92389d3228494324f9de3700feeecb36, type: 3}
@@ -19251,6 +19255,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Beer Bottle (16)
+      objectReference: {fileID: 0}
     - target: {fileID: 3914261180717863372, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19316,11 +19325,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 100.00003
       objectReference: {fileID: 0}
-    - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Beer Bottle (16)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6c87e05f977bb47ab407cf0744dd1e, type: 3}
 --- !u!1001 &1695570534833026522
@@ -19339,6 +19343,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695570533809110336, guid: 8e6054c4239c7884ea0d44291f17edc1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.023
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695570533809110336, guid: 8e6054c4239c7884ea0d44291f17edc1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.043
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695570533809110336, guid: 8e6054c4239c7884ea0d44291f17edc1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.673
       objectReference: {fileID: 0}
     - target: {fileID: 1695570534664822378, guid: 8e6054c4239c7884ea0d44291f17edc1,
         type: 3}
@@ -19465,21 +19484,6 @@ PrefabInstance:
       propertyPath: repairUI
       value: 
       objectReference: {fileID: 986607659}
-    - target: {fileID: 1695570533809110336, guid: 8e6054c4239c7884ea0d44291f17edc1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.023
-      objectReference: {fileID: 0}
-    - target: {fileID: 1695570533809110336, guid: 8e6054c4239c7884ea0d44291f17edc1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.043
-      objectReference: {fileID: 0}
-    - target: {fileID: 1695570533809110336, guid: 8e6054c4239c7884ea0d44291f17edc1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.673
-      objectReference: {fileID: 0}
     - target: {fileID: 1695570534868005531, guid: 8e6054c4239c7884ea0d44291f17edc1,
         type: 3}
       propertyPath: m_Layer

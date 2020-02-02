@@ -13,8 +13,7 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField]
     private float spawnTimeMax = 10.0f;
 
-    [SerializeField]
-    private int maxCustomers = 20;
+    public static int maxCustomers = 20;
 
     [SerializeField]
     private Color[] tshirtColours;
@@ -32,9 +31,9 @@ public class CustomerSpawner : MonoBehaviour
     private float spawnTime;
 
     private MaterialPropertyBlock propBlock;
-
-    private List<CustomerController> activeCustomers;
-    private List<CustomerController> inactiveCustomers;
+    public Waypoint exitWP;
+    public static List<CustomerController> activeCustomers;
+    public static List<CustomerController> inactiveCustomers;
 
     // Start is called before the first frame update
     void Start()
@@ -85,7 +84,7 @@ public class CustomerSpawner : MonoBehaviour
             }
 
             customer.SetActive(true);
-
+            customerController.exitWP = exitWP;
             activeCustomers.Add(customerController);
 
             customer.transform.position = transform.position;
@@ -132,5 +131,20 @@ public class CustomerSpawner : MonoBehaviour
         {
             PoolCustomer(customer);
         }
+    }
+    [ContextMenu("GetDrunkness")]
+    public void CallGetDrunkess()
+    {
+        GetDrunkness();
+    }
+    public static float GetDrunkness()
+    {
+        float drunkness = 0;
+        foreach (CustomerController c in activeCustomers)
+        {
+            drunkness += c.drunkness;
+        }
+
+        return drunkness / maxCustomers;
     }
 }
