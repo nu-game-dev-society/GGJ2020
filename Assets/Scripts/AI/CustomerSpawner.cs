@@ -35,13 +35,17 @@ public class CustomerSpawner : MonoBehaviour
     public static List<CustomerController> activeCustomers;
     public static List<CustomerController> inactiveCustomers;
 
+    private void Awake()
+    {
+        activeCustomers = new List<CustomerController>();
+        inactiveCustomers = new List<CustomerController>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         spawnTime = Random.Range(spawnTimeMin, spawnTimeMax);
         propBlock = new MaterialPropertyBlock();
-        activeCustomers = new List<CustomerController>();
-        inactiveCustomers = new List<CustomerController>();
 
         if (tshirtColours.Length == 0)
             tshirtColours = new Color[] { new Color(204.0f / 255.0f, 185.0f / 255.0f, 99.0f / 255.0f) };

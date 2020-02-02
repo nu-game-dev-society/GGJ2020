@@ -5642,7 +5642,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608488269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 2.67}
+  m_LocalPosition: {x: 1, y: 0, z: 2.607}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1774045390}
@@ -13974,9 +13974,9 @@ MonoBehaviour:
   main: {fileID: 24500006, guid: 270ceb79ca7bc934aad6667a398f616f, type: 2}
   bathroom: {fileID: -7180576494329325831, guid: 270ceb79ca7bc934aad6667a398f616f,
     type: 2}
-  foleyAudio: {fileID: 0}
-  custSpawn: {fileID: 0}
-  MusicAudio: {fileID: 0}
+  foleyAudio: {fileID: 967820500}
+  custSpawn: {fileID: 1052997309}
+  MusicAudio: {fileID: 1296567417}
   songs: []
 --- !u!4 &1400216745
 Transform:
@@ -15695,6 +15695,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a117645d77d349743a6e689bc40ac4d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  notificationPrefab: {fileID: 0}
+  canvas: {fileID: 0}
   breakInterval: 10
 --- !u!4 &1637516797
 Transform:
