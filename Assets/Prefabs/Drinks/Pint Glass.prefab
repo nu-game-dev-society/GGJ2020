@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 1055759885444431953}
   - component: {fileID: 1923642781501001215}
   - component: {fileID: 4756447999595846424}
+  - component: {fileID: 3706367573893038996}
   m_Layer: 0
   m_Name: Pint Glass
   m_TagString: PickupItem
@@ -585,6 +586,21 @@ MonoBehaviour:
   type: 1
   pickedUpByPlayer: {fileID: 0}
   pickupTarget: {fileID: 0}
+--- !u!114 &3706367573893038996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5184198976226342895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 652229985db463441875b688dda00c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn:
+    transform: {fileID: 0}
+    drink: {fileID: 0}
 --- !u!1 &5723572532610113913
 GameObject:
   m_ObjectHideFlags: 0

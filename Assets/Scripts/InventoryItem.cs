@@ -10,7 +10,7 @@ public class InventoryItem : MonoBehaviour
     public PlayerController pickedUpByPlayer;
     public Transform pickupTarget;
     Rigidbody rb;
-
+    public Drink drinkComponent; 
 
     float defaultAngular; 
 
@@ -26,6 +26,10 @@ public class InventoryItem : MonoBehaviour
     }
     public void PickedUp(PlayerController pc)
     {
+
+        if (drinkComponent != null)
+            drinkComponent.ClearSpawn();
+
         pickedUpByPlayer = pc;
         pickupTarget = pc.handTransform;
         rb.angularDrag = 1f;
