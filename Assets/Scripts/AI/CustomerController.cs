@@ -16,6 +16,7 @@ public class CustomerController : MonoBehaviour
     public float drunkness;
     public float happiness;
     public float timeSinceLastDrink;
+    [SerializeField]GameObject complaintBubble;
 
     public Waypoint exitWP;
 
@@ -24,7 +25,6 @@ public class CustomerController : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
-        
         //-----
         JoinQueue();
     }
@@ -48,7 +48,7 @@ public class CustomerController : MonoBehaviour
             if (target.barSpot && agent.remainingDistance < 0.1f && !atBar)
             {
                 atBar = true;
-                target.GetComponentInChildren<ServiceTriggers>().cust = GetComponentInChildren<OrderBubble>();
+                //target.GetComponentInChildren<ServiceTriggers>().cust = GetComponentInChildren<OrderBubble>();
             }
         }
         if(atBar && serviceComplete)
@@ -141,9 +141,22 @@ public class CustomerController : MonoBehaviour
     }
 #endif
 
-    public void ComplainAbout(Complaint complaint)
+    public void SetComplaint(Complaint complaint)
     {
-        this.complaint = complaint;
-        gameObject.transform.Find("ComplaintBubble").GetChild(complaint.id);
+        if(complaint!=null)
+        {
+            this.complaint = complaint;
+            for (int i = 0; i < complaintBubble.transform.childCount; i++)
+                complaintBubble.transform.GetChild(i).gameObject.SetActive(false);
+
+            complaintBubble.SetActive(true);            
+            complaintBubble.transform.GetChild(complaint.id).gameObject.SetActive(true);            
+        }
+        else
+        {
+            for (int i = 0; i < complaintBubble.transform.childCount; i++)
+                complaintBubble.transform.GetChild(i).gameObject.SetActive(false);
+            complaintBubble.SetActive(false);
+        }        
     }
 }

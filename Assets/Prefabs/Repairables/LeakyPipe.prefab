@@ -126,6 +126,8 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   repairTime: 2
   breakChance: 0.2
+  autoRepairTime: 20
+  autoRepairCost: 20
 --- !u!65 &7494285188662178757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -152,7 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: Leaky Pipe
-  id: 1
+  id: 0
+  content: {fileID: 0}
 --- !u!1 &7494285189489549314
 GameObject:
   m_ObjectHideFlags: 0

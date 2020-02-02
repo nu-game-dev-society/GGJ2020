@@ -12,14 +12,12 @@ public class ComplaintManager : MonoBehaviour
             Instance = this;
     }
     #endregion
-
-
+    
     [SerializeField] Material baseMaterial;
     [SerializeField] Sprite defaultImage;
-    [SerializeField] ComplaintImage[] images;
+    //[SerializeField] List<Complaint> possibleComplaints = new List<Complaint>();
     
-
-    List<Complaint> complaints = new List<Complaint>();
+    List<Complaint> activeComplaints = new List<Complaint>();
 
     // Start is called before the first frame update
     void Start()
@@ -38,53 +36,39 @@ public class ComplaintManager : MonoBehaviour
     }
 
     //A new thing has gone wrong
-    public void AddComplaint(Complaint complaint)
+    public void Activate(Complaint complaint)
     {
-        if (!complaints.Contains(complaint))
-            complaints.Add(complaint);
+        if (!activeComplaints.Contains(complaint))
+            activeComplaints.Add(complaint);
         else
             Debug.Log("Complaint already active!");
     }
 
     //Player fixed something
-    public void RemoveComplaint(Complaint complaint)
+    public void Deactivate(Complaint complaint)
     {
-        if (!complaints.Contains(complaint))
-            complaints.Remove(complaint);
+        if (activeComplaints.Contains(complaint))
+            activeComplaints.Remove(complaint);
         else
             Debug.Log("Complaint not active!");
+
+        //Remove all customers with  this complaint
+        List<CustomerController> customers = CustomerSpawner.activeCustomers;
+        foreach (CustomerController customer in customers)
+        {
+            if(customer.complaint)
+                if (customer.complaint.id == complaint.id)
+                    customer.SetComplaint(null);
+        }            
     }
 
     //Tell a new customer about the complaint(s)
     void AssignComplaint()
     {
-        List<CustomerController> customers = CustomerManager.Instance.GetAllCustomers();
-        foreach (Complaint complaint in complaints)
-            foreach(CustomerController customer in customers)
-                customer.ComplainAbout(complaint);
+        List<CustomerController> customers = CustomerSpawner.activeCustomers;
+        foreach (Complaint complaint in activeComplaints)
+            customers[Random.Range(0,customers.Count)].SetComplaint(complaint);
 
         cooldown = 10.0f;
-    }
-
-    //Retrieve the img for the complaint
-    public Sprite GetComplaintImage(string itemID)
-    {
-        foreach (ComplaintImage image in images)
-            if (itemID == image.complaintID)
-                return image.complaintImage;
-        
-        //Fail-safe
-        return defaultImage;
-    }
-
-    //Turn img into mat
-    public Material GetComplaintImageMat(string complaintID)
-    {
-        Sprite image = GetComplaintImage(complaintID);
-
-        Material material = new Material(baseMaterial);
-        material.SetTexture("_MainTex", image.texture);
-
-        return material;
     }
 }
