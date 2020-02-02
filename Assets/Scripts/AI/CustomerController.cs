@@ -44,19 +44,35 @@ public class CustomerController : MonoBehaviour
     void Update()
     {
         animator.SetBool("Idle", agent.velocity.sqrMagnitude < 0.1f);
-            
 
-        if(target!=null)
+
+        if (agent.enabled && agent.remainingDistance <= 0.1f && target.isSeat)
+        {
+            Seat[] seats = target.GetComponent<Seating>().seats;
+            foreach (Seat s in seats)
+            {
+                if (!s.occupied)
+                {
+                    Sit(s);
+                    break;
+                }
+            }
+            agent.enabled = false;
+            
+            //target = null;
+        }
+
+        if (target!=null)
         {
             Waypoint wp = target.EvaluateNext();
 
             if (wp != null)
                 SetTarget(wp);
 
-            if (target.barSpot && agent.remainingDistance < 0.1f && !atBar)
+            if (agent.enabled && target.barSpot && agent.remainingDistance < 0.1f && !atBar)
             {
                 atBar = true;
-                //target.GetComponentInChildren<ServiceTriggers>().cust = GetComponentInChildren<OrderBubble>();
+                target.GetComponentInChildren<ServiceTriggers>().cust = GetComponentInChildren<OrderBubble>();
             }
         }
         if(atBar && serviceComplete)
@@ -82,6 +98,25 @@ public class CustomerController : MonoBehaviour
                     SetTargetIgnoreOccupied(exitWP);
             }
         }
+
+    }
+    Seat seat;
+    void Sit(Seat s)
+    {
+        animator.SetBool("Sitting", true);
+        transform.position = s.t.position;
+        transform.rotation = s.t.rotation;
+        s.occupied = true;
+        target.Occupied = false;
+        seat = s;
+    }
+    void Stand()
+    {
+        animator.SetBool("Sitting", false);
+        transform.position = target.transform.position;
+        agent.enabled = true;
+        seat.occupied = false;
+        seat = null;
     }
     IEnumerator UpdateDrunkness(float drunkDelta)
     {
@@ -135,6 +170,8 @@ public class CustomerController : MonoBehaviour
     [ContextMenu("Finish Drink")]
     public void FinishedDrink()
     {
+        if(seat != null)
+            Stand();
         serviceComplete = false;
         JoinQueue();
     }
