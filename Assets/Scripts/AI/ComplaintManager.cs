@@ -13,6 +13,12 @@ public class ComplaintManager : MonoBehaviour
     }
     #endregion
 
+
+    [SerializeField] Material baseMaterial;
+    [SerializeField] Sprite defaultImage;
+    [SerializeField] ComplaintImage[] images;
+    
+
     List<Complaint> complaints = new List<Complaint>();
 
     // Start is called before the first frame update
@@ -58,5 +64,27 @@ public class ComplaintManager : MonoBehaviour
                 customer.ComplainAbout(complaint);
 
         cooldown = 10.0f;
+    }
+
+    //Retrieve the img for the complaint
+    public Sprite GetComplaintImage(string itemID)
+    {
+        foreach (ComplaintImage image in images)
+            if (itemID == image.complaintID)
+                return image.complaintImage;
+        
+        //Fail-safe
+        return defaultImage;
+    }
+
+    //Turn img into mat
+    public Material GetComplaintImageMat(string complaintID)
+    {
+        Sprite image = GetComplaintImage(complaintID);
+
+        Material material = new Material(baseMaterial);
+        material.SetTexture("_MainTex", image.texture);
+
+        return material;
     }
 }

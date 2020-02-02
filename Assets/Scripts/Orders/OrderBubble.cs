@@ -55,6 +55,18 @@ public class OrderBubble : MonoBehaviour
 
     void FixedUpdate()
     {
+
+    }
+
+    private void Update()
+    {
+        transform.LookAt(player);
+
+        if (customer.atBar)
+        {
+            content.gameObject.SetActive(customer.atBar);
+        }
+
         bool allActive = true;
 
         for (int i = 0; i < customer.order.items.Count; i++)
@@ -72,18 +84,9 @@ public class OrderBubble : MonoBehaviour
         if (allActive)
         {
             customer.serviceComplete = true;
+            customer.happiness = 1;
             MoneySystem.AddMoney(customer.order.cost);
             Destroy(gameObject);
-        }
-    }
-
-    private void Update()
-    {
-        transform.LookAt(player);
-
-        if (customer.atBar)
-        {
-            content.gameObject.SetActive(customer.atBar);
         }
     }
 

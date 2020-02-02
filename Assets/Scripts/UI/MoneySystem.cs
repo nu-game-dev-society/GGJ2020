@@ -91,11 +91,17 @@ public class MoneySystem : MonoBehaviour
         return instance.mMoney;
     }
 
-
     //Add money to balance
     public static void AddMoney(int amount)
     {
         instance.mMoney += amount;
+    }
+
+
+    //Take money to balance
+    public static void TakeMoney(int amount)
+    {
+        instance.mMoney -= amount;
     }
 
     public static string FormatMoney(int amount)

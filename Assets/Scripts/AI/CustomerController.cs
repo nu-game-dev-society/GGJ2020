@@ -14,6 +14,11 @@ public class CustomerController : MonoBehaviour
     public bool atBar;
     [Range(0.0f,1.0f)]
     public float drunkness;
+    public float happiness;
+    public float timeSinceLastDrink;
+
+    public Waypoint exitWP;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +28,10 @@ public class CustomerController : MonoBehaviour
         //-----
         JoinQueue();
     }
-
+    private void OnEnable()
+    {
+        happiness = 1;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -47,9 +55,32 @@ public class CustomerController : MonoBehaviour
         {
             atBar = false;
             SetTarget(CustomerManager.Instance.RequestIdleSpot());
+            StartCoroutine(UpdateDrunkness(0.08f));
+        }
+        if(!serviceComplete)
+        {
+            happiness -= (Time.deltaTime / 200);
+            if (happiness < 0.3f)
+                SetTargetIgnoreOccupied(exitWP);
+        }
+        if(!atBar && serviceComplete)
+        {
+            timeSinceLastDrink += Time.deltaTime;
+            if(timeSinceLastDrink > 120)
+            {
+                if (happiness > 0.3f)
+                    FinishedDrink();
+                else
+                    SetTargetIgnoreOccupied(exitWP);
+            }
         }
     }
-
+    IEnumerator UpdateDrunkness(float drunkDelta)
+    {
+        yield return new WaitForSeconds(5);
+        drunkness += drunkDelta;
+        drunkness = Mathf.Clamp(drunkness, 0, 1);
+    }
     void SetTarget(Waypoint wp)
     {
         //Leave old wp
@@ -57,6 +88,12 @@ public class CustomerController : MonoBehaviour
             target.Occupied = false;
 
         //Join new wp
+        target = wp;
+        agent.SetDestination(target.transform.position);
+        target.Occupied = true;
+    }
+    void SetTargetIgnoreOccupied(Waypoint wp)
+    {
         target = wp;
         agent.SetDestination(target.transform.position);
         target.Occupied = true;
@@ -107,6 +144,6 @@ public class CustomerController : MonoBehaviour
     public void ComplainAbout(Complaint complaint)
     {
         this.complaint = complaint;
-
+        gameObject.transform.Find("ComplaintBubble").GetChild(complaint.id);
     }
 }
