@@ -54,12 +54,15 @@ public class ComplaintManager : MonoBehaviour
 
         //Remove all customers with  this complaint
         List<CustomerController> customers = CustomerSpawner.activeCustomers;
-        foreach (CustomerController customer in customers)
+        if (customers.Count > 0)
         {
-            if(customer.complaint)
-                if (customer.complaint.id == complaint.id)
-                    customer.SetComplaint(null);
-        }            
+            foreach (CustomerController customer in customers)
+            {
+                if (customer.complaint)
+                    if (customer.complaint.id == complaint.id)
+                        customer.SetComplaint(null);
+            }
+        }
     }
 
     //Tell a new customer about the complaint(s)
