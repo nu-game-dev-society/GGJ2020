@@ -22,6 +22,7 @@ public class HUD : MonoBehaviour
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
+        inputHandler = playerController.gameObject.GetComponent<InputHandler>();
     }
 
     // Update is called once per frame
@@ -39,7 +40,10 @@ public class HUD : MonoBehaviour
     {
         isPaused = !isPaused;
         pausePanel.SetActive(isPaused);
-        playerController.enabled = !isPaused;
+
+        inputHandler.enabled = !isPaused;
+        playerController.ClearInputs();
+
         Time.timeScale = Convert.ToInt32(!isPaused);
         Cursor.visible = isPaused;
 
@@ -51,10 +55,10 @@ public class HUD : MonoBehaviour
 
     public void Exit()
     {
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-#else
+        #else
         Application.Quit();
-#endif
+        #endif
     }
 }

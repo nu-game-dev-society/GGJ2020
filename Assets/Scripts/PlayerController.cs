@@ -123,4 +123,15 @@ public class PlayerController : MonoBehaviour
     {
         LookCamera();
     }
+
+    public void ClearInputs()
+    {
+        inputs.v = 0;
+        inputs.h = 0;
+        inputs.mouseX = 0;
+        inputs.mouseY = 0;
+        inputs.interactPressed = false;
+        inputs.interactReleased = false;
+        inputs.crouch = false;
+    }
 }
