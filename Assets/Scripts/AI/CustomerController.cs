@@ -47,7 +47,7 @@ public class CustomerController : MonoBehaviour
         animator.SetBool("Idle", agent.velocity.sqrMagnitude < 0.1f);
 
 
-        if (agent.enabled && agent.remainingDistance <= 0.1f && target.isSeat)
+        if (agent.enabled && agent.remainingDistance <= 0.1f && target != null && target.isSeat)
         {
             Seat[] seats = target.GetComponent<Seating>().seats;
             foreach (Seat s in seats)
