@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class TV : MonoBehaviour
 {
+    [SerializeField]
+    private Renderer rend;
 
+    [SerializeField]
+    private int framesPerImage = 400;
 
-    public Renderer rend;
-    public Material mat;
-
-    public Material[] images;
+    [SerializeField]
+    private Material[] images;
    
     void Update()
     {
-        if (Time.frameCount % 400 == 0)
+        if (Time.frameCount % framesPerImage == 0)
             rend.sharedMaterial = images[Random.Range(0, 3)];
     }
 }
