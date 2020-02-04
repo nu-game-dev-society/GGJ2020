@@ -37,14 +37,8 @@ public class AudioPool : MonoBehaviour
     private void Awake()
     {
         if (!instance)
-            instance = this; 
-
-       
+            instance = this;
     }
-
-
-    
-
 
     private void Start()
     {
@@ -96,7 +90,6 @@ public class AudioPool : MonoBehaviour
 
         return source; 
     }
-
 
     public void ReturnToPool(AudioSourcePooled source)
     {
