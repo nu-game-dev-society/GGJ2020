@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1695570533809110343}
   - component: {fileID: 1695570533809110342}
   - component: {fileID: 1695570533809110337}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HandTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 1695570533909576446}
   - component: {fileID: 1695570533909576441}
   - component: {fileID: 1695570533909576440}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 1695570534664822379}
   - component: {fileID: 1695570534664822378}
   - component: {fileID: 1695570534664822389}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 1695570534868005534}
   - component: {fileID: 1695570534868005529}
   - component: {fileID: 1645222800}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 3895
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -418,13 +418,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 1695570534868005528}
+  volumeTrigger: {fileID: 0}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 3
+  antialiasingMode: 0
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -459,7 +459,7 @@ MonoBehaviour:
       motionGridSize: 64
       colorBlindnessType: 0
       colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_Resources: {fileID: 0}
   m_ShowToolkit: 0
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
