@@ -8,10 +8,12 @@ public class OrderItem
 {
     public string item;
     public bool has;
+    public readonly Material material;
 
-    public OrderItem(string item)
+    public OrderItem(string item, Material material)
     {
         this.item = item;
         this.has = false;
+        this.material = material;
     }
 }

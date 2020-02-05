@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ServiceTriggers : MonoBehaviour
 {
-    public OrderBubble cust;
+    public CustomerController cust;
 
     // Update is called once per frame
     void Update()
@@ -15,10 +15,13 @@ public class ServiceTriggers : MonoBehaviour
             {
                 if (cust)
                 {
-                    if (cust.PickupItem(curitem.id))
+                    foreach (OrderItem item in cust.order.items)
                     {
-                        Destroy(curitem.gameObject);
-                    }
+                        if (item.item == curitem.id)
+                        {
+                            Destroy(curitem.gameObject);
+                        }
+                    }                        
                     curitem = null;
                 }
             }

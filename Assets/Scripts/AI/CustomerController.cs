@@ -73,7 +73,7 @@ public class CustomerController : MonoBehaviour
             if (agent.enabled && target.barSpot && agent.remainingDistance < 0.1f && !atBar)
             {
                 atBar = true;
-                target.GetComponentInChildren<ServiceTriggers>().cust = GetComponentInChildren<OrderBubble>();
+                target.GetComponentInChildren<ServiceTriggers>().cust = this;
             }
         }
         if(atBar && serviceComplete)
@@ -149,7 +149,7 @@ public class CustomerController : MonoBehaviour
     void LeaveBar()
     {
         complaintBubble.SetActive(false);
-        Destroy(GetComponentInChildren<OrderBubble>().gameObject);
+        //Destroy(GetComponentInChildren<OrderBubble>().gameObject);
         SetTargetIgnoreOccupied(exitWP);
     }
     IEnumerator Wait(float t)
@@ -212,5 +212,29 @@ public class CustomerController : MonoBehaviour
                 complaintBubble.transform.GetChild(i).gameObject.SetActive(false);
             complaintBubble.SetActive(false);
         }        
+    }
+
+    public void SetOrder(Order order)
+    {
+        if (order != null)
+        {
+            this.order = order;
+            DrawOrder();
+        }
+        else
+        {
+            for (int i = 0; i < complaintBubble.transform.childCount; i++)
+                complaintBubble.transform.GetChild(i).gameObject.SetActive(false);
+            complaintBubble.SetActive(false);
+        }
+    }
+
+    public void DrawOrder()
+    {
+        //For each item in the order
+        for(int i = 0; i < order.items.Count; i++)
+        {
+            complaintBubble.transform.GetChild(i).GetComponent<Renderer>().material = order.items[i].material;
+        }
     }
 }
