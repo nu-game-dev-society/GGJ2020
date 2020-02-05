@@ -13,6 +13,13 @@ public class HUD : MonoBehaviour
     [SerializeField]
     private GameObject pausePanel;
 
+    [Header("Clock")]
+    [SerializeField]
+    private RectTransform bigHand;
+
+    [SerializeField]
+    private RectTransform smallHand;
+
     private PlayerController playerController;
     private InputHandler inputHandler;
 
@@ -34,6 +41,10 @@ public class HUD : MonoBehaviour
         {
             TogglePause();
         }
+
+        DateTime time = DateTime.Now;
+        smallHand.rotation = Quaternion.Euler(0, 0, 360f - (0.5f * (60 * time.Hour + time.Minute)));
+        bigHand.rotation = Quaternion.Euler(0, 0, 360f - (6f * time.Minute));
     }
 
     public void TogglePause()
