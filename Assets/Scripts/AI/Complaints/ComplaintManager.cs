@@ -13,9 +13,6 @@ public class ComplaintManager : MonoBehaviour
     }
     #endregion
     
-    [SerializeField] Material baseMaterial;
-    [SerializeField] Sprite defaultImage;
-    //[SerializeField] List<Complaint> possibleComplaints = new List<Complaint>();
     
     List<Complaint> activeComplaints = new List<Complaint>();
 

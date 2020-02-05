@@ -10,5 +10,6 @@ public class OrderPossibleItem
     public int min;
     public int max;
     public Sprite itemImage;
+    public Material material;
     public int price;
 }

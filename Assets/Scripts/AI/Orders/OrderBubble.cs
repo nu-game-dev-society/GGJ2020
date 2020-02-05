@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+/*
 public class OrderBubble : MonoBehaviour
 {
     private Dictionary<string, GameObject> itemHas = new Dictionary<string, GameObject>();
@@ -105,3 +105,4 @@ public class OrderBubble : MonoBehaviour
         return false;
     }
 }
+*/
