@@ -104,21 +104,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1695570533909576440, guid: 8e6054c4239c7884ea0d44291f17edc1,
-        type: 3}
-      propertyPath: pickupText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1695570533909576440, guid: 8e6054c4239c7884ea0d44291f17edc1,
-        type: 3}
-      propertyPath: interactionUI
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1695570533909576440, guid: 8e6054c4239c7884ea0d44291f17edc1,
-        type: 3}
-      propertyPath: repairUI
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1645222800, guid: 8e6054c4239c7884ea0d44291f17edc1, type: 3}
       propertyPath: volumeTrigger
       value: 
@@ -134,6 +119,21 @@ PrefabInstance:
     - target: {fileID: 1645222800, guid: 8e6054c4239c7884ea0d44291f17edc1, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695570533909576440, guid: 8e6054c4239c7884ea0d44291f17edc1,
+        type: 3}
+      propertyPath: pickupText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695570533909576440, guid: 8e6054c4239c7884ea0d44291f17edc1,
+        type: 3}
+      propertyPath: interactionUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695570533909576440, guid: 8e6054c4239c7884ea0d44291f17edc1,
+        type: 3}
+      propertyPath: repairUI
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e6054c4239c7884ea0d44291f17edc1, type: 3}
