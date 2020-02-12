@@ -7,6 +7,7 @@ public class Complaint : MonoBehaviour
     //Need an image to send
     [SerializeField] public string description;
     [SerializeField] public int id;
+    [SerializeField] public Material material;
     
 
     Transform player;
@@ -20,7 +21,7 @@ public class Complaint : MonoBehaviour
     void FixedUpdate()
     {
         bool problemSolved = false;
-//      problemSolved = ComplaintManager.Instance.Check(id);
+        //problemSolved = ComplaintManager.Instance.Check(id);
 
         if (problemSolved)
         {

@@ -450,6 +450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Toilet
   id: 1
+  material: {fileID: 2100000, guid: def8a8844515d5f408d2a407f9f5b048, type: 2}
 --- !u!95 &3597450370505381546
 Animator:
   serializedVersion: 3

@@ -16,7 +16,8 @@ public class CustomerController : MonoBehaviour
     public float drunkness;
     public float happiness;
     public float timeSinceLastDrink;
-    [SerializeField]GameObject complaintBubble;
+    [SerializeField] Bubble complaintBubble;
+    [SerializeField] Bubble orderBubble;
 
     public SkinnedMeshRenderer[] skinnedMeshs;
 
@@ -33,6 +34,10 @@ public class CustomerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //If not set in editor, find bubbles
+        if (complaintBubble == null) complaintBubble = GetComponentsInChildren<Bubble>()[0];
+        if (orderBubble == null) orderBubble = GetComponentsInChildren<Bubble>()[1];
+
         //-----
         JoinQueue();
         drunkness = Random.Range(0, 0.5f - Random.Range(0.0f, 0.5f));
@@ -148,8 +153,7 @@ public class CustomerController : MonoBehaviour
 
     void LeaveBar()
     {
-        complaintBubble.SetActive(false);
-        //Destroy(GetComponentInChildren<OrderBubble>().gameObject);
+        complaintBubble.Clear();
         SetTargetIgnoreOccupied(exitWP);
     }
     IEnumerator Wait(float t)
@@ -174,8 +178,6 @@ public class CustomerController : MonoBehaviour
         animator.SetFloat("Drunkness", drunkness);
     }
 
-
-
     [ContextMenu("Finish Drink")]
     public void FinishedDrink()
     {
@@ -184,7 +186,6 @@ public class CustomerController : MonoBehaviour
         serviceComplete = false;
         JoinQueue();
     }
-
     
     //Force update drunk
 #if UNITY_EDITOR
@@ -195,46 +196,72 @@ public class CustomerController : MonoBehaviour
     }
 #endif
 
+    // ********************************************************************************
+    // Complaints *********************************************************************
+    // ********************************************************************************
+    #region Complaints
     public void SetComplaint(Complaint complaint)
     {
-        if(complaint!=null)
+        //Redundant but defensive
+        //At this point, we know customer is ready for new complaint
+        ClearComplaint();
+
+        //If new complaint is valid
+        if (complaint!=null)
         {
             this.complaint = complaint;
-            for (int i = 0; i < complaintBubble.transform.childCount; i++)
-                complaintBubble.transform.GetChild(i).gameObject.SetActive(false);
-
-            complaintBubble.SetActive(true);            
-            complaintBubble.transform.GetChild(complaint.id).gameObject.SetActive(true);            
-        }
-        else
-        {
-            for (int i = 0; i < complaintBubble.transform.childCount; i++)
-                complaintBubble.transform.GetChild(i).gameObject.SetActive(false);
-            complaintBubble.SetActive(false);
+            DrawComplaint();
         }        
     }
 
+    void ClearComplaint()
+    {
+        this.complaint = null;
+        complaintBubble.Clear();        
+    }
+
+    void DrawComplaint()
+    {
+        //Collect materials
+        List<Material> materials = new List<Material>() { complaint.material };
+
+        //Send materials to bubble
+        complaintBubble.Draw(materials);
+    }
+    #endregion Complaints
+
+    // ********************************************************************************
+    // Orders *************************************************************************
+    // ********************************************************************************
+    #region Orders
     public void SetOrder(Order order)
     {
+        //Redundant but defensive
+        //At this point, we know customer is ready for new order
+        ClearOrder();
+
+        //If new order is valid
         if (order != null)
         {
             this.order = order;
             DrawOrder();
         }
-        else
-        {
-            for (int i = 0; i < complaintBubble.transform.childCount; i++)
-                complaintBubble.transform.GetChild(i).gameObject.SetActive(false);
-            complaintBubble.SetActive(false);
-        }
+    }
+
+    void ClearOrder()
+    {
+        this.order = null;
+        orderBubble.Clear();
     }
 
     public void DrawOrder()
     {
-        //For each item in the order
-        for(int i = 0; i < order.items.Count; i++)
-        {
-            complaintBubble.transform.GetChild(i).GetComponent<Renderer>().material = order.items[i].material;
-        }
+        //Collect materials
+        List<Material> materials = new List<Material>();
+        order.items.ForEach(i => materials.Add(i.material));
+
+        //Send materials to bubble
+        orderBubble.Draw(materials);
     }
+    #endregion Orders
 }

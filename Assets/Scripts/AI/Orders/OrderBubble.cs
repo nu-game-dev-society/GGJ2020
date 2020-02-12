@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-/*
+
 public class OrderBubble : MonoBehaviour
 {
+    /*
     private Dictionary<string, GameObject> itemHas = new Dictionary<string, GameObject>();
 
     private Transform player;
@@ -103,6 +104,5 @@ public class OrderBubble : MonoBehaviour
         }
 
         return false;
-    }
+    }*/
 }
-*/
