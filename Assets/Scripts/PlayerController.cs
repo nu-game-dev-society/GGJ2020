@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
         {
             if (!pV.IsMine)
                 GetComponent<InputHandler>().enabled = false;
+            else
+                GetComponent<MeshRenderer>().enabled = true;
         }
         interactionController = GetComponentInChildren<InteractionController>();
         playerCollider = GetComponent<CapsuleCollider>();
