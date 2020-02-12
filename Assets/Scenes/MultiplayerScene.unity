@@ -7401,7 +7401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &761463846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11216,7 +11216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1052997309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17554,7 +17554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1599512655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17604,7 +17604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1605532456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18054,12 +18054,12 @@ GameObject:
   - component: {fileID: 1637516797}
   - component: {fileID: 1637516796}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: rEPAIRManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1637516796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19027,7 +19027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1753602734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20752,7 +20752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1929202175
 MonoBehaviour:
   m_ObjectHideFlags: 0
