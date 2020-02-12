@@ -45,6 +45,8 @@ public class ServerManager : MonoBehaviourPunCallbacks
     public void Startgame()
     {
         SceneManager.LoadScene("MultiplayerScene");
+        Transform t = GameObject.Find("SpawnPoint").transform;
+        PhotonNetwork.Instantiate("NetworkedPlayer", t.position, t.rotation); //GameObject go = 
     }
     
     void Update()
