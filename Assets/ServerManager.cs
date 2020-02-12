@@ -40,12 +40,12 @@ public class ServerManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
-        PhotonNetwork.AutomaticallySyncScene = true;
+        //PhotonNetwork.AutomaticallySyncScene = true;
         serverStatusUI.SetText("Room: " + PhotonNetwork.CurrentRoom.Name);
     }
     public void Startgame()
     {
-        SceneManager.LoadScene("MultiplayerScene");//photonView.RPC("LoadScene", RpcTarget.All);
+        photonView.RPC("LoadScene", RpcTarget.All);
     }
 
     [PunRPC]
