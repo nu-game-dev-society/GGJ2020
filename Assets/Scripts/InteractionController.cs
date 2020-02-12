@@ -24,7 +24,7 @@ public class InteractionController : MonoBehaviour
 
     void Start()
     {
-        repairProgress = repairUI.transform.Find("Progress").GetComponent<Image>();
+        //   repairProgress = repairUI.transform.Find("Progress").GetComponent<Image>();
         statInteractionUI = interactionUI;
         statRepairUI = repairUI;
     }

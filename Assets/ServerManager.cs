@@ -33,16 +33,23 @@ public class ServerManager : MonoBehaviourPunCallbacks
         int randomRoomName = Random.Range(0, 100000000);
         RoomOptions ro = new RoomOptions() { IsVisible = true, IsOpen = true, MaxPlayers = 2 };
         PhotonNetwork.CreateRoom("Room: " + randomRoomName, ro);
+        
         startGameButton.SetActive(true);
 
     }
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
-        
+        PhotonNetwork.AutomaticallySyncScene = true;
         serverStatusUI.SetText("Room: " + PhotonNetwork.CurrentRoom.Name);
     }
     public void Startgame()
+    {
+        SceneManager.LoadScene("MultiplayerScene");//photonView.RPC("LoadScene", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void LoadScene()
     {
         SceneManager.LoadScene("MultiplayerScene");
     }

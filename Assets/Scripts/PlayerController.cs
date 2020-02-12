@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 [System.Serializable]
 public class Inputs
@@ -33,6 +34,14 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        PhotonView pV = GetComponent<PhotonView>();
+        if(pV)
+        {
+            if (!pV.IsMine)
+                GetComponent<InputHandler>().enabled = false;
+            else
+                GetComponent<MeshRenderer>().enabled = true;
+        }
         interactionController = GetComponentInChildren<InteractionController>();
         playerCollider = GetComponent<CapsuleCollider>();
         Cursor.lockState = CursorLockMode.Locked;
