@@ -33,6 +33,7 @@ public class ServerManager : MonoBehaviourPunCallbacks
         int randomRoomName = Random.Range(0, 100000000);
         RoomOptions ro = new RoomOptions() { IsVisible = true, IsOpen = true, MaxPlayers = 2 };
         PhotonNetwork.CreateRoom("Room: " + randomRoomName, ro);
+        PhotonNetwork.AutomaticallySyncScene = true;
         startGameButton.SetActive(true);
 
     }
