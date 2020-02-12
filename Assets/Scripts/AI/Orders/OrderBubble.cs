@@ -3,6 +3,58 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+public class OrderBubble : Bubble
+{
+    [SerializeField] Material tickMaterial;
+    [SerializeField] MeshRenderer leftTick, middleTick, rightTick;
+
+    private void Awake()
+    {
+        leftTick.material = tickMaterial;
+        middleTick.material = tickMaterial;
+        rightTick.material = tickMaterial;
+        //Default to empty
+        Clear();
+    }
+
+    public void DrawTicks(List<bool> ticks)
+    {
+        switch(ticks.Count)
+        {
+            case 1: //Draw in middle
+                SetMiddle(ticks[0]);
+                break;
+            case 2: //Draw either side
+                SetLeft(ticks[0]);
+                SetRight(ticks[1]);
+                break;
+            case 3: //Draw in all 3 spots
+                SetLeft(ticks[0]);
+                SetMiddle(ticks[1]);
+                SetRight(ticks[2]);
+                break;
+            default:
+                Debug.Log("Too many/few ticks in bubble");
+                break;
+        }
+    }
+
+    void SetTicked(MeshRenderer renderer, bool ticked) => renderer.enabled = ticked;
+    void SetLeft(bool ticked) => SetTicked(leftTick, ticked);
+    void SetMiddle(bool ticked) => SetTicked(middleTick, ticked);
+    void SetRight(bool ticked) => SetTicked(rightTick, ticked);
+
+    public new void Clear()
+    {
+        base.Clear();
+        SetLeft(false);
+        SetMiddle(false);
+        SetRight(false);
+    }
+}
+
+//OLD ORDER BUBBLE
+/*
 public class OrderBubble : MonoBehaviour
 {
     /*
@@ -66,29 +118,7 @@ public class OrderBubble : MonoBehaviour
         if (customer.atBar)
         {
             content.gameObject.SetActive(customer.atBar);
-        }
-
-        bool allActive = true;
-
-        for (int i = 0; i < customer.order.items.Count; i++)
-        {
-            OrderItem item = customer.order.items[i];
-            if (!item.has) { allActive = false; }
-
-            GameObject hasGO;
-            if (itemHas.TryGetValue(i.ToString(), out hasGO))
-            {
-                hasGO.SetActive(item.has);
-            }
-        }
-
-        if (allActive)
-        {
-            customer.serviceComplete = true;
-            customer.happiness = 1;
-            MoneySystem.AddMoney(customer.order.cost);
-            Destroy(gameObject);
-        }
+        }        
     }
 
     public bool PickupItem(string itemID)
@@ -104,5 +134,6 @@ public class OrderBubble : MonoBehaviour
         }
 
         return false;
-    }*/
+    }
 }
+*/

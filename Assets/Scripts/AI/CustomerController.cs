@@ -17,7 +17,7 @@ public class CustomerController : MonoBehaviour
     public float happiness;
     public float timeSinceLastDrink;
     [SerializeField] Bubble complaintBubble;
-    [SerializeField] Bubble orderBubble;
+    [SerializeField] OrderBubble orderBubble;
 
     public SkinnedMeshRenderer[] skinnedMeshs;
 
@@ -35,8 +35,8 @@ public class CustomerController : MonoBehaviour
     void Start()
     {
         //If not set in editor, find bubbles
-        if (complaintBubble == null) complaintBubble = GetComponentsInChildren<Bubble>()[0];
-        if (orderBubble == null) orderBubble = GetComponentsInChildren<Bubble>()[1];
+        if (complaintBubble == null) complaintBubble = GetComponentInChildren<Bubble>();
+        if (orderBubble == null) orderBubble = GetComponentInChildren<OrderBubble>();
 
         //-----
         JoinQueue();
@@ -89,6 +89,7 @@ public class CustomerController : MonoBehaviour
         }
         if(!serviceComplete)
         {
+            DrawOrder();
             happiness -= (Time.deltaTime / 200);
             if (happiness < 0.3f)
                 LeaveBar();
@@ -256,12 +257,68 @@ public class CustomerController : MonoBehaviour
 
     public void DrawOrder()
     {
-        //Collect materials
+        //Don't draw if they're not at the bar
+        if (!atBar)
+        {
+            orderBubble.Clear();
+            return;
+        }
+
+        /*If we reach this line, customer is at the bar*/
+
+        //Collect icons
         List<Material> materials = new List<Material>();
         order.items.ForEach(i => materials.Add(i.material));
 
-        //Send materials to bubble
+        //Draw icons
         orderBubble.Draw(materials);
+
+        //Collect ticks
+        List<bool> ticks = new List<bool>();
+        order.items.ForEach(i => ticks.Add(i.has));
+
+        //Draw ticks
+        orderBubble.DrawTicks(ticks);
+    }
+
+    public bool PickupItem(string itemID)
+    {
+        for (int i = 0; i < order.items.Count; i++)
+        {
+            OrderItem item = order.items[i];
+            if (item.item == itemID && !item.has)
+            {
+                item.has = true;
+                DrawOrder();
+                EvaluateOrder();
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void EvaluateOrder()
+    {
+        //Assume
+        bool orderComplete = true;
+
+        for (int i = 0; i < order.items.Count; i++)
+        {
+            if (!order.items[i].has)
+            {
+                orderComplete = false;
+                break;
+            }                
+        }
+
+        if (orderComplete)
+        {
+            serviceComplete = true;
+            happiness = 1;
+            MoneySystem.AddMoney(order.cost);
+            orderBubble.Clear();
+        }
     }
     #endregion Orders
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ServiceTriggers : MonoBehaviour
 {
     public CustomerController cust;
-
+    public InventoryItem curitem;
     // Update is called once per frame
     void Update()
     {
@@ -15,20 +15,17 @@ public class ServiceTriggers : MonoBehaviour
             {
                 if (cust)
                 {
-                    foreach (OrderItem item in cust.order.items)
+                    if (cust.PickupItem(curitem.id))
                     {
-                        if (item.item == curitem.id)
-                        {
-                            Destroy(curitem.gameObject);
-                        }
-                    }                        
-                    curitem = null;
+                        Destroy(curitem.gameObject);
+                        curitem = null;
+                    }
                 }
             }
 
         }
     }
-    public InventoryItem curitem;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PickupItem"))
