@@ -61,9 +61,7 @@ public class Bubble : MonoBehaviour
 
     public void Clear()
     {
-        SetLeft(null);
-        SetMiddle(null);
-        SetRight(null);
-        bubble.enabled = false;
+        foreach (Renderer renderer in new Renderer[] { left, middle, right, bubble })
+            renderer.enabled = false;
     }
 }
