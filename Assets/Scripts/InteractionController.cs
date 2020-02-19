@@ -26,6 +26,7 @@ public class InteractionController : MonoBehaviour
     {
         repairUI = GameObject.Find("Canvas/RepairUI");
         interactionUI = GameObject.Find("Canvas/InteractionUI");
+        pickupText = interactionUI.GetComponentInChildren<TextMeshProUGUI>();
         repairProgress = repairUI.transform.Find("Progress").GetComponent<Image>();
         statInteractionUI = interactionUI;
         statRepairUI = repairUI;

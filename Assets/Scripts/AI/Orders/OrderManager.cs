@@ -20,27 +20,19 @@ public class OrderManager : MonoBehaviour
     public void GenerateOrder(CustomerController cust)
     {
         List<OrderItem> orderItems = new List<OrderItem>();
-        orderItems.Add(new OrderItem(possibleItems[0].id, possibleItems[0].material));
-        orderItems.Add(new OrderItem(possibleItems[0].id, possibleItems[0].material));
+        //orderItems.Add(new OrderItem(possibleItems[0].id, possibleItems[0].material));
+        //orderItems.Add(new OrderItem(possibleItems[0].id, possibleItems[0].material));
         int orderCost = 0;
-        /*
-        while (orderItems.Count <= 0 || orderItems.Count > maxItems)
+        
+        for(int i = 0; i<maxItems; i++)
         {
-            orderItems.Clear();
-            orderCost = 0;
-
-            foreach (OrderPossibleItem possibleItem in possibleItems)
-            {
-                int count = Random.Range(possibleItem.min, possibleItem.max + 1);
-
-                for (int i = 0; i < count; i++)
-                {
-                    orderCost += possibleItem.price;
-                    orderItems.Add(new OrderItem(possibleItem.id, possibleItem.material));
-                }
-            }
-        }*/
-
+            int rand = Random.Range(0, possibleItems.Count+i);
+            if (rand >= possibleItems.Count)
+                continue;
+            OrderPossibleItem opi = possibleItems[rand];
+            orderCost += possibleItems[rand].price;
+            orderItems.Add(new OrderItem(opi.id, opi.material));
+        }
         cust.SetOrder(new Order(orderItems, orderCost));
     }
 }
