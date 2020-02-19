@@ -17502,7 +17502,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd59f7ef56e70f448b1111e2d698a63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possibleItems: []
+  possibleItems:
+  - id: Beer Bottle
+    itemImage: {fileID: 21300000, guid: 69495295674c71143a58f21b561dad49, type: 3}
+    material: {fileID: 2100000, guid: aebf64eb8134d554b999787039b980d6, type: 2}
+    price: 2
+  - id: Wine Bottle
+    itemImage: {fileID: 21300000, guid: 326a549ab8f5b2a44ab7388624500057, type: 3}
+    material: {fileID: 2100000, guid: 25b245b5edfb47a4194222052ca2549c, type: 2}
+    price: 5
 --- !u!4 &1599512656
 Transform:
   m_ObjectHideFlags: 0
