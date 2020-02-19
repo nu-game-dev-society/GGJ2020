@@ -13223,7 +13223,7 @@ PrefabInstance:
     - target: {fileID: 8748035479611109076, guid: fffe03cf2de52004ab91a8b4af5548ad,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 1.6400026
+      value: 1.6800027
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fffe03cf2de52004ab91a8b4af5548ad, type: 3}
