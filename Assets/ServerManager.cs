@@ -53,7 +53,6 @@ public class ServerManager : MonoBehaviourPunCallbacks
     void LoadScene()
     {
         SceneManager.LoadScene("MultiplayerScene");
-        PhotonNetwork.Instantiate("NetworkedPlayer", transform.position, transform.rotation);
     }
     
     void Update()

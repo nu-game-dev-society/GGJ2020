@@ -6,9 +6,10 @@ using UnityEngine;
 public class LocalNetworkManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-         //GameObject go = 
+        PhotonNetwork.Instantiate("NetworkedPlayer", transform.position, transform.rotation);
+        //GameObject go = 
     }
 
     // Update is called once per frame
