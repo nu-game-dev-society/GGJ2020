@@ -29,15 +29,16 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     InteractionController interactionController;
     public Transform handTransform;
+    public PhotonView photonView;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        PhotonView pV = GetComponent<PhotonView>();
-        if(pV)
+        photonView = GetComponent<PhotonView>();
+        if(photonView)
         {
-            if (!pV.IsMine)
+            if (!photonView.IsMine)
             {
                 GetComponent<InputHandler>().enabled = false;
                 GetComponentInChildren<Camera>().enabled = false;
