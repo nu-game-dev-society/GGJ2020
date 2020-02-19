@@ -7401,7 +7401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &761463846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11216,7 +11216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1052997309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11776,7 +11776,7 @@ GameObject:
   - component: {fileID: 1098386016}
   - component: {fileID: 1098386015}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PickupText?
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12181,71 +12181,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1046589903065975843, guid: 7488974d4d4bc7443899d5c1e9ec73b1,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1046589903065975843, guid: 7488974d4d4bc7443899d5c1e9ec73b1,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1046589903065975843, guid: 7488974d4d4bc7443899d5c1e9ec73b1,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1046589903065975843, guid: 7488974d4d4bc7443899d5c1e9ec73b1,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1046589903065975842, guid: 7488974d4d4bc7443899d5c1e9ec73b1,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1046589903065975842, guid: 7488974d4d4bc7443899d5c1e9ec73b1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 8973408124667731188, guid: 7488974d4d4bc7443899d5c1e9ec73b1,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044590074432409164, guid: 7488974d4d4bc7443899d5c1e9ec73b1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044590074432409164, guid: 7488974d4d4bc7443899d5c1e9ec73b1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044590074432409164, guid: 7488974d4d4bc7443899d5c1e9ec73b1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044590074432409164, guid: 7488974d4d4bc7443899d5c1e9ec73b1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044590074432409164, guid: 7488974d4d4bc7443899d5c1e9ec73b1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044590074432409164, guid: 7488974d4d4bc7443899d5c1e9ec73b1,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7488974d4d4bc7443899d5c1e9ec73b1, type: 3}
@@ -17554,7 +17489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1599512655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17604,7 +17539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1605532456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18059,7 +17994,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1637516796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19027,7 +18962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1753602734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20752,7 +20687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1929202175
 MonoBehaviour:
   m_ObjectHideFlags: 0
