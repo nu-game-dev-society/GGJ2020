@@ -41,9 +41,9 @@ public class PlayerController : MonoBehaviour
             {
                 GetComponent<InputHandler>().enabled = false;
                 GetComponentInChildren<Camera>().enabled = false;
-            }
-            else
+                GetComponentInChildren<AudioListener>().enabled = false;
                 GetComponent<MeshRenderer>().enabled = true;
+            }
         }
         interactionController = GetComponentInChildren<InteractionController>();
         playerCollider = GetComponent<CapsuleCollider>();
