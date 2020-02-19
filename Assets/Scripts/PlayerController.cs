@@ -38,7 +38,10 @@ public class PlayerController : MonoBehaviour
         if(pV)
         {
             if (!pV.IsMine)
+            {
                 GetComponent<InputHandler>().enabled = false;
+                GetComponentInChildren<Camera>().enabled = false;
+            }
             else
                 GetComponent<MeshRenderer>().enabled = true;
         }

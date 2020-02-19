@@ -8,7 +8,7 @@ public class LocalNetworkManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        PhotonNetwork.Instantiate("NetworkedPlayer", transform.position, transform.rotation); //GameObject go = 
+         //GameObject go = 
     }
 
     // Update is called once per frame

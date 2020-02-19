@@ -46,6 +46,7 @@ public class ServerManager : MonoBehaviourPunCallbacks
     public void Startgame()
     {
         photonView.RPC("LoadScene", RpcTarget.All);
+        PhotonNetwork.Instantiate("NetworkedPlayer", transform.position, transform.rotation);
     }
 
     [PunRPC]
