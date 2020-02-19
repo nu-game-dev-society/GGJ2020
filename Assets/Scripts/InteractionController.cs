@@ -14,8 +14,6 @@ public class InteractionController : MonoBehaviour
 
     #region UI
     public TextMeshProUGUI pickupText;
-    public GameObject interactionUI;
-    public GameObject repairUI;
 
     public static GameObject statInteractionUI;
     public static GameObject statRepairUI;
@@ -24,19 +22,21 @@ public class InteractionController : MonoBehaviour
 
     void Start()
     {
-        repairUI = GameObject.Find("Canvas/RepairUI");
-        interactionUI = GameObject.Find("Canvas/InteractionUI");
-        pickupText = interactionUI.GetComponentInChildren<TextMeshProUGUI>();
-        repairProgress = repairUI.transform.Find("Progress").GetComponent<Image>();
-        statInteractionUI = interactionUI;
-        statRepairUI = repairUI;
+        statRepairUI = GameObject.Find("Canvas/RepairUI");
+        statInteractionUI = GameObject.Find("Canvas/InteractionUI");
+
+        pickupText = statInteractionUI.GetComponentInChildren<TextMeshProUGUI>();
+        repairProgress = statRepairUI.transform.Find("Progress").GetComponent<Image>();
+
+        statRepairUI.SetActive(false);
+        statRepairUI.SetActive(false);
     }
 
     public void Interact()
     {
         if (currentRepair && currentRepair.IsBroken && (currentRepair.requiredTool == "" || (player.heldItem && player.heldItem.id.Equals(currentRepair.requiredTool))))
         {
-            repairUI.SetActive(true);
+            statRepairUI.SetActive(true);
             currentRepair.StartRepair(player);
         }
         else if (player.heldItem)
@@ -60,7 +60,7 @@ public class InteractionController : MonoBehaviour
     {
         if (currentRepair)
         {
-            repairUI.SetActive(false);
+            statRepairUI.SetActive(false);
             currentRepair.StopRepair();
         }
     }
@@ -74,19 +74,19 @@ public class InteractionController : MonoBehaviour
                 currentItem = other.transform.GetComponent<InventoryItem>();
                 if (currentItem.pickupTarget)
                     return;
-                interactionUI.SetActive(true);
+                statInteractionUI.SetActive(true);
                 pickupText.SetText("E to Pickup " + currentItem.itemName);
                 break;
             case "Interaction":
                 currentInteraction = other.transform.GetComponent<Interaction>();
-                interactionUI.SetActive(true);
+                statInteractionUI.SetActive(true);
                 pickupText.SetText("E to " + currentInteraction.interactionName);
                 break;
             case "Repairable":
                 currentRepair = other.transform.GetComponent<RepairPart>();
                 if (currentRepair.IsBroken)
                 {
-                    interactionUI.SetActive(true);
+                    statInteractionUI.SetActive(true);
 
                     if (currentRepair.requiredTool == "" || (player.heldItem && player.heldItem.id.Equals(currentRepair.requiredTool)))
                         pickupText.SetText("Hold E to Repair");
@@ -105,7 +105,7 @@ public class InteractionController : MonoBehaviour
                 InventoryItem item = other.GetComponent<InventoryItem>();
                 if (item == currentItem)
                 {
-                    interactionUI.SetActive(false);
+                    statInteractionUI.SetActive(false);
                     currentItem = null;
                 }
                 break;
@@ -114,7 +114,7 @@ public class InteractionController : MonoBehaviour
                 if (interaction == currentInteraction)
                 {
                     currentInteraction = null;
-                    interactionUI.SetActive(false);
+                    statInteractionUI.SetActive(false);
                 }
                 break;
             case "Repairable":
@@ -123,7 +123,7 @@ public class InteractionController : MonoBehaviour
                 {
                     currentRepair.StopRepair();
                     currentRepair = null;
-                    interactionUI.SetActive(false);
+                    statInteractionUI.SetActive(false);
                 }
                 break;
         }
