@@ -32,14 +32,8 @@ public class CustomerSpawner : MonoBehaviour
 
     private MaterialPropertyBlock propBlock;
     public Waypoint exitWP;
-    public static List<CustomerController> activeCustomers;
-    public static List<CustomerController> inactiveCustomers;
-
-    private void Awake()
-    {
-        activeCustomers = new List<CustomerController>();
-        inactiveCustomers = new List<CustomerController>();
-    }
+    public static List<CustomerController> activeCustomers = new List<CustomerController>();
+    public static List<CustomerController> inactiveCustomers = new List<CustomerController>();
 
     // Start is called before the first frame update
     void Start()
