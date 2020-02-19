@@ -29,7 +29,7 @@ public class InteractionController : MonoBehaviour
         repairProgress = statRepairUI.transform.Find("Progress").GetComponent<Image>();
 
         statRepairUI.SetActive(false);
-        statRepairUI.SetActive(false);
+        statInteractionUI.SetActive(false);
     }
 
     public void Interact()
