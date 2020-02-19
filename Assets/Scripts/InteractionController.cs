@@ -22,6 +22,8 @@ public class InteractionController : MonoBehaviour
 
     void Start()
     {
+        if (!player.photonView.IsMine)
+            Destroy(this);
         statRepairUI = GameObject.Find("Canvas/RepairUI");
         statInteractionUI = GameObject.Find("Canvas/InteractionUI");
 
@@ -30,6 +32,7 @@ public class InteractionController : MonoBehaviour
 
         statRepairUI.SetActive(false);
         statInteractionUI.SetActive(false);
+
     }
 
     public void Interact()
