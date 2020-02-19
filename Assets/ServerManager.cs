@@ -45,8 +45,10 @@ public class ServerManager : MonoBehaviourPunCallbacks
     }
     public void Startgame()
     {
-        photonView.RPC("LoadScene", RpcTarget.All);
-        
+        PhotonNetwork.AutomaticallySyncScene = true;
+        SceneManager.LoadScene("MultiplayerScene");
+        //photonView.RPC("LoadScene", RpcTarget.All);
+
     }
 
     [PunRPC]
