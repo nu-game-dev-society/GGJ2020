@@ -20,8 +20,10 @@ public class OrderManager : MonoBehaviour
     public void GenerateOrder(CustomerController cust)
     {
         List<OrderItem> orderItems = new List<OrderItem>();
+        orderItems.Add(new OrderItem(possibleItems[0].id, possibleItems[0].material));
+        orderItems.Add(new OrderItem(possibleItems[0].id, possibleItems[0].material));
         int orderCost = 0;
-
+        /*
         while (orderItems.Count <= 0 || orderItems.Count > maxItems)
         {
             orderItems.Clear();
@@ -37,7 +39,7 @@ public class OrderManager : MonoBehaviour
                     orderItems.Add(new OrderItem(possibleItem.id, possibleItem.material));
                 }
             }
-        }
+        }*/
 
         cust.SetOrder(new Order(orderItems, orderCost));
     }
