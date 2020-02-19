@@ -25,6 +25,7 @@ public class ServerManager : MonoBehaviourPunCallbacks
     {
         base.OnConnectedToMaster();
         serverStatusUI.SetText("Joining Room");
+        PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.JoinRandomRoom();
     }
     public override void OnJoinRandomFailed(short returnCode, string message)
@@ -45,7 +46,7 @@ public class ServerManager : MonoBehaviourPunCallbacks
     }
     public void Startgame()
     {
-        PhotonNetwork.AutomaticallySyncScene = true;
+        
         PhotonNetwork.LoadLevel("MultiplayerScene");
         //photonView.RPC("LoadScene", RpcTarget.All);
 
