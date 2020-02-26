@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PooSplatterManager : MonoBehaviour
 {
+
     [SerializeField] List<GameObject> splatterPrefabs;
     float pooLevel = 0f;
     List<PooSplatter> activeSplatters;
+    [SerializeField] Transform canvas;
 
     // Start is called before the first frame update
     void Start()
@@ -23,9 +25,15 @@ public class PooSplatterManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.KeypadPlus))
+        {
+            IncreasePooLevel();            
+        }
+
         if (pooLevel > 0.0f) DecreasePooLevel(Time.deltaTime);
         if (pooLevel < 0.0f) ClearPooLevel();
         if (pooLevel > 1.0f) GenerateSplatter();
+        Debug.Log("POO: " + pooLevel);
     }
 
     void GenerateSplatter()
@@ -34,8 +42,11 @@ public class PooSplatterManager : MonoBehaviour
         DecreasePooLevel(1.0f);
 
         //Instantiate a new poo splatter, position it randomly on the screen
-        GameObject go = Instantiate(splatterPrefabs[0], transform);
-        go.transform.position += RandomVector(Screen.width/2,Screen.height/2);
+        GameObject go = Instantiate(splatterPrefabs[0], canvas.transform);
+
+        //go.transform.localPosition += RandomVector();
+        go.transform.localPosition += RandomVector(Screen.width/2,Screen.height/2);
+        Debug.Log("GENERATED POO");
     }
 
     Vector3 RandomVector(float xRange = 0f, float yRange = 0f, float zRange = 0f)
