@@ -22,7 +22,7 @@ public class InteractionController : MonoBehaviour
 
     void Start()
     {
-        if (!player.photonView.IsMine)
+        if (player.photonView && !player.photonView.IsMine)
             Destroy(this);
         statRepairUI = GameObject.Find("Canvas/RepairUI");
         statInteractionUI = GameObject.Find("Canvas/InteractionUI");
