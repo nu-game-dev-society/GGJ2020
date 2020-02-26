@@ -17,7 +17,7 @@ public class OrderManager : MonoBehaviour
 
     [SerializeField] List<OrderPossibleItem> possibleItems;
 
-    public void GenerateOrder(CustomerController cust)
+    public Order GenerateOrder(CustomerController cust)
     {
         List<OrderItem> orderItems = new List<OrderItem>();
         //orderItems.Add(new OrderItem(possibleItems[0].id, possibleItems[0].material));
@@ -33,6 +33,8 @@ public class OrderManager : MonoBehaviour
             orderCost += possibleItems[rand].price;
             orderItems.Add(new OrderItem(opi.id, opi.material));
         }
-        cust.SetOrder(new Order(orderItems, orderCost));
+        Order o = new Order(orderItems, orderCost);
+        cust.SetOrder(o);
+        return o;
     }
 }

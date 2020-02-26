@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,10 +35,12 @@ public class CustomerSpawner : MonoBehaviour
     public Waypoint exitWP;
     public static List<CustomerController> activeCustomers = new List<CustomerController>();
     public static List<CustomerController> inactiveCustomers = new List<CustomerController>();
+    PhotonView photonView;
 
     // Start is called before the first frame update
     void Start()
     {
+        photonView = GetComponent<PhotonView>();
         spawnTime = Random.Range(spawnTimeMin, spawnTimeMax);
         propBlock = new MaterialPropertyBlock();
 
@@ -52,6 +55,8 @@ public class CustomerSpawner : MonoBehaviour
 
         if (skinColours.Length == 0)
             skinColours = new Color[] { new Color(204.0f / 255.0f, 152.0f / 255.0f, 194.0f / 255.0f) };
+        if (!PhotonNetwork.IsMasterClient)
+            this.enabled = false;
     }
 
     // Update is called once per frame
@@ -62,60 +67,113 @@ public class CustomerSpawner : MonoBehaviour
             lastSpawn = Time.time;
             spawnTime = Random.Range(spawnTimeMin, spawnTimeMax + 1);
 
-            GameObject customer;
-            CustomerController customerController;
-
-            if (inactiveCustomers.Count >= 1)
-            {
-                customerController = inactiveCustomers[0];
-                customer = customerController.gameObject;
-                inactiveCustomers.Remove(customerController);
-                customerController.serviceComplete = false;
-
-                customer.SetActive(true);
-                customerController.JoinQueue();
-            }
-            else
-            {
-                if ((activeCustomers.Count + inactiveCustomers.Count) >= maxCustomers) { return; }
-                customer = GameObject.Instantiate(customerPrefab);
-                customerController = customer.GetComponent<CustomerController>();
-            }
-
-            customer.SetActive(true);
-            customerController.exitWP = exitWP;
-            activeCustomers.Add(customerController);
-
-            customer.transform.position = transform.position;
-            foreach (SkinnedMeshRenderer renderer in customerController.skinnedMeshs)
-            {
-                renderer.GetPropertyBlock(propBlock);
-
-                switch (renderer.gameObject.name)
-                {
-                    case "HairShort":
-                        propBlock.SetColor("_Color", hairColours[Random.Range(0, hairColours.Length)]);
-                        break;
-                    case "TShirt":
-                        propBlock.SetColor("_Color", tshirtColours[Random.Range(0, tshirtColours.Length)]);
-                        break;
-                    case "Pants":
-                        propBlock.SetColor("_Color", trouserColours[Random.Range(0, trouserColours.Length)]);
-                        break;
-                    case "Male":
-                        propBlock.SetColor("_Color", skinColours[Random.Range(0, skinColours.Length)]);
-                        break;
-                    default:
-                        break;
-                }
-
-                renderer.SetPropertyBlock(propBlock);
-            }
-
-            OrderManager.Instance.GenerateOrder(customerController);
+            SpawnCustomer();
         }
     }
 
+    private void SpawnCustomer()
+    {
+        GameObject customer;
+        CustomerController customerController;
+
+        if (inactiveCustomers.Count >= 1)
+        {   //GetFromPool
+            customerController = inactiveCustomers[0];
+            customer = customerController.gameObject;
+            inactiveCustomers.Remove(customerController);
+            customerController.serviceComplete = false;
+
+            customer.SetActive(true);
+            customerController.JoinQueue();
+        }
+        else
+        {   //Instantiate new Customers
+            if ((activeCustomers.Count + inactiveCustomers.Count) >= maxCustomers) { return; }
+            customer = Instantiate(customerPrefab);
+            customerController = customer.GetComponent<CustomerController>();
+        }
+
+        customer.SetActive(true);
+        customerController.exitWP = exitWP;
+        activeCustomers.Add(customerController);
+
+        customer.transform.position = transform.position;
+        int hairColor = Random.Range(0, hairColours.Length);
+        int tshirtColor = Random.Range(0, tshirtColours.Length);
+        int trouserColor = Random.Range(0, tshirtColours.Length);
+        int skinColor = Random.Range(0, skinColours.Length);
+
+        SetCustomerClothes(customerController, hairColor, tshirtColor, trouserColor, skinColor);
+        Order o = OrderManager.Instance.GenerateOrder(customerController);
+        photonView.RPC("NetworkSpawnCustomer", RpcTarget.Others, new object[] { hairColor, tshirtColor, trouserColor, skinColor, o });
+        
+    }
+
+    [PunRPC]
+    void NetworkSpawnCustomer(int hairColor, int tshirtColor, int trouserColor, int skinColor, Order order)
+    {
+        GameObject customer;
+        CustomerController customerController;
+
+        if (inactiveCustomers.Count >= 1)
+        {   //GetFromPool
+            customerController = inactiveCustomers[0];
+            customer = customerController.gameObject;
+            inactiveCustomers.Remove(customerController);
+            customerController.serviceComplete = false;
+
+            customer.SetActive(true);
+            customerController.JoinQueue();
+        }
+        else
+        {   //Instantiate new Customers
+            if ((activeCustomers.Count + inactiveCustomers.Count) >= maxCustomers) { return; }
+            customer = Instantiate(customerPrefab);
+            customerController = customer.GetComponent<CustomerController>();
+        }
+
+        customer.SetActive(true);
+        customerController.exitWP = exitWP;
+        activeCustomers.Add(customerController);
+
+        customer.transform.position = transform.position;
+        
+        SetCustomerClothes(customerController, hairColor, tshirtColor, trouserColor, skinColor);
+        customerController.SetOrder(order);
+    }
+
+    private void SetCustomerClothes(CustomerController customerController, int hairColor, int tshirtColor, int trouserColor, int skinColor)
+    {
+        foreach (SkinnedMeshRenderer renderer in customerController.skinnedMeshs)
+        {
+            renderer.GetPropertyBlock(propBlock);
+
+            switch (renderer.gameObject.name)
+            {
+                case "HairShort":
+                    propBlock.SetColor("_Color", hairColours[hairColor]);
+                    break;
+                case "TShirt":
+                    propBlock.SetColor("_Color", tshirtColours[tshirtColor]);
+                    break;
+                case "Pants":
+                    propBlock.SetColor("_Color", trouserColours[trouserColor]);
+                    break;
+                case "Male":
+                    propBlock.SetColor("_Color", skinColours[skinColor]);
+                    break;
+                default:
+                    break;
+            }
+
+            renderer.SetPropertyBlock(propBlock);
+        }
+    }
+
+    /// <summary>
+    /// Move Customer back into Pool
+    /// </summary>
+    /// <param name="customer"></param>
     void PoolCustomer(CustomerController customer)
     {
         activeCustomers.Remove(customer);

@@ -35,5 +35,7 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - LoadScene
+  - SpawnCustomer
+  - NetworkSpawnCustomer
   DisableAutoOpenWizard: 1
   ShowSettings: 1
