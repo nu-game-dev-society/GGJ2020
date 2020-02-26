@@ -32,10 +32,13 @@ public class PlayerController : MonoBehaviour
     public PhotonView photonView;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
         photonView = GetComponent<PhotonView>();
+        rb = GetComponent<Rigidbody>();
+    }
+    void Start()
+    { 
         if(photonView)
         {
             if (!photonView.IsMine)

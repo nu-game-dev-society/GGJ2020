@@ -23,8 +23,7 @@ public class PooSplatter : MonoBehaviour
 
         for(int i = 0; i < 5; i++)
         {
-            if (lifetime < i)
-                UpdateStage(i);
+            if (lifetime < i) UpdateStage(i);
         }
         
     }
