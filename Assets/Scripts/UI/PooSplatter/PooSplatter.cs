@@ -4,32 +4,45 @@ using UnityEngine;
 
 public class PooSplatter : MonoBehaviour
 {
-    [SerializeField] List<Sprite> stages;
-    [Range(5,0)]
-    [SerializeField] int stage;
-    float lifetime;
+    [Range(5,0)][SerializeField] float lifetime = 5f;
+
+    SpriteRenderer spriteRenderer;
+    PooSplatterManager splatterManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        lifetime = stage;
-        UpdateStage(stage);
+        splatterManager = FindObjectOfType<PooSplatterManager>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();        
     }
 
-    // Update is called once per frame
+    public void BeginFade() => StartCoroutine(Fade());
+    public void ResetFade() => ChangeAlpha(255f);
+
+    IEnumerator Fade()
+    {
+        //ChangeAlpha(spriteRenderer.color.a - (255f / lifetime));
+        ChangeAlpha(spriteRenderer.color.a - 1f);
+
+        Debug.Log(name + " fading... Alpha: " + spriteRenderer.color.a);
+
+        yield return new WaitForSeconds(.1f);
+    }
+
     void Update()
     {
-        lifetime -= Time.deltaTime;
-
-        for(int i = 0; i < 5; i++)
-        {
-            if (lifetime < i) UpdateStage(i);
-        }
-        
+        if (spriteRenderer.color.a <= 0f)
+            splatterManager.ReturnSplatter(gameObject);
     }
 
-    void UpdateStage(int stage)
+    void ChangeAlpha(float newAlpha)
     {
-        this.stage = stage;
+        spriteRenderer.color = new Color()
+        {
+            r = spriteRenderer.color.r,
+            g = spriteRenderer.color.g,
+            b = spriteRenderer.color.b,
+            a = newAlpha
+        };
     }
 }

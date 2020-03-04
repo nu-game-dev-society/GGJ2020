@@ -4,27 +4,29 @@ using UnityEngine;
 
 public class PooSplatterManager : MonoBehaviour
 {
-
-    [SerializeField] List<GameObject> splatterPrefabs;
-    float pooLevel = 0f;
-    List<PooSplatter> activeSplatters;
+    [SerializeField] List<GameObject> splatterPrefabs;    
     [SerializeField] Transform canvas;
 
+    float pooLevel = 0f;
+
+    List<GameObject> splatterPool;
+    const int poolSize = 100;
+    
     // Start is called before the first frame update
     void Start()
     {
-        if(splatterPrefabs == null)
+        if(splatterPrefabs == null || splatterPrefabs.Count == 0)
         {
             splatterPrefabs = new List<GameObject>();
-            Debug.LogWarning("WARNING: Nobody serialised the fucking poo splatters");
+            Debug.LogError("ERROR: Nobody serialised the fucking poo splatters");
         }
-
-        activeSplatters = new List<PooSplatter>();
+        FillPool();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //TEMPORARY DEBUG BUTTON
         if (Input.GetKeyDown(KeyCode.KeypadPlus))
         {
             IncreasePooLevel();            
@@ -32,21 +34,25 @@ public class PooSplatterManager : MonoBehaviour
 
         if (pooLevel > 0.0f) DecreasePooLevel(Time.deltaTime);
         if (pooLevel < 0.0f) ClearPooLevel();
-        if (pooLevel > 1.0f) GenerateSplatter();
-        Debug.Log("POO: " + pooLevel);
+        if (pooLevel > 1.0f) ActivateSplatter();
+        //Debug.Log("POO: " + pooLevel);
     }
 
-    void GenerateSplatter()
+    void ActivateSplatter()
     {
-        //Generating a new splatter "spends" pooLevel
-        DecreasePooLevel(1.0f);
-
-        //Instantiate a new poo splatter, position it randomly on the screen
-        GameObject go = Instantiate(splatterPrefabs[0], canvas.transform);
-
-        //go.transform.localPosition += RandomVector();
-        go.transform.localPosition += RandomVector(Screen.width/2,Screen.height/2);
-        Debug.Log("GENERATED POO");
+        GameObject splatter = RequestSplatter();
+        if (splatter)
+        {
+            splatter.SetActive(true);
+            splatter.transform.localPosition += RandomVector(Screen.width / 2, Screen.height / 2);
+            splatter.GetComponent<PooSplatter>().BeginFade();
+            //Generating a new splatter "spends" pooLevel
+            DecreasePooLevel(1.0f);
+        }
+        else
+        {
+            Debug.Log("POO REQUEST FAILED");
+        }        
     }
 
     Vector3 RandomVector(float xRange = 0f, float yRange = 0f, float zRange = 0f)
@@ -62,4 +68,39 @@ public class PooSplatterManager : MonoBehaviour
     void IncreasePooLevel(float amount = 1.0f) => pooLevel += amount;
     void DecreasePooLevel(float amount = 1.0f) => pooLevel -= amount;
     void ClearPooLevel() => pooLevel = 0.0f;
+
+    //Instantiate poo splatters, store in pool
+    void FillPool()
+    {
+        splatterPool = new List<GameObject>();
+        for (int i = 0; i < poolSize; i++)
+        {
+            GameObject prefab = splatterPrefabs[Random.Range(0, splatterPrefabs.Count)];
+            GameObject splatter = Instantiate(prefab, transform);
+            splatter.SetActive(false);
+            splatterPool.Add(splatter);
+        }
+    }
+
+    //Request an inactive splatter from the pool
+    GameObject RequestSplatter()
+    {
+        //NOTE: This loop will be inefficient if poolsize is too big
+        foreach (GameObject splatter in splatterPool)
+            if (!splatter.activeInHierarchy)
+                return splatter;
+        //If code reaches this point, all pooled splatters are currently active
+        return null;
+    }
+
+    //Function is public to allow poosplatters to return themselves upon expiration
+    public void ReturnSplatter(GameObject splatter)
+    {
+        splatter.transform.localPosition = Vector3.zero;
+        splatter.GetComponent<PooSplatter>().ResetFade();
+        splatter.SetActive(false);
+
+        if (!splatterPool.Contains(splatter))
+            Debug.LogWarning("WARNING: Rogue poos, beware!\nReturned splatter does not belong to splatter pool");
+    }
 }

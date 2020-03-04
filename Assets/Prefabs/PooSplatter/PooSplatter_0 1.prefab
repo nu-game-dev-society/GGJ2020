@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7612987203535698365}
   - component: {fileID: 7612987203535698363}
   - component: {fileID: 7612987203535698362}
+  - component: {fileID: -2018011820718050103}
   m_Layer: 5
   m_Name: PooSplatter_0 1
   m_TagString: Untagged
@@ -74,3 +75,16 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &-2018011820718050103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7612987203535698364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770352f752fbddc4b93f244db70b0db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 5
