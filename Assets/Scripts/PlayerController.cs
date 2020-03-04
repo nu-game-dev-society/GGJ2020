@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public float lookSens;
     public float crouchDist = 0.45f;
     CapsuleCollider playerCollider;
-    
+
     public Transform cam;
     Vector2 lookDir;
     Rigidbody rb;
@@ -39,13 +39,14 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
     void Start()
-    { 
-        if(photonView)
+    {
+        if (photonView)
         {
             if (!photonView.IsMine)
             {
                 GetComponent<InputHandler>().enabled = false;
                 GetComponentInChildren<Camera>().enabled = false;
+                GetComponentInChildren<Rigidbody>().isKinematic = true;
                 GetComponentInChildren<AudioListener>().enabled = false;
                 mesh.SetActive(true);
             }
@@ -78,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
         if (inputs.interactReleased)
             interactionController.ReleaseInteract();
-        if(inputs.crouch)
+        if (inputs.crouch)
         {
             ToggleCrouch();
         }
@@ -93,7 +94,7 @@ public class PlayerController : MonoBehaviour
     private void ToggleCrouch()
     {
         crouching = !crouching;
-        if(crouching)
+        if (crouching)
         {
             StartCoroutine(LerpCameraPosition(cam.localPosition - new Vector3(0, crouchDist, 0)));
             playerCollider.height -= crouchDist;
@@ -110,7 +111,7 @@ public class PlayerController : MonoBehaviour
     {
         float t = 0;
         Vector3 startPos = cam.localPosition;
-        while (t<1)
+        while (t < 1)
         {
             t += Time.deltaTime * 3f;
             cam.localPosition = Vector3.Lerp(startPos, targetPosition, t);
