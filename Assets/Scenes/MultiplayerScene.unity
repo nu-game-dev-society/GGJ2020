@@ -8530,6 +8530,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1395926645}
     m_Modifications:
+    - target: {fileID: -4071727849124464648, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4071727849124464648, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: viewIdField
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_Name
@@ -9971,6 +9981,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: -4071727849124464648, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4071727849124464648, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: viewIdField
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_Name
@@ -13319,6 +13339,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149593240}
     m_Modifications:
+    - target: {fileID: -4071727849124464648, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4071727849124464648, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: viewIdField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_Name
@@ -19491,6 +19521,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1395926645}
     m_Modifications:
+    - target: {fileID: -4071727849124464648, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4071727849124464648, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
+        type: 3}
+      propertyPath: viewIdField
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3521186333312992575, guid: 0d6c87e05f977bb47ab407cf0744dd1e,
         type: 3}
       propertyPath: m_Name
