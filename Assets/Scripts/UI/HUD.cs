@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using Photon.Pun;
 
 public class HUD : MonoBehaviour
 {
@@ -55,7 +56,10 @@ public class HUD : MonoBehaviour
         inputHandler.enabled = !isPaused;
         playerController.ClearInputs();
 
-        Time.timeScale = Convert.ToInt32(!isPaused);
+        if (!PhotonNetwork.IsConnected)
+        {
+            Time.timeScale = Convert.ToInt32(!isPaused);
+        }
         Cursor.visible = isPaused;
 
         if (isPaused)
