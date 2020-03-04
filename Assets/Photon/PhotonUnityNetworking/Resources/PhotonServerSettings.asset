@@ -33,9 +33,8 @@ MonoBehaviour:
   - DestroyRpc
   - DestroySpaceship
   - Fire
-  - RespawnSpaceship
   - LoadScene
-  - SpawnCustomer
   - NetworkSpawnCustomer
+  - RespawnSpaceship
   DisableAutoOpenWizard: 1
   ShowSettings: 1

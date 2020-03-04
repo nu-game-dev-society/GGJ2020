@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 {
     public Inputs inputs;
     public LayerMask floor;
+    public GameObject mesh;
     [HideInInspector] public InventoryItem heldItem;
     public float speed;
     public float mouseSmooth;
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
                 GetComponent<InputHandler>().enabled = false;
                 GetComponentInChildren<Camera>().enabled = false;
                 GetComponentInChildren<AudioListener>().enabled = false;
-                GetComponent<MeshRenderer>().enabled = true;
+                mesh.SetActive(true);
             }
         }
         interactionController = GetComponentInChildren<InteractionController>();

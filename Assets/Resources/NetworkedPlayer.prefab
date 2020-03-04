@@ -49,11 +49,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkedPlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 1695570534664822378, guid: 8e6054c4239c7884ea0d44291f17edc1,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1695570534664822383, guid: 8e6054c4239c7884ea0d44291f17edc1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -109,20 +104,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1695570533909576440, guid: 8e6054c4239c7884ea0d44291f17edc1,
+    - target: {fileID: 1695570534664822378, guid: 8e6054c4239c7884ea0d44291f17edc1,
         type: 3}
-      propertyPath: pickupText
-      value: 
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1695570533909576440, guid: 8e6054c4239c7884ea0d44291f17edc1,
+    - target: {fileID: 1695570534664822378, guid: 8e6054c4239c7884ea0d44291f17edc1,
         type: 3}
-      propertyPath: interactionUI
+      propertyPath: mesh
       value: 
+      objectReference: {fileID: 3034111068539449167}
+    - target: {fileID: 1695570534664822376, guid: 8e6054c4239c7884ea0d44291f17edc1,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.13
       objectReference: {fileID: 0}
-    - target: {fileID: 1695570533909576440, guid: 8e6054c4239c7884ea0d44291f17edc1,
+    - target: {fileID: 1695570534664822389, guid: 8e6054c4239c7884ea0d44291f17edc1,
         type: 3}
-      propertyPath: repairUI
-      value: 
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 958897895118687571, guid: 8e6054c4239c7884ea0d44291f17edc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645222800, guid: 8e6054c4239c7884ea0d44291f17edc1, type: 3}
       propertyPath: volumeTrigger
@@ -140,20 +145,20 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1695570534664822389, guid: 8e6054c4239c7884ea0d44291f17edc1,
+    - target: {fileID: 1695570533909576440, guid: 8e6054c4239c7884ea0d44291f17edc1,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: pickupText
+      value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 958897895118687571, guid: 8e6054c4239c7884ea0d44291f17edc1,
+    - target: {fileID: 1695570533909576440, guid: 8e6054c4239c7884ea0d44291f17edc1,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: interactionUI
+      value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1695570534664822376, guid: 8e6054c4239c7884ea0d44291f17edc1,
+    - target: {fileID: 1695570533909576440, guid: 8e6054c4239c7884ea0d44291f17edc1,
         type: 3}
-      propertyPath: m_Radius
-      value: 0.13
+      propertyPath: repairUI
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e6054c4239c7884ea0d44291f17edc1, type: 3}
@@ -259,3 +264,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 832c53abd71f0b845b74483c1941dbb6, type: 3}
+--- !u!1 &3034111068539449167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 832c53abd71f0b845b74483c1941dbb6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6429661319239087686}
+  m_PrefabAsset: {fileID: 0}

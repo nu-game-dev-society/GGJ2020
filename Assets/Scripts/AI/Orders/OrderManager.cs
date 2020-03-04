@@ -17,11 +17,10 @@ public class OrderManager : MonoBehaviour
 
     [SerializeField] List<OrderPossibleItem> possibleItems;
 
-    public Order GenerateOrder(CustomerController cust)
+    public int[] GenerateOrder(CustomerController cust)
     {
         List<OrderItem> orderItems = new List<OrderItem>();
-        //orderItems.Add(new OrderItem(possibleItems[0].id, possibleItems[0].material));
-        //orderItems.Add(new OrderItem(possibleItems[0].id, possibleItems[0].material));
+        List<int> orderIDs = new List<int>();
         int orderCost = 0;
         
         for(int i = 0; i<maxItems; i++)
@@ -32,9 +31,23 @@ public class OrderManager : MonoBehaviour
             OrderPossibleItem opi = possibleItems[rand];
             orderCost += possibleItems[rand].price;
             orderItems.Add(new OrderItem(opi.id, opi.material));
+            orderIDs.Add(rand);
         }
         Order o = new Order(orderItems, orderCost);
         cust.SetOrder(o);
-        return o;
+        return orderIDs.ToArray();
+    }
+    public void GenerateOrder(CustomerController cust, int[] orderIDs)
+    {
+        List<OrderItem> orderItems = new List<OrderItem>();
+        int orderCost = 0;
+
+        foreach (int i in orderIDs)
+        {
+            OrderPossibleItem opi = possibleItems[i];
+            orderCost += possibleItems[i].price;
+            orderItems.Add(new OrderItem(opi.id, opi.material));
+        }
+        cust.SetOrder(new Order(orderItems, orderCost));
     }
 }

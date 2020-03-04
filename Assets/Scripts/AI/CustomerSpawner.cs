@@ -55,13 +55,15 @@ public class CustomerSpawner : MonoBehaviour
 
         if (skinColours.Length == 0)
             skinColours = new Color[] { new Color(204.0f / 255.0f, 152.0f / 255.0f, 194.0f / 255.0f) };
-        if (!PhotonNetwork.IsMasterClient)
-            this.enabled = false;
+        //if (!PhotonNetwork.IsMasterClient)
+        //this.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!PhotonNetwork.IsMasterClient)
+            return;
         if ((Time.time - lastSpawn) >= spawnTime)
         {
             lastSpawn = Time.time;
@@ -73,6 +75,7 @@ public class CustomerSpawner : MonoBehaviour
 
     private void SpawnCustomer()
     {
+        Debug.Log("Spawned");
         GameObject customer;
         CustomerController customerController;
 
@@ -100,18 +103,19 @@ public class CustomerSpawner : MonoBehaviour
         customer.transform.position = transform.position;
         int hairColor = Random.Range(0, hairColours.Length);
         int tshirtColor = Random.Range(0, tshirtColours.Length);
-        int trouserColor = Random.Range(0, tshirtColours.Length);
+        int trouserColor = Random.Range(0, trouserColours.Length);
         int skinColor = Random.Range(0, skinColours.Length);
 
         SetCustomerClothes(customerController, hairColor, tshirtColor, trouserColor, skinColor);
-        Order o = OrderManager.Instance.GenerateOrder(customerController);
-        photonView.RPC("NetworkSpawnCustomer", RpcTarget.Others, new object[] { hairColor, tshirtColor, trouserColor, skinColor, o });
-        
+
+        photonView.RPC("NetworkSpawnCustomer", RpcTarget.Others, hairColor, tshirtColor, trouserColor, skinColor, OrderManager.Instance.GenerateOrder(customerController));
+
     }
 
     [PunRPC]
-    void NetworkSpawnCustomer(int hairColor, int tshirtColor, int trouserColor, int skinColor, Order order)
+    void NetworkSpawnCustomer(int hairColor, int tshirtColor, int trouserColor, int skinColor, int[] orderIDs)
     {
+        Debug.Log("Called");
         GameObject customer;
         CustomerController customerController;
 
@@ -137,9 +141,9 @@ public class CustomerSpawner : MonoBehaviour
         activeCustomers.Add(customerController);
 
         customer.transform.position = transform.position;
-        
+
         SetCustomerClothes(customerController, hairColor, tshirtColor, trouserColor, skinColor);
-        customerController.SetOrder(order);
+        OrderManager.Instance.GenerateOrder(customerController, orderIDs);
     }
 
     private void SetCustomerClothes(CustomerController customerController, int hairColor, int tshirtColor, int trouserColor, int skinColor)

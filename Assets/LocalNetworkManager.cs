@@ -14,7 +14,7 @@ public class LocalNetworkManager : MonoBehaviour
     }
     IEnumerator DelaySpawn()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(4); //WILL CAUSE AWAKE ISSUES
         
     }
     // Update is called once per frame
