@@ -4,55 +4,58 @@ using UnityEngine;
 
 public class PooSplatterManager : MonoBehaviour
 {
-    [SerializeField] List<GameObject> splatterPrefabs;    
-    [SerializeField] Transform canvas;
-
-    float pooLevel = 0f;
-
-    List<GameObject> splatterPool;
-    const int poolSize = 100;
+    [SerializeField] GameObject[] prefabs;
     
+    GameObject[] cache = new GameObject[50];
+
+    Vector2 canvasSize;
+
     // Start is called before the first frame update
     void Start()
     {
-        if(splatterPrefabs == null || splatterPrefabs.Count == 0)
-        {
-            splatterPrefabs = new List<GameObject>();
-            Debug.LogError("ERROR: Nobody serialised the fucking poo splatters");
-        }
-        FillPool();
+        FindCanvasSize();
+        ValidatePrefabs();
+        FillCache();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //TEMPORARY DEBUG BUTTON
         if (Input.GetKeyDown(KeyCode.KeypadPlus))
-        {
-            IncreasePooLevel();            
-        }
-
-        if (pooLevel > 0.0f) DecreasePooLevel(Time.deltaTime);
-        if (pooLevel < 0.0f) ClearPooLevel();
-        if (pooLevel > 1.0f) ActivateSplatter();
-        //Debug.Log("POO: " + pooLevel);
+            ActivateSplatters(5);
     }
 
+    //NOTE: If canvas size changes during runtime, this will need to be called again (not likely)
+    void FindCanvasSize()
+    {
+        canvasSize = GetComponentInParent<Canvas>().GetComponent<RectTransform>().rect.size;
+    }
+
+    //Ensures that the prefabs have been set in the editor
+    void ValidatePrefabs()
+    {
+        if (prefabs.Length == 0)
+            Debug.LogError("ERROR: Nobody serialised the fucking poo splatters");
+    }
+    
+    //Pull a splatter from the cache and display it
     void ActivateSplatter()
     {
-        GameObject splatter = RequestSplatter();
-        if (splatter)
+        try
         {
+            GameObject splatter = RequestSplatter();
             splatter.SetActive(true);
-            splatter.transform.localPosition += RandomVector(Screen.width / 2, Screen.height / 2);
-            splatter.GetComponent<PooSplatter>().BeginFade();
-            //Generating a new splatter "spends" pooLevel
-            DecreasePooLevel(1.0f);
+            splatter.transform.localPosition += RandomVector(canvasSize.x / 2, canvasSize.y / 2);
         }
-        else
+        catch(System.NullReferenceException nre)
         {
-            Debug.Log("POO REQUEST FAILED");
-        }        
+            Debug.Log("POO REQUEST FAILED!\n" + nre.StackTrace);
+        }      
+    }
+    public void ActivateSplatters(int count = 1)
+    {
+        for (int i = 0; i < count; i++)
+            ActivateSplatter();
     }
 
     Vector3 RandomVector(float xRange = 0f, float yRange = 0f, float zRange = 0f)
@@ -65,31 +68,31 @@ public class PooSplatterManager : MonoBehaviour
         };
     }
 
-    void IncreasePooLevel(float amount = 1.0f) => pooLevel += amount;
-    void DecreasePooLevel(float amount = 1.0f) => pooLevel -= amount;
-    void ClearPooLevel() => pooLevel = 0.0f;
-
     //Instantiate poo splatters, store in pool
-    void FillPool()
+    void FillCache()
     {
-        splatterPool = new List<GameObject>();
-        for (int i = 0; i < poolSize; i++)
-        {
-            GameObject prefab = splatterPrefabs[Random.Range(0, splatterPrefabs.Count)];
-            GameObject splatter = Instantiate(prefab, transform);
-            splatter.SetActive(false);
-            splatterPool.Add(splatter);
-        }
+        for (int i = 0; i < cache.Length; i++)
+            cache[i] = CreateSplatter();
+    }
+
+    //Create a new splatter
+    GameObject CreateSplatter()
+    {
+        GameObject prefab = prefabs[Random.Range(0, prefabs.Length)];
+        GameObject splatter = Instantiate(prefab, transform);
+        splatter.GetComponent<PooSplatter>().Register(this);
+        splatter.SetActive(false);
+        return splatter;
     }
 
     //Request an inactive splatter from the pool
     GameObject RequestSplatter()
     {
-        //NOTE: This loop will be inefficient if poolsize is too big
-        foreach (GameObject splatter in splatterPool)
+        //NOTE: This loop will be inefficient if cache is too big
+        foreach (GameObject splatter in cache)
             if (!splatter.activeInHierarchy)
                 return splatter;
-        //If code reaches this point, all pooled splatters are currently active
+        //If code reaches this point, all cached splatters are currently active
         return null;
     }
 
@@ -100,7 +103,7 @@ public class PooSplatterManager : MonoBehaviour
         splatter.GetComponent<PooSplatter>().ResetFade();
         splatter.SetActive(false);
 
-        if (!splatterPool.Contains(splatter))
-            Debug.LogWarning("WARNING: Rogue poos, beware!\nReturned splatter does not belong to splatter pool");
+        if (!System.Array.Exists(cache, s => s == splatter))
+            Debug.LogWarning("WARNING: Rogue poos, beware!\nReturned splatter does not belong to cache");
     }
 }

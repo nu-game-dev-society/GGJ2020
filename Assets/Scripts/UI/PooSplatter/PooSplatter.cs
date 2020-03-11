@@ -1,48 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PooSplatter : MonoBehaviour
 {
-    [Range(5,0)][SerializeField] float lifetime = 5f;
-
-    SpriteRenderer spriteRenderer;
+    Image image;
     PooSplatterManager splatterManager;
+    const float FADERATE = 0.5f;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        splatterManager = FindObjectOfType<PooSplatterManager>();
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();        
-    }
-
-    public void BeginFade() => StartCoroutine(Fade());
-    public void ResetFade() => ChangeAlpha(255f);
-
-    IEnumerator Fade()
-    {
-        //ChangeAlpha(spriteRenderer.color.a - (255f / lifetime));
-        ChangeAlpha(spriteRenderer.color.a - 1f);
-
-        Debug.Log(name + " fading... Alpha: " + spriteRenderer.color.a);
-
-        yield return new WaitForSeconds(.1f);
+        image = gameObject.GetComponent<Image>();
     }
 
     void Update()
     {
-        if (spriteRenderer.color.a <= 0f)
+        if (image.color.a > 0f)
+            Fade();
+        else
             splatterManager.ReturnSplatter(gameObject);
     }
 
-    void ChangeAlpha(float newAlpha)
+    public void Register(PooSplatterManager splatterManager) => this.splatterManager = splatterManager;
+
+    void Fade()
     {
-        spriteRenderer.color = new Color()
+        float newAlpha = Mathf.Lerp(image.color.a, image.color.a - 1f, Time.deltaTime * FADERATE);
+        SetAlpha(newAlpha);
+    }
+    public void ResetFade() => SetAlpha(1f);
+
+    //Leave RGB the same, change alpha value only
+    void SetAlpha(float newAlpha)
+    {
+        image.color = new Color()
         {
-            r = spriteRenderer.color.r,
-            g = spriteRenderer.color.g,
-            b = spriteRenderer.color.b,
+            r = image.color.r,
+            g = image.color.g,
+            b = image.color.b,
             a = newAlpha
         };
     }
+
+    
 }
